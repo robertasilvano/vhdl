@@ -1,0 +1,285 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.1
+vControle
+Z1 I[VBXLga2Sk@`aKoYkVQ4g3
+Z2 VZ53Y=R0IW^RG5QdHUE>eH0
+Z3 dC:\Users\rober\Desktop\UFSC241\VHDL\PROJETOS\PROJETO FINAL-20240524\sim
+Z4 w1717769531
+Z5 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Controle.v
+Z6 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Controle.v
+L0 1
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+Z9 n@controle
+Z10 !s100 8==[IAgjb4P<59Dk1AmSm0
+Z11 !s108 1717770101.187000
+Z12 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Controle.v|
+Z13 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Controle.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vCounter_divider
+Z14 IJF^7MoSZ?N_Y0o82PIDkz2
+Z15 ViEgPz47RkbAIoUl`]=bXG3
+R3
+Z16 w1716561088
+Z17 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_divide.v
+Z18 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_divide.v
+L0 1
+R7
+r1
+31
+R8
+Z19 n@counter_divider
+Z20 !s100 ROW:bk6]W2`=A2SFZSR`X2
+Z21 !s108 1717770101.264000
+Z22 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_divide.v|
+Z23 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_divide.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vCounter_round
+Z24 IZeCb8B[=mDi2=MLmR71YD3
+Z25 VSDYdN2^:BG7JNf5d[HLSJ0
+R3
+Z26 w1717763094
+Z27 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_round.v
+Z28 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_round.v
+L0 1
+R7
+r1
+31
+R8
+Z29 n@counter_round
+Z30 !s100 :TA8[^[7NT]o:9?hzIS5<1
+Z31 !s108 1717770101.307000
+Z32 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_round.v|
+Z33 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_round.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vCounter_time
+Z34 IoN][mPN6@lQMi;kK:7M6;0
+Z35 VFz>PibTH3GZgWWSR>CH<d3
+R3
+Z36 w1717765313
+Z37 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_time.v
+Z38 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_time.v
+L0 1
+R7
+r1
+31
+R8
+Z39 n@counter_time
+Z40 !s100 ;UhHFUf`96=2X1_hPaikj2
+Z41 !s108 1717770101.347000
+Z42 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_time.v|
+Z43 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_time.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDatapath
+Z44 I4K9[^bk?M=ElBlcj;]c@l3
+Z45 VAoAn_?Kl4DQU1PgG9AUd52
+R3
+Z46 w1717767563
+Z47 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Datapath.v
+Z48 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Datapath.v
+L0 1
+R7
+r1
+31
+R8
+Z49 n@datapath
+Z50 !s100 eIQ63ZWBT21SZNR:Ben7a3
+Z51 !s108 1717770101.386000
+Z52 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Datapath.v|
+Z53 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Datapath.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDec7seg
+Z54 Id@PO:MN416MCe:9H9IV:o0
+Z55 VKPHnSgZG0c4^;3ag=_e^I1
+R3
+Z56 w1716560107
+Z57 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Dec7seg.v
+Z58 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Dec7seg.v
+L0 1
+R7
+r1
+31
+R8
+Z59 n@dec7seg
+Z60 !s100 [fDl?7ziJiX9Xm=makHIE0
+Z61 !s108 1717770101.427000
+Z62 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Dec7seg.v|
+Z63 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Dec7seg.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDecSeq
+Z64 I;gmAR5[zUX[E]hD_nnV^93
+Z65 V2?9CIc3XfB]B@7naE0W[?1
+R3
+Z66 w1716560706
+Z67 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/DecSeq.v
+Z68 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/DecSeq.v
+L0 1
+R7
+r1
+31
+R8
+Z69 n@dec@seq
+Z70 !s100 R2K0glX[G0VAlHRn^jMPH3
+Z71 !s108 1717770101.474000
+Z72 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/DecSeq.v|
+Z73 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/DecSeq.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMux2x1_7bits
+Z74 I3D7AX0?UW4DC9bKhS>_:f3
+Z75 V50Xmia@JKRfgK^@c<0XMD1
+R3
+Z76 w1717762934
+Z77 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux2x1_7bits.v
+Z78 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux2x1_7bits.v
+L0 1
+R7
+r1
+31
+R8
+Z79 n@mux2x1_7bits
+Z80 !s100 H>h]fY6dc^0eR22A:cm[_0
+Z81 !s108 1717770101.518000
+Z82 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux2x1_7bits.v|
+Z83 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux2x1_7bits.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMux4x1
+Z84 IY0[0_H?@0ab_57=[QiAYn3
+Z85 V:lN<:mU;`abHY4E^n@^ha2
+R3
+Z86 w1717763020
+Z87 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1.v
+Z88 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1.v
+L0 1
+R7
+r1
+31
+R8
+Z89 n@mux4x1
+Z90 !s100 ;kUez5ce]gR9CF1iDd=Q51
+Z91 !s108 1717770101.561000
+Z92 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1.v|
+Z93 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vMux4x1_4bits
+Z94 I`kLa1K<2i8cl:=8lM]2OA2
+Z95 V8O4d@[H8U:BSf^984?S^h2
+R3
+Z96 w1716560002
+Z97 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1_4bits.v
+Z98 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1_4bits.v
+L0 1
+R7
+r1
+31
+R8
+Z99 n@mux4x1_4bits
+Z100 !s100 HF=B0Jbf9AJc94Ef6cGLc1
+Z101 !s108 1717770101.606000
+Z102 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1_4bits.v|
+Z103 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1_4bits.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vReg_fgpa
+Z104 IK[0Wfe`d3SQXC09YNM]oi2
+Z105 VM9USPi?m@zmAi@eYG8:V>0
+R3
+Z106 w1717763058
+Z107 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_fpga.v
+Z108 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_fpga.v
+L0 1
+R7
+r1
+31
+R8
+Z109 n@reg_fgpa
+Z110 !s100 P6aMAjUVoXY]0YB?S=0=d3
+Z111 !s108 1717770101.652000
+Z112 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_fpga.v|
+Z113 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_fpga.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vReg_fgpa2
+Z114 I42_D7<eWFef[0=?Shd98k3
+Z115 V>JGUBNO0kbdZ:O`0gFlCC3
+R3
+Z116 w1717762993
+Z117 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_user.v
+Z118 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_user.v
+L0 1
+R7
+r1
+31
+R8
+Z119 n@reg_fgpa2
+!i10b 1
+Z120 !s100 7U<NlM9UGzT^VMGLC<LcB2
+!s85 0
+Z121 !s108 1717770101.735000
+Z122 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_user.v|
+Z123 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_user.v|
+!s101 -O0
+vReg_setup
+Z124 In7@_1O[On2`UQ:o]=36<Q3
+Z125 V1m?Ge[0zRAQQlAabfDo_;2
+R3
+Z126 w1716560352
+Z127 8C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_setup.v
+Z128 FC:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_setup.v
+L0 1
+R7
+r1
+31
+R8
+Z129 n@reg_setup
+Z130 !s100 92a[c[jbHmWZAVE[zbj]A1
+Z131 !s108 1717770101.693000
+Z132 !s107 C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_setup.v|
+Z133 !s90 -reportprogress|300|-work|work|C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_setup.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vTopo_tb
+!i10b 1
+!s100 GPBY1a21R<3XE5YCFa6bJ0
+IK3:z0I^B6BaG0QR>UZQW?2
+VMaW3hM4em:5?K1T2NaK^W2
+R3
+w1717770085
+8C:\Users\rober\Desktop\UFSC241\VHDL\PROJETOS\PROJETO FINAL-20240524\src\Topo_tb.v
+FC:\Users\rober\Desktop\UFSC241\VHDL\PROJETOS\PROJETO FINAL-20240524\src\Topo_tb.v
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1717770101.814000
+!s107 C:\Users\rober\Desktop\UFSC241\VHDL\PROJETOS\PROJETO FINAL-20240524\src\Topo_tb.v|
+!s90 -reportprogress|300|-work|work|C:\Users\rober\Desktop\UFSC241\VHDL\PROJETOS\PROJETO FINAL-20240524\src\Topo_tb.v|
+!s101 -O0
+R8
+n@topo_tb

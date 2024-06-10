@@ -1,0 +1,21 @@
+module Mux4x1_4bits(
+sel,
+ent0,
+ent1,
+ent2,
+ent3,
+out
+);
+
+	localparam p_sel = 2;
+	localparam p_ent = 4;
+	localparam p_out = 4;
+
+	input wire [p_sel - 1:0] sel,
+	input wire [p_ent - 1:0] ent0,
+	input wire [p_ent - 1:0] ent1,
+	input wire [p_ent - 1:0] ent2,
+	input wire [p_ent - 1:0] ent3,
+	input wire [p_out - 1:0] out
+
+endmodule
