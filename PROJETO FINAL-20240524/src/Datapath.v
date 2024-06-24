@@ -1,26 +1,34 @@
 module Datapath(
-	clock_50,	//entrada
-	key,			//entrada
-	switch,		//entrada
-	r1,			//entrada
-	r2,			//entrada
-	e1,			//entrada
-	e2,			//entrada
-	e3,			//entrada
-	e4,			//entrada
-	sel,			//entrada
-	hex0,			//saida
-	hex1,			//saida
-	hex2,			//saida
-	hex3,			//saida
-	hex4,			//saida
-	hex5,			//saida
-	leds,			//saida
-	end_fpga,	//saida
-	end_user,	//saida
-	end_time,	//saida
-	win,			//saida
-	match			//saida
+
+	//entrada de dados
+	clock_50,
+	key,
+	switch,
+	
+	//entrada de comandos
+	r1,
+	r2,
+	e1,
+	e2,
+	e3,
+	e4,
+	sel,
+	
+	// saida de dados
+	hex0,
+	hex1,
+	hex2,
+	hex3,
+	hex4,
+	hex5,
+	leds,
+	
+	// saida de status
+	end_fpga,
+	end_user,
+	end_time,
+	win,
+	match
 );
 
 	localparam p_key = 4;
@@ -29,7 +37,7 @@ module Datapath(
 	localparam p_leds = 4;
 
 	// Input Port(s)
-	input 		clock_50;
+	input 								clock_50;
 	input wire 	[p_key - 1:0] 		key;
 	input wire 	[p_switch - 1:0] 	switch;
 	input wire 							r1;
@@ -55,6 +63,7 @@ module Datapath(
 	output wire 						match;
 	
 	wire [3:0] w_tempo;  //maracutaia só pra poder rodar. depois vamos usar o do codificador 7 seg.
+	
 	Counter_time U0_CT (
 		.clkt(clock_50),
 		.R(r2),
