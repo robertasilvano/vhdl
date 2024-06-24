@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Fri Jun 07 11:15:54 2024
+Mon Jun 24 19:50:06 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -44,7 +44,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 07 11:15:54 2024      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 24 19:50:06 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -159,16 +159,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                           ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
-; ../src/Topo.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Topo.v         ;         ;
-; ../src/Datapath.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Datapath.v     ;         ;
-; ../src/Controle.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Controle.v     ;         ;
-; ../src/Counter_time.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_time.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                              ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
+; ../src/Topo.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Topo.v         ;         ;
+; ../src/Datapath.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Datapath.v     ;         ;
+; ../src/Controle.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Controle.v     ;         ;
+; ../src/Counter_time.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_time.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------+
@@ -270,62 +270,61 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri Jun 07 11:15:54 2024
+    Info: Processing started: Mon Jun 24 19:50:06 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/seq1.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq1.v
     Info (12023): Found entity 1: SEQ1
-Warning (10275): Verilog HDL Module Instantiation warning at Topo.v(92): ignored dangling comma in List of Port Connections
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/topo.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/topo.v
     Info (12023): Found entity 1: Topo
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/datapath.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/datapath.v
     Info (12023): Found entity 1: Datapath
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/controle.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/controle.v
     Info (12023): Found entity 1: Controle
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/mux4x1_4bits.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/mux4x1_4bits.v
     Info (12023): Found entity 1: Mux4x1_4bits
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/mux2x1_7bits.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/mux2x1_7bits.v
     Info (12023): Found entity 1: Mux2x1_7bits
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/mux4x1.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/mux4x1.v
     Info (12023): Found entity 1: Mux4x1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/dec7seg.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/dec7seg.v
     Info (12023): Found entity 1: Dec7seg
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/reg_setup.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/reg_setup.v
     Info (12023): Found entity 1: Reg_setup
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/reg_fpga.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/reg_fpga.v
     Info (12023): Found entity 1: Reg_fgpa
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/reg_user.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/reg_user.v
     Info (12023): Found entity 1: Reg_fgpa2
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/decseq.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/decseq.v
     Info (12023): Found entity 1: DecSeq
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/counter_time.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_time.v
     Info (12023): Found entity 1: Counter_time
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/counter_round.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_round.v
     Info (12023): Found entity 1: Counter_round
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/projeto final-20240524/src/counter_divide.v
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_divide.v
     Info (12023): Found entity 1: Counter_divider
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
 Warning (10034): Output port "ledr" at Topo.v(34) has no driver
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
-Warning (10034): Output port "hex0" at Datapath.v(44) has no driver
-Warning (10034): Output port "hex1" at Datapath.v(45) has no driver
-Warning (10034): Output port "hex2" at Datapath.v(46) has no driver
-Warning (10034): Output port "hex3" at Datapath.v(47) has no driver
-Warning (10034): Output port "hex4" at Datapath.v(48) has no driver
-Warning (10034): Output port "hex5" at Datapath.v(49) has no driver
-Warning (10034): Output port "leds" at Datapath.v(50) has no driver
-Warning (10034): Output port "end_fpga" at Datapath.v(51) has no driver
-Warning (10034): Output port "end_user" at Datapath.v(52) has no driver
-Warning (10034): Output port "win" at Datapath.v(54) has no driver
-Warning (10034): Output port "match" at Datapath.v(55) has no driver
+Warning (10034): Output port "hex0" at Datapath.v(52) has no driver
+Warning (10034): Output port "hex1" at Datapath.v(53) has no driver
+Warning (10034): Output port "hex2" at Datapath.v(54) has no driver
+Warning (10034): Output port "hex3" at Datapath.v(55) has no driver
+Warning (10034): Output port "hex4" at Datapath.v(56) has no driver
+Warning (10034): Output port "hex5" at Datapath.v(57) has no driver
+Warning (10034): Output port "leds" at Datapath.v(58) has no driver
+Warning (10034): Output port "end_fpga" at Datapath.v(59) has no driver
+Warning (10034): Output port "end_user" at Datapath.v(60) has no driver
+Warning (10034): Output port "win" at Datapath.v(62) has no driver
+Warning (10034): Output port "match" at Datapath.v(63) has no driver
 Info (12128): Elaborating entity "Counter_time" for hierarchy "Datapath:U0_DP|Counter_time:U0_CT"
 Info (12128): Elaborating entity "Controle" for hierarchy "Controle:U1_FSM"
-Warning (10034): Output port "r1" at Controle.v(27) has no driver
-Warning (10034): Output port "e1" at Controle.v(29) has no driver
-Warning (10034): Output port "e2" at Controle.v(30) has no driver
-Warning (10034): Output port "e3" at Controle.v(31) has no driver
-Warning (10034): Output port "e4" at Controle.v(32) has no driver
-Warning (10034): Output port "sel" at Controle.v(33) has no driver
+Warning (10034): Output port "r1" at Controle.v(35) has no driver
+Warning (10034): Output port "e1" at Controle.v(37) has no driver
+Warning (10034): Output port "e2" at Controle.v(38) has no driver
+Warning (10034): Output port "e3" at Controle.v(39) has no driver
+Warning (10034): Output port "e4" at Controle.v(40) has no driver
+Warning (10034): Output port "sel" at Controle.v(41) has no driver
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledr[0]" is stuck at GND
     Warning (13410): Pin "ledr[1]" is stuck at GND
@@ -400,9 +399,9 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
 Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 89 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 88 warnings
     Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Fri Jun 07 11:15:54 2024
+    Info: Processing ended: Mon Jun 24 19:50:06 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

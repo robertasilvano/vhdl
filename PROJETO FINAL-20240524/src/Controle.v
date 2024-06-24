@@ -1,21 +1,27 @@
 module Controle(
-clock_50,
-enter,
-reset,
-end_fpga,
-end_user,
-end_time,
-win,
-match,
-r1,
-r2,
-e1,
-e2,
-e3,
-e4,
-sel
+	// entrada de dados
+	clock_50,
+	enter,
+	reset,
+	
+	// entrada de status
+	end_fpga,
+	end_user,
+	end_time,
+	win,
+	match,
+	
+	// saida comandos
+	r1,
+	r2,
+	e1,
+	e2,
+	e3,
+	e4,
+	sel
 );
 	
+	// Input Port(s)
 	input 			clock_50;
 	input wire 		enter;
 	input wire 		reset;
@@ -24,6 +30,8 @@ sel
 	input wire 		end_time;
 	input wire 		win;
 	input wire 		match;
+	
+	// Output Port(s)
 	output wire 	r1;
 	output wire 	r2;
 	output wire 	e1;
