@@ -1,0 +1,97 @@
+{C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_fpga.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_fpga.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Reg_fgpa
+
+Top level modules:
+	Reg_fgpa
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1_4bits.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1_4bits.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Mux4x1_4bits
+
+Top level modules:
+	Mux4x1_4bits
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux2x1_7bits.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux2x1_7bits.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Mux2x1_7bits
+
+Top level modules:
+	Mux2x1_7bits
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Controle.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Controle.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Controle
+
+Top level modules:
+	Controle
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_round.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_round.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Counter_round
+
+Top level modules:
+	Counter_round
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Mux4x1.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Mux4x1
+
+Top level modules:
+	Mux4x1
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Topo.v} {0 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Topo.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Topo
+** Error: C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Topo.v(92): near ")": syntax error, unexpected ')', expecting .* or '.'
+
+} {4.0 5.0} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Dec7seg.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Dec7seg.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Dec7seg
+
+Top level modules:
+	Dec7seg
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_user.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_user.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Reg_fgpa2
+
+Top level modules:
+	Reg_fgpa2
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_divide.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_divide.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Counter_divider
+
+Top level modules:
+	Counter_divider
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/DecSeq.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/DecSeq.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module DecSeq
+
+Top level modules:
+	DecSeq
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_time.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Counter_time.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Counter_time
+
+Top level modules:
+	Counter_time
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_setup.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Reg_setup.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Reg_setup
+
+Top level modules:
+	Reg_setup
+
+} {} {}} {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Datapath.v} {1 {vlog -work work {C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/PROJETO FINAL-20240524/src/Datapath.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module Datapath
+
+Top level modules:
+	Datapath
+
+} {} {}}
