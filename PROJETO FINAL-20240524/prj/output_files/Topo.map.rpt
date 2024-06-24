@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Mon Jun 24 19:50:06 2024
+Mon Jun 24 20:02:36 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -14,11 +14,10 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "Controle:U1_FSM"
- 10. Port Connectivity Checks: "Datapath:U0_DP|Counter_time:U0_CT"
- 11. Port Connectivity Checks: "Datapath:U0_DP"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "Datapath:U0_DP|Counter_time:U0_CT"
+ 10. Port Connectivity Checks: "Datapath:U0_DP"
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -44,7 +43,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 24 19:50:06 2024      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 24 20:02:36 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -225,16 +224,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Port Connectivity Checks: "Controle:U1_FSM"       ;
-+-------+-------+----------+------------------------+
-; Port  ; Type  ; Severity ; Details                ;
-+-------+-------+----------+------------------------+
-; win   ; Input ; Info     ; Explicitly unconnected ;
-; match ; Input ; Info     ; Explicitly unconnected ;
-+-------+-------+----------+------------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Datapath:U0_DP|Counter_time:U0_CT"                                                   ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -244,15 +233,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------+
-; Port Connectivity Checks: "Datapath:U0_DP"         ;
-+-------+--------+----------+------------------------+
-; Port  ; Type   ; Severity ; Details                ;
-+-------+--------+----------+------------------------+
-; leds  ; Output ; Info     ; Explicitly unconnected ;
-; win   ; Output ; Info     ; Explicitly unconnected ;
-; match ; Output ; Info     ; Explicitly unconnected ;
-+-------+--------+----------+------------------------+
++---------------------------------------------------+
+; Port Connectivity Checks: "Datapath:U0_DP"        ;
++------+--------+----------+------------------------+
+; Port ; Type   ; Severity ; Details                ;
++------+--------+----------+------------------------+
+; leds ; Output ; Info     ; Explicitly unconnected ;
++------+--------+----------+------------------------+
 
 
 +-------------------------------+
@@ -270,7 +257,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 24 19:50:06 2024
+    Info: Processing started: Mon Jun 24 20:02:35 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq1.v
@@ -319,12 +306,12 @@ Warning (10034): Output port "win" at Datapath.v(62) has no driver
 Warning (10034): Output port "match" at Datapath.v(63) has no driver
 Info (12128): Elaborating entity "Counter_time" for hierarchy "Datapath:U0_DP|Counter_time:U0_CT"
 Info (12128): Elaborating entity "Controle" for hierarchy "Controle:U1_FSM"
-Warning (10034): Output port "r1" at Controle.v(35) has no driver
-Warning (10034): Output port "e1" at Controle.v(37) has no driver
-Warning (10034): Output port "e2" at Controle.v(38) has no driver
-Warning (10034): Output port "e3" at Controle.v(39) has no driver
-Warning (10034): Output port "e4" at Controle.v(40) has no driver
-Warning (10034): Output port "sel" at Controle.v(41) has no driver
+Warning (10034): Output port "r1" at Controle.v(37) has no driver
+Warning (10034): Output port "e1" at Controle.v(39) has no driver
+Warning (10034): Output port "e2" at Controle.v(40) has no driver
+Warning (10034): Output port "e3" at Controle.v(41) has no driver
+Warning (10034): Output port "e4" at Controle.v(42) has no driver
+Warning (10034): Output port "sel" at Controle.v(43) has no driver
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledr[0]" is stuck at GND
     Warning (13410): Pin "ledr[1]" is stuck at GND
@@ -401,8 +388,8 @@ Info (21057): Implemented 67 device resources after synthesis - the final resour
     Info (21059): Implemented 52 output pins
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 88 warnings
     Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Mon Jun 24 19:50:06 2024
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Mon Jun 24 20:02:36 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

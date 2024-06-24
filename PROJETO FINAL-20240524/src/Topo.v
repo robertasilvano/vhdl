@@ -39,7 +39,7 @@ module Topo(
 	output wire [p_hex  - 1:0] hex4;
 	output wire [p_hex  - 1:0] hex5;
 	
-	wire w_r1, w_r2, w_e1, w_e2, w_e3, w_e4, w_end_fpga, w_end_user, w_endtime, w_sel;  //maracutaia 2 pra ligar com o datapath e o controller
+	wire w_r1, w_r2, w_e1, w_e2, w_e3, w_e4, w_sel, w_end_fpga, w_end_user, w_endtime, w_win, w_match;  //maracutaia 2 pra ligar com o datapath e o controller
 	
 	Datapath U0_DP (
 	
@@ -64,14 +64,14 @@ module Topo(
 		.hex3(hex3),		
 		.hex4(hex4),		
 		.hex5(hex5),		
-		.leds(),	
+		.leds(),	// TODO
 		
 		// saida de status
 		.end_fpga(w_end_fpga),
 		.end_user(w_end_user),
 		.end_time(w_endtime),
-		.win(),		
-		.match()
+		.win(w_win),		
+		.match(w_match)
 		
 	);
 	
@@ -86,8 +86,8 @@ module Topo(
 		.end_fpga(w_end_fpga),
 		.end_user(w_end_user),
 		.end_time(w_endtime),
-		.win(),
-		.match(),
+		.win(w_win),
+		.match(w_match),
 		
 		// saida comandos
 		.r1(w_r1),
