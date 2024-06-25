@@ -53,7 +53,7 @@ module Controle(
 	end
 
 	// Lógica combinacional dos estados
-	always @(end_fpga or end_user or end_time or win or match)
+	always @(end_fpga or end_user or end_time or win or match or state) // state e enter precisam ta aqui?
 	begin
 		next_state = state;  //conferir, ta estranho
 		case (state)

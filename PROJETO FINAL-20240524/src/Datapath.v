@@ -63,8 +63,9 @@ module Datapath(
 	output wire 						win;
 	output wire 						match;
 	
+	//COUNTERS
 	wire [3:0] w_tempo;
-	Counter_time U0_CT (
+	Counter_time CT (
 		.clkt(clock_50),
 		.R(r2),
 		.E(e2),
@@ -72,14 +73,22 @@ module Datapath(
 		.end_time(end_time)
 	);
 	
+	wire [7:0] setup; //TODO
+	wire [3:0] round; //TODO
+	Counter_round CR (
+		.clk(clock_50),
+		.R(r1),
+		.E(e4),
+		.data(setup[3:0]),
+		.tc(win),
+		.round(round)
+	);
 	
 	//HEX5
-	wire w_win;
-	assign win = w_win;
 	wire [6:0] w_mux0_mux1;
 	
 	Mux2x1_7bits MUX0 (
-		.sel(w_win),
+		.sel(win),
 		.ent0(7'b1011_011),  // 1 - U
 		.ent1(7'b1000_111),  // 0 - F
 		.out(w_mux0_mux1)
@@ -94,7 +103,6 @@ module Datapath(
 	
 	
 	//HEX4
-	wire [7:0] setup; //TODO
 	wire [6:0] w_dec0_mux3;
 	wire [6:0] w_mux2_mux3;
 	
@@ -104,7 +112,7 @@ module Datapath(
 	);
 	
 	Mux2x1_7bits MUX2 (
-		.sel(w_win),
+		.sel(win),
 		.ent0(7'b1011_011), //1 - S
 		.ent1(7'b1100_111), //0 - P
 		.out(w_mux2_mux3)
@@ -122,7 +130,7 @@ module Datapath(
 	wire [6:0] w_mux4_mux5;
 	
 	Mux2x1_7bits MUX4 (
-		.sel(w_win),
+		.sel(win),
 		.ent0(7'b1001_111), //1 - E
 		.ent1(7'b1111_011), //0 - g
 		.out(w_mux4_mux5)
@@ -146,7 +154,7 @@ module Datapath(
 	);
 	
 	Mux2x1_7bits MUX6 (
-		.sel(w_win),
+		.sel(win),
 		.ent0(7'b1011_011), //1 - r
 		.ent1(7'b1100_111), //0 - A
 		.out(w_mux6_mux7)
@@ -178,7 +186,6 @@ module Datapath(
 	
 	
 	//HEX0
-	wire [3:0] round; //TODO
 	wire [6:0] w_dec3_mux9;
 	wire [6:0] w_dec4_mux9;
 	

@@ -36,7 +36,7 @@ module Counter_round(
 	output reg 							tc;
 	output reg [p_round - 1:0]		round;
 	
-	always @(posedge clk or R)  // perguntar pro prof. R não tem posedge ne?
+	always @(posedge clk or posedge R)  // perguntar pro prof. R tem posedge ne?
 	begin
 		if (R == 1'b1)
 			begin
@@ -57,4 +57,5 @@ module Counter_round(
 			end
 		
 	end
+
 endmodule
