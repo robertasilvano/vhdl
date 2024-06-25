@@ -195,6 +195,10 @@ module Datapath(
 		.points(points)
 	);
 	
+	//COMP
+	assign comp = out_fpga == out_user;
+	assign match = comp & end_user;
+	
 	//REG SETUP
 	wire [7:0] setup; //TODO
 	Reg_setup R_SETUP (

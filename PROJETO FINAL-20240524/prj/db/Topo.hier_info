@@ -139,7 +139,7 @@ end_fpga <= Counter_FPGA:CFPGA.tc
 end_user <= Counter_user:C_USER.tc
 end_time <= Counter_time:CT.end_time
 win <= win.DB_MAX_OUTPUT_PORT_TYPE
-match <= <GND>
+match <= match.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topo|Datapath:U0_DP|FSM_clock:FSM
