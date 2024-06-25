@@ -24,7 +24,7 @@ module Counter_round(
 
 	//localparams
 	localparam p_data = 4;
-	localparam p_round = 4;  //ver tamananho
+	localparam p_round = 4;
 
 	// Input Port(s)
 	input wire 						clk;

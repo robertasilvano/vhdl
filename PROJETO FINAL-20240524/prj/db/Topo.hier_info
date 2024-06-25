@@ -69,7 +69,7 @@ hex5[6] << Datapath:U0_DP.hex5
 
 
 |Topo|Datapath:U0_DP
-clock_50 => clock_50.IN2
+clock_50 => clock_50.IN3
 key[0] => ~NO_FANOUT~
 key[1] => ~NO_FANOUT~
 key[2] => ~NO_FANOUT~
@@ -82,7 +82,7 @@ switch[4] => ~NO_FANOUT~
 switch[5] => ~NO_FANOUT~
 switch[6] => ~NO_FANOUT~
 switch[7] => ~NO_FANOUT~
-r1 => r1.IN1
+r1 => r1.IN2
 r2 => r2.IN1
 e1 => ~NO_FANOUT~
 e2 => e2.IN1
@@ -189,6 +189,15 @@ round[0] <= round[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 round[1] <= round[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 round[2] <= round[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 round[3] <= round[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Topo|Datapath:U0_DP|FSM_clock:FSM
+reset => ~NO_FANOUT~
+clock_50 => ~NO_FANOUT~
+c025Hz <= <VCC>
+c05Hz <= <VCC>
+c1Hz <= <VCC>
+c2Hz <= <VCC>
 
 
 |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX0

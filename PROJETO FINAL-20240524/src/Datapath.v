@@ -84,6 +84,17 @@ module Datapath(
 		.round(round)
 	);
 	
+	//FSM_clock
+	wire c025Hz, c05Hz, c1Hz, c2Hz;
+	FSM_clock FSM (
+		.reset(r1),
+		.clock_50(clock_50),
+		.c025Hz(c025Hz),
+		.c05Hz(c05Hz),
+		.c1Hz(c1Hz),
+		.c2Hz(c2Hz)
+	);
+	
 	//HEX5
 	wire [6:0] w_mux0_mux1;
 	
