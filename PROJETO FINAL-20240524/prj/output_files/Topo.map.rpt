@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Mon Jun 24 21:05:40 2024
+Mon Jun 24 21:29:00 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -17,10 +17,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
- 12. Port Connectivity Checks: "Datapath:U0_DP|Counter_time:U0_CT"
- 13. Port Connectivity Checks: "Datapath:U0_DP"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "Datapath:U0_DP|Counter_time:U0_CT"
+ 14. Port Connectivity Checks: "Datapath:U0_DP"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -46,7 +47,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 24 21:05:40 2024      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 24 21:29:00 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -228,36 +229,40 @@ Encoding Type:  One-Hot
 +------------------+--------------+------------------+-------------+-----------------+-----------------+-------------+------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+--------------------------------------------+----------------------------------------+
-; Register name                              ; Reason for Removal                     ;
-+--------------------------------------------+----------------------------------------+
-; Datapath:U0_DP|Counter_time:U0_CT|end_time ; Stuck at GND due to stuck port data_in ;
-; Controle:U1_FSM|state.next_round           ; Lost fanout                            ;
-; Controle:U1_FSM|state~2                    ; Lost fanout                            ;
-; Controle:U1_FSM|state~3                    ; Lost fanout                            ;
-; Controle:U1_FSM|state~4                    ; Lost fanout                            ;
-; Controle:U1_FSM|state.check                ; Stuck at GND due to stuck port data_in ;
-; Controle:U1_FSM|state.result               ; Stuck at GND due to stuck port data_in ;
-; Controle:U1_FSM|state.init                 ; Lost fanout                            ;
-; Controle:U1_FSM|state.setup                ; Lost fanout                            ;
-; Controle:U1_FSM|state.play_FPGA            ; Lost fanout                            ;
-; Controle:U1_FSM|state.play_user            ; Lost fanout                            ;
-; Total Number of Removed Registers = 11     ;                                        ;
-+--------------------------------------------+----------------------------------------+
++--------------------------------------------------------------------+
+; Registers Removed During Synthesis                                 ;
++-----------------------------------------------+--------------------+
+; Register name                                 ; Reason for Removal ;
++-----------------------------------------------+--------------------+
+; Controle:U1_FSM|state.check                   ; Lost fanout        ;
+; Controle:U1_FSM|state.next_round              ; Lost fanout        ;
+; Controle:U1_FSM|state~2                       ; Lost fanout        ;
+; Controle:U1_FSM|state~3                       ; Lost fanout        ;
+; Controle:U1_FSM|state~4                       ; Lost fanout        ;
+; Datapath:U0_DP|Counter_time:U0_CT|end_time    ; Lost fanout        ;
+; Datapath:U0_DP|Counter_time:U0_CT|tempo[0..3] ; Lost fanout        ;
+; Controle:U1_FSM|state.init                    ; Lost fanout        ;
+; Controle:U1_FSM|state.setup                   ; Lost fanout        ;
+; Controle:U1_FSM|state.play_FPGA               ; Lost fanout        ;
+; Controle:U1_FSM|state.play_user               ; Lost fanout        ;
+; Controle:U1_FSM|state.result                  ; Lost fanout        ;
+; Total Number of Removed Registers = 15        ;                    ;
++-----------------------------------------------+--------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                        ;
-+------------------------------+---------------------------+---------------------------------------------------------+
-; Register name                ; Reason for Removal        ; Registers Removed due to This Register                  ;
-+------------------------------+---------------------------+---------------------------------------------------------+
-; Controle:U1_FSM|state.result ; Stuck at GND              ; Controle:U1_FSM|state.init, Controle:U1_FSM|state.setup ;
-;                              ; due to stuck port data_in ;                                                         ;
-; Controle:U1_FSM|state~2      ; Lost Fanouts              ; Controle:U1_FSM|state.play_user                         ;
-; Controle:U1_FSM|state~3      ; Lost Fanouts              ; Controle:U1_FSM|state.play_FPGA                         ;
-+------------------------------+---------------------------+---------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                            ;
++-------------------------+--------------------+-------------------------------------------------------------------------+
+; Register name           ; Reason for Removal ; Registers Removed due to This Register                                  ;
++-------------------------+--------------------+-------------------------------------------------------------------------+
+; Controle:U1_FSM|state~2 ; Lost Fanouts       ; Datapath:U0_DP|Counter_time:U0_CT|end_time,                             ;
+;                         ;                    ; Datapath:U0_DP|Counter_time:U0_CT|tempo[3],                             ;
+;                         ;                    ; Datapath:U0_DP|Counter_time:U0_CT|tempo[2],                             ;
+;                         ;                    ; Datapath:U0_DP|Counter_time:U0_CT|tempo[1],                             ;
+;                         ;                    ; Datapath:U0_DP|Counter_time:U0_CT|tempo[0], Controle:U1_FSM|state.init, ;
+;                         ;                    ; Controle:U1_FSM|state.play_user                                         ;
+; Controle:U1_FSM|state~3 ; Lost Fanouts       ; Controle:U1_FSM|state.play_FPGA                                         ;
++-------------------------+--------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -273,6 +278,15 @@ Encoding Type:  One-Hot
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; No         ; |Topo|Controle:U1_FSM|state ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -308,7 +322,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 24 21:05:39 2024
+    Info: Processing started: Mon Jun 24 21:28:59 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq1.v
@@ -342,7 +356,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_divide.v
     Info (12023): Found entity 1: Counter_divider
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
-Warning (10034): Output port "ledr" at Topo.v(35) has no driver
+Warning (10034): Output port "ledr" at Topo.v(40) has no driver
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
 Warning (10034): Output port "hex0" at Datapath.v(53) has no driver
 Warning (10034): Output port "hex1" at Datapath.v(54) has no driver
@@ -413,7 +427,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "hex5[4]" is stuck at GND
     Warning (13410): Pin "hex5[5]" is stuck at GND
     Warning (13410): Pin "hex5[6]" is stuck at GND
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (17049): 15 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 15 input pin(s) that do not drive logic
@@ -437,7 +451,7 @@ Info (21057): Implemented 67 device resources after synthesis - the final resour
     Info (21059): Implemented 52 output pins
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 85 warnings
     Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Mon Jun 24 21:05:40 2024
+    Info: Processing ended: Mon Jun 24 21:29:00 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

@@ -1,6 +1,6 @@
 module Controle(
 	// entrada de dados
-	clock_50,
+	clock,
 	enter,
 	reset,
 	
@@ -23,15 +23,8 @@ module Controle(
 
 	//TODO: NÃO ENTENDI A TABELA 4 DO ARQUIVO "Top.pdf". REVER.
 	
-	//localparams
-	localparam p_state = 3;
-	localparam [p_state-1:0] init = 3'b000, setup = 3'b001, play_FPGA = 3'b010, play_user = 3'b011, check = 3'b100, next_round = 3'b101, result = 3'b110;
-	
-	//reg
-	reg [p_state-1:0] state, next_state;
-	
 	// Input Port(s)
-	input 			clock_50;
+	input wire		clock;  //aqui tem wire?
 	input wire 		enter;
 	input wire 		reset;
 	input wire 		end_fpga;
@@ -45,8 +38,15 @@ module Controle(
 	output reg 		e1, e2, e3, e4;
 	output reg 		sel;
 	
-	// Processo Sequencial, armazena o estato atuAL
-	always @(posedge clock_50)
+	//localparams
+	localparam p_state = 3;
+	localparam [p_state-1:0] init = 3'b000, setup = 3'b001, play_FPGA = 3'b010, play_user = 3'b011, check = 3'b100, next_round = 3'b101, result = 3'b110;
+	
+	//reg
+	reg [p_state-1:0] state, next_state;
+	
+	// Processo Sequencial, armazena o estato atual
+	always @(posedge clock)
 	begin
 		if (reset)
 			state <= init;
@@ -55,7 +55,7 @@ module Controle(
 	end
 
 	// Lógica combinacional dos estados
-	always @ (end_fpga or end_user or end_time or win or match)
+	always @(end_fpga or end_user or end_time or win or match)
 	begin
 		next_state = state;  //conferir, ta estranho
 		case (state)

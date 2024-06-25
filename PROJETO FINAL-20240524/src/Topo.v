@@ -8,16 +8,21 @@
 */
 
 module Topo(
-	clock_50,	//entrada
-	key,			//entrada
-	sw,			//entrada
-	ledr,			//saida
-	hex0,			//saida
-	hex1,			//saida
-	hex2,			//saida
-	hex3,			//saida
-	hex4,			//saida
-	hex5			//saida
+	
+	// entrada de dados
+	clock_50,
+	key,
+	sw,
+	
+	// saida de dados
+	ledr,
+	hex0,
+	hex1,
+	hex2,
+	hex3,
+	hex4,
+	hex5
+	
 );
 
 	//localparams
@@ -40,7 +45,8 @@ module Topo(
 	output wire [p_hex  - 1:0] hex4;
 	output wire [p_hex  - 1:0] hex5;
 	
-	wire w_r1, w_r2, w_e1, w_e2, w_e3, w_e4, w_sel, w_end_fpga, w_end_user, w_endtime, w_win, w_match;  //maracutaia 2 pra ligar com o datapath e o controller
+	wire w_r1, w_r2, w_e1, w_e2, w_e3, w_e4, w_sel;  //maracutaia 2 pra ligar com o datapath e o controller
+	wire w_end_fpga, w_end_user, w_endtime, w_win, w_match;  //maracutaia 2 pra ligar com o datapath e o controller
 	
 	Datapath U0_DP (
 	
@@ -79,7 +85,7 @@ module Topo(
 	Controle U1_FSM(
 		
 		// entrada de dados
-		.clock_50(clock_50),
+		.clock(clock_50),
 		.enter(sw[0]),
 		.reset(sw[1]),
 		
