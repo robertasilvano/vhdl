@@ -1,0 +1,10 @@
+
+State Machine - |Topo|Controle:U1_FSM|state
+Name state.result state.next_round state.check state.play_user state.play_FPGA state.setup state.init 
+state.init 0 0 0 0 0 0 0 
+state.setup 0 0 0 0 0 1 1 
+state.play_FPGA 0 0 0 0 1 0 1 
+state.play_user 0 0 0 1 0 0 1 
+state.check 0 0 1 0 0 0 1 
+state.next_round 0 1 0 0 0 0 1 
+state.result 1 0 0 0 0 0 1 

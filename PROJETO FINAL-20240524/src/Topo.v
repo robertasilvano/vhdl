@@ -20,6 +20,7 @@ module Topo(
 	hex5			//saida
 );
 
+	//localparams
 	localparam p_key	= 4;
 	localparam p_sw	= 10;
 	localparam p_ledr = 10;

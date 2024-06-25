@@ -31,6 +31,7 @@ module Datapath(
 	match
 );
 
+	//localparams
 	localparam p_key = 4;
 	localparam p_switch = 8;
 	localparam p_hex = 7;

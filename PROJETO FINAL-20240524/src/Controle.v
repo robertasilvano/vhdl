@@ -23,6 +23,13 @@ module Controle(
 
 	//TODO: NÃO ENTENDI A TABELA 4 DO ARQUIVO "Top.pdf". REVER.
 	
+	//localparams
+	localparam p_state = 3;
+	localparam [p_state-1:0] init = 3'b000, setup = 3'b001, play_FPGA = 3'b010, play_user = 3'b011, check = 3'b100, next_round = 3'b101, result = 3'b110;
+	
+	//reg
+	reg [p_state-1:0] state, next_state;
+	
 	// Input Port(s)
 	input 			clock_50;
 	input wire 		enter;
@@ -38,84 +45,97 @@ module Controle(
 	output reg 		e1, e2, e3, e4;
 	output reg 		sel;
 	
-	//assign r2 = reset;  //maracutaia só pra conseguir testar
+	// Processo Sequencial, armazena o estato atuAL
+	always @(posedge clock_50)
+	begin
+		if (reset)
+			state <= init;
+		else
+			state <= next_state;
+	end
 
-localparam N_STADOS = 3;
-localparam [2:0]
-Init = 3'b000, 
-Setup = 3'b001, 
-Play_FPGA = 3'b010, 
-Play_User = 3'b011, 
-Check = 3'b100, 
-Next_Round = 3'b101, 
-Result = 3'b110; 
+	// Lógica combinacional dos estados
+	always @ (end_fpga or end_user or end_time or win or match)
+	begin
+		next_state = state;  //conferir, ta estranho
+		case (state)
+			init:  //Define o proximo estado como setup.
+				begin
+					next_state = setup;
+				end
+			setup:  //Passa para o estado Play FPGA se enter for ativado
+				begin
+					if (enter == 1'b1) next_state = play_FPGA;
+				end
+			play_FPGA: //Passa para o estado Play User quando end FPGA é ativado
+				begin
+					if (end_fpga == 1'b1) next_state = play_user;
+				end
+			play_user:  //Passa para Result se o tempo acabar ou para Check se end User for ativado.
+				begin
+					if (end_time == 1'b1) next_state = result;
+					else if (end_user == 1'b1) next_state = check;
+				end
+			check:  //Passa para Next Round se houve uma correspondencia ou para Result se não houve correspondencia.
+				begin
+					if (match == 1'b1) next_state = next_round;
+					else next_state = result;
+				end
+			next_round:  //Volta para Play FPGA se nao houve vitoria, ou vai para Result se houve vitoria.
+				begin
+					if (win) next_state = result;  // acho que precisa de um == 1'b1
+					else next_state = play_FPGA; // confirmar com o prof
+				end
+			result:  //Volta pro estado inicial
+				begin
+					next_state = init;  // confirmar com o prof
+				end
+			default:
+				begin
+					next_state = init;
+				end
+		endcase
+	end
 
-reg [N_STADOS-1:0]state
-next_state;
 
-// Processo sequencial
-// Armazena estado ATUAL
-always @(posedge clock_50)
-begin
-	if (reset)
-		state <= Init;
-	else 
-		state <= next_state;
-end
-
-
-// LOGICA COMBINACIONAL DOS ESTADOS
-always @(end_fpga or end_user or end_time or win or match or state) 
-begin	
-	next_state = state;
-	case (state)
-		Init: 
-		begin
-			next_state = Setup;
-		end
-		Setup: 
-			if (enter == 1'b1) next_state = Play_FPGA;
-		Play_FPGA: 
-			if (end_fpga == 1'b1) next_state = Play_User;
-		Play_User: 
-		begin
-			if (end_time == 1'b1) next_state = Result;
-			else if (end_user = 1'b1 )next_state = Check;
-		end
-		Check:
-		begin 
-		  	if (match == 1'b1) next_state = Next_Round;
-			else next_state =  Result;
-		end
-		Next_Round: 
-		begin
-			if (win) next_state = Result;
-			else next_state = Play_FPGA
-		end
-		Result: next_state = Init;
-
-	endcase
-end 
-// FIM LOGICA COMBINACIONAL DE ESTADOS
-
-// LOGICA COMBINACIONAL CONTROLE DAS SAIDAS
-always @(state) begin
-	r1 = 1'b1; r2 = 1'b1;
-	e1 = 1'b0; e2 = 1'b0; e3 = 1'b0; e4 = 1'b0;
-	sel = 1'b0;
-	case (state)
-		Init: 
-			begin
-			r1 = 1'b1; r2 = 1'b1;
-			end
-		Setup: e1 = 1'b1;
-		Play_FPGA: e3 = 1'b1;
-		Play_User: e2 = 1'b1; 
-		Check: e4 = 1'b1;
-		Next_Round: r2 = 1'b1;
-		Result: sel = 1'b1;
-
-	endcase
-end
-	
+	// Lógica combinacional das saídas
+	always @(state) 
+	begin
+		// Zera todo mundo pra inicializar as variáveis
+		r1 = 1'b0; r2 = 1'b0;
+		e1 = 1'b0; e2 = 1'b0; e3 = 1'b0; e4 = 1'b0;
+		sel = 1'b0;
+		
+		case (state)
+			init:
+				begin
+					r1 = 1'b1; 
+					r2 = 1'b1;
+				end
+			setup:
+				begin
+					e1 = 1'b1;
+				end
+			play_FPGA:
+				begin
+					e3 = 1'b1;
+				end
+			play_user:
+				begin
+					e2 = 1'b1;
+				end
+			check:
+				begin
+					e4 = 1'b1;
+				end
+			next_round:
+				begin
+					r2 = 1'b1;
+				end
+			result:
+				begin
+					sel = 1'b1;
+				end
+		endcase
+	end
 endmodule

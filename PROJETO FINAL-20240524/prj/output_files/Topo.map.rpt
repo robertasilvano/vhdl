@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Mon Jun 24 20:02:36 2024
+Mon Jun 24 21:05:40 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,11 +13,14 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "Datapath:U0_DP|Counter_time:U0_CT"
- 10. Port Connectivity Checks: "Datapath:U0_DP"
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. State Machine - |Topo|Controle:U1_FSM|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Port Connectivity Checks: "Datapath:U0_DP|Counter_time:U0_CT"
+ 13. Port Connectivity Checks: "Datapath:U0_DP"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -43,7 +46,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 24 20:02:36 2024      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun 24 21:05:40 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -170,33 +173,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-;                                             ;          ;
-; Total combinational functions               ; 0        ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 0        ;
-;     -- 3 input functions                    ; 0        ;
-;     -- <=2 input functions                  ; 0        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 0        ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 67       ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-; Maximum fan-out node                        ; clock_50 ;
-; Maximum fan-out                             ; 1        ;
-; Total fan-out                               ; 67       ;
-; Average fan-out                             ; 0.50     ;
-+---------------------------------------------+----------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+;                                             ;        ;
+; Total combinational functions               ; 0      ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 0      ;
+;     -- 3 input functions                    ; 0      ;
+;     -- <=2 input functions                  ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 0      ;
+;     -- arithmetic mode                      ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+;     -- Dedicated logic registers            ; 0      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 67     ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; key[0] ;
+; Maximum fan-out                             ; 1      ;
+; Total fan-out                               ; 67     ;
+; Average fan-out                             ; 0.50   ;
++---------------------------------------------+--------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -207,6 +210,54 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; |Topo                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |Topo               ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Topo|Controle:U1_FSM|state                                                                                     ;
++------------------+--------------+------------------+-------------+-----------------+-----------------+-------------+------------+
+; Name             ; state.result ; state.next_round ; state.check ; state.play_user ; state.play_FPGA ; state.setup ; state.init ;
++------------------+--------------+------------------+-------------+-----------------+-----------------+-------------+------------+
+; state.init       ; 0            ; 0                ; 0           ; 0               ; 0               ; 0           ; 0          ;
+; state.setup      ; 0            ; 0                ; 0           ; 0               ; 0               ; 1           ; 1          ;
+; state.play_FPGA  ; 0            ; 0                ; 0           ; 0               ; 1               ; 0           ; 1          ;
+; state.play_user  ; 0            ; 0                ; 0           ; 1               ; 0               ; 0           ; 1          ;
+; state.check      ; 0            ; 0                ; 1           ; 0               ; 0               ; 0           ; 1          ;
+; state.next_round ; 0            ; 1                ; 0           ; 0               ; 0               ; 0           ; 1          ;
+; state.result     ; 1            ; 0                ; 0           ; 0               ; 0               ; 0           ; 1          ;
++------------------+--------------+------------------+-------------+-----------------+-----------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++--------------------------------------------+----------------------------------------+
+; Register name                              ; Reason for Removal                     ;
++--------------------------------------------+----------------------------------------+
+; Datapath:U0_DP|Counter_time:U0_CT|end_time ; Stuck at GND due to stuck port data_in ;
+; Controle:U1_FSM|state.next_round           ; Lost fanout                            ;
+; Controle:U1_FSM|state~2                    ; Lost fanout                            ;
+; Controle:U1_FSM|state~3                    ; Lost fanout                            ;
+; Controle:U1_FSM|state~4                    ; Lost fanout                            ;
+; Controle:U1_FSM|state.check                ; Stuck at GND due to stuck port data_in ;
+; Controle:U1_FSM|state.result               ; Stuck at GND due to stuck port data_in ;
+; Controle:U1_FSM|state.init                 ; Lost fanout                            ;
+; Controle:U1_FSM|state.setup                ; Lost fanout                            ;
+; Controle:U1_FSM|state.play_FPGA            ; Lost fanout                            ;
+; Controle:U1_FSM|state.play_user            ; Lost fanout                            ;
+; Total Number of Removed Registers = 11     ;                                        ;
++--------------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                        ;
++------------------------------+---------------------------+---------------------------------------------------------+
+; Register name                ; Reason for Removal        ; Registers Removed due to This Register                  ;
++------------------------------+---------------------------+---------------------------------------------------------+
+; Controle:U1_FSM|state.result ; Stuck at GND              ; Controle:U1_FSM|state.init, Controle:U1_FSM|state.setup ;
+;                              ; due to stuck port data_in ;                                                         ;
+; Controle:U1_FSM|state~2      ; Lost Fanouts              ; Controle:U1_FSM|state.play_user                         ;
+; Controle:U1_FSM|state~3      ; Lost Fanouts              ; Controle:U1_FSM|state.play_FPGA                         ;
++------------------------------+---------------------------+---------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -257,7 +308,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Jun 24 20:02:35 2024
+    Info: Processing started: Mon Jun 24 21:05:39 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq1.v
@@ -291,27 +342,24 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_divide.v
     Info (12023): Found entity 1: Counter_divider
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
-Warning (10034): Output port "ledr" at Topo.v(34) has no driver
+Warning (10034): Output port "ledr" at Topo.v(35) has no driver
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
-Warning (10034): Output port "hex0" at Datapath.v(52) has no driver
-Warning (10034): Output port "hex1" at Datapath.v(53) has no driver
-Warning (10034): Output port "hex2" at Datapath.v(54) has no driver
-Warning (10034): Output port "hex3" at Datapath.v(55) has no driver
-Warning (10034): Output port "hex4" at Datapath.v(56) has no driver
-Warning (10034): Output port "hex5" at Datapath.v(57) has no driver
-Warning (10034): Output port "leds" at Datapath.v(58) has no driver
-Warning (10034): Output port "end_fpga" at Datapath.v(59) has no driver
-Warning (10034): Output port "end_user" at Datapath.v(60) has no driver
-Warning (10034): Output port "win" at Datapath.v(62) has no driver
-Warning (10034): Output port "match" at Datapath.v(63) has no driver
+Warning (10034): Output port "hex0" at Datapath.v(53) has no driver
+Warning (10034): Output port "hex1" at Datapath.v(54) has no driver
+Warning (10034): Output port "hex2" at Datapath.v(55) has no driver
+Warning (10034): Output port "hex3" at Datapath.v(56) has no driver
+Warning (10034): Output port "hex4" at Datapath.v(57) has no driver
+Warning (10034): Output port "hex5" at Datapath.v(58) has no driver
+Warning (10034): Output port "leds" at Datapath.v(59) has no driver
+Warning (10034): Output port "end_fpga" at Datapath.v(60) has no driver
+Warning (10034): Output port "end_user" at Datapath.v(61) has no driver
+Warning (10034): Output port "win" at Datapath.v(63) has no driver
+Warning (10034): Output port "match" at Datapath.v(64) has no driver
 Info (12128): Elaborating entity "Counter_time" for hierarchy "Datapath:U0_DP|Counter_time:U0_CT"
 Info (12128): Elaborating entity "Controle" for hierarchy "Controle:U1_FSM"
-Warning (10034): Output port "r1" at Controle.v(37) has no driver
-Warning (10034): Output port "e1" at Controle.v(39) has no driver
-Warning (10034): Output port "e2" at Controle.v(40) has no driver
-Warning (10034): Output port "e3" at Controle.v(41) has no driver
-Warning (10034): Output port "e4" at Controle.v(42) has no driver
-Warning (10034): Output port "sel" at Controle.v(43) has no driver
+Warning (10235): Verilog HDL Always Construct warning at Controle.v(60): variable "state" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Controle.v(61): variable "state" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Controle.v(68): variable "enter" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledr[0]" is stuck at GND
     Warning (13410): Pin "ledr[1]" is stuck at GND
@@ -365,16 +413,14 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "hex5[4]" is stuck at GND
     Warning (13410): Pin "hex5[5]" is stuck at GND
     Warning (13410): Pin "hex5[6]" is stuck at GND
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 15 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock_50"
     Warning (15610): No output dependent on input pin "key[0]"
     Warning (15610): No output dependent on input pin "key[1]"
     Warning (15610): No output dependent on input pin "key[2]"
     Warning (15610): No output dependent on input pin "key[3]"
-    Warning (15610): No output dependent on input pin "sw[0]"
-    Warning (15610): No output dependent on input pin "sw[1]"
     Warning (15610): No output dependent on input pin "sw[2]"
     Warning (15610): No output dependent on input pin "sw[3]"
     Warning (15610): No output dependent on input pin "sw[4]"
@@ -383,12 +429,15 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw[7]"
     Warning (15610): No output dependent on input pin "sw[8]"
     Warning (15610): No output dependent on input pin "sw[9]"
+    Warning (15610): No output dependent on input pin "sw[1]"
+    Warning (15610): No output dependent on input pin "sw[0]"
+    Warning (15610): No output dependent on input pin "clock_50"
 Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 88 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 85 warnings
     Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Mon Jun 24 20:02:36 2024
+    Info: Processing ended: Mon Jun 24 21:05:40 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

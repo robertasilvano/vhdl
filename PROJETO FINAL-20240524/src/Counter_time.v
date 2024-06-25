@@ -6,6 +6,7 @@ tempo,
 end_time
 );
 
+	//localparams
 	localparam p_tempo = 4;
 
 	input wire 						clkt;
