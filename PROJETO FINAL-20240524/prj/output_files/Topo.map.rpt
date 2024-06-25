@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Tue Jun 25 14:35:27 2024
+Tue Jun 25 14:53:14 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 25 14:35:27 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 25 14:53:14 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -200,6 +200,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ../src/SEQ2.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ2.v          ;         ;
 ; ../src/SEQ3.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ3.v          ;         ;
 ; ../src/SEQ4.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ4.v          ;         ;
+; ../src/Logica.v                  ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Logica.v        ;         ;
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
@@ -559,7 +560,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 25 14:35:26 2024
+    Info: Processing started: Tue Jun 25 14:53:13 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/buttonsync.vhd
@@ -606,8 +607,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: SEQ3
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq4.v
     Info (12023): Found entity 1: SEQ4
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(199): created implicit net for "nbtn_or"
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(200): created implicit net for "e2_and_ntnb"
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/logica.v
+    Info (12023): Found entity 1: Logica
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(208): created implicit net for "nbtn_or"
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(209): created implicit net for "e2_and_ntnb"
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
 Warning (10034): Output port "ledr" at Topo.v(40) has no driver
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
@@ -645,6 +648,9 @@ Info (12128): Elaborating entity "SEQ2" for hierarchy "Datapath:U0_DP|SEQ2:S2"
 Info (12128): Elaborating entity "SEQ3" for hierarchy "Datapath:U0_DP|SEQ3:S3"
 Info (12128): Elaborating entity "SEQ4" for hierarchy "Datapath:U0_DP|SEQ4:S4"
 Info (12128): Elaborating entity "ButtonSync" for hierarchy "Datapath:U0_DP|ButtonSync:BTN"
+Info (12128): Elaborating entity "Logica" for hierarchy "Datapath:U0_DP|Logica:LG"
+Warning (10034): Output port "points" at Logica.v(35) has no driver
+Warning (12158): Entity "Logica" contains only dangling pins
 Info (12128): Elaborating entity "Reg_setup" for hierarchy "Datapath:U0_DP|Reg_setup:R_SETUP"
 Warning (10235): Verilog HDL Always Construct warning at Reg_setup.v(45): variable "sw" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10240): Verilog HDL Always Construct warning at Reg_setup.v(36): inferring latch(es) for variable "setup", which holds its previous value in one or more paths through the always construct
@@ -863,9 +869,9 @@ Info (21057): Implemented 117 device resources after synthesis - the final resou
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 50 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 77 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 79 warnings
     Info: Peak virtual memory: 4658 megabytes
-    Info: Processing ended: Tue Jun 25 14:35:27 2024
+    Info: Processing ended: Tue Jun 25 14:53:14 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

@@ -349,6 +349,25 @@ BTN2 <= BTN2.DB_MAX_OUTPUT_PORT_TYPE
 BTN3 <= BTN3.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|Topo|Datapath:U0_DP|Logica:LG
+round[0] => ~NO_FANOUT~
+round[1] => ~NO_FANOUT~
+round[2] => ~NO_FANOUT~
+round[3] => ~NO_FANOUT~
+reg_setup_level[0] => ~NO_FANOUT~
+reg_setup_level[1] => ~NO_FANOUT~
+reg_setup_mapa[0] => ~NO_FANOUT~
+reg_setup_mapa[1] => ~NO_FANOUT~
+points[0] <= <GND>
+points[1] <= <GND>
+points[2] <= <GND>
+points[3] <= <GND>
+points[4] <= <GND>
+points[5] <= <GND>
+points[6] <= <GND>
+points[7] <= <GND>
+
+
 |Topo|Datapath:U0_DP|Reg_setup:R_SETUP
 clk => ~NO_FANOUT~
 R => setup[7].IN0

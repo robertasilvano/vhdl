@@ -89,7 +89,7 @@ module Datapath(
 	);
 	
 	Mux4x1_4bits MUX10 (  //TODO ver com o prof. aqui ta clock 0.5 ate 3, e não de 0.25 até 2.
-		.sel(setup[7:6]),
+		.sel(setup[7:6]), //setup[7:6] = level
 		.ent0(c025Hz),
 		.ent1(c05Hz),
 		.ent2(c1Hz),
@@ -113,7 +113,7 @@ module Datapath(
 		.clk(clock_50),
 		.R(r1),
 		.E(e4),
-		.data(setup[3:0]),
+		.data(setup[3:0]), //setup[3:0] = ?????
 		.tc(win),
 		.round(round)
 	);
@@ -151,7 +151,7 @@ module Datapath(
 	);
 	
 	Mux4x1_4bits MUX11 (
-		.sel(setup[5:4]),
+		.sel(setup[5:4]), //setup[5:4] = mapa
 		.ent0(seq1),
 		.ent1(seq2),
 		.ent2(seq3),
@@ -171,6 +171,15 @@ module Datapath(
 		.BTN1(nbtn[1]),
 		.BTN2(nbtn[2]),
 		.BTN3(nbtn[3]),
+	);
+	
+	//LOGICA
+	wire [7:0] points;
+	Logica LG (
+		.round(round),
+		.reg_setup_level(setup[7:6]), //setup[7:6] = level
+		.reg_setup_mapa(setup[5:4]), //setup[5:4] = mapa
+		.points(points)
 	);
 	
 	//REG SETUP
@@ -230,7 +239,7 @@ module Datapath(
 	wire [6:0] w_mux2_mux3;
 	
 	Dec7seg DEC0 (
-		.G({2'b00, setup[7:6]}),
+		.G({2'b00, setup[7:6]}), //setup[7:6] = level
 		.O(w_dec0_mux3)
 	);
 	
@@ -292,7 +301,6 @@ module Datapath(
 	
 	
 	//HEX1
-	wire [7:0] points; //TODO
 	wire [6:0] w_dec2_mux8;
 	
 	Dec7seg DEC2 (
