@@ -45,7 +45,13 @@ module Datapath(
 	// 12. rever todas as ligações
 	// 13. ver variaveis que não estao sendo utilizadas (por exemplo clk)
 	// 14. rever parametro 'total' que é interno
-
+	
+	//DÚVIDAS PROF
+	// 1. O arquivo SEQ1 que o prof havia passado corresponde ao arquivo seqdec10 das especificações e não ao seqdec00. To em dúvida de qual seqdec é na ordem pro mux. ou não faz diferença?
+	// 2. Não entendi o que é pra fazer com a saida q3 do REG_FPGA. É pra passar ela pro módulo de controle? Se sim, o que fazer com ele lá? Não ficou claro.
+	
+	
+	
 	//localparams
 	localparam p_key = 4;
 	localparam p_switch = 8;
@@ -89,6 +95,7 @@ module Datapath(
 	wire [7:0] points;
 	wire [7:0] setup; //TODO
 	wire [63:0] out_fpga; //TODO
+	wire [3:0] out_fpga_significativos; //TODO
 	wire [63:0] out_user; // TODO
 	wire [6:0] w_mux0_mux1;
 	wire [6:0] w_dec0_mux3;
@@ -120,7 +127,7 @@ module Datapath(
 		.c2Hz(c2Hz)
 	);
 	
-	Mux4x1_4bits MUX10 (  //TODO ver com o prof. aqui ta clock 0.5 ate 3, e não de 0.25 até 2.
+	Mux4x1_4bits MUX10 (
 		.sel(setup[7:6]), //setup[7:6] = level
 		.ent0(c025Hz),
 		.ent1(c05Hz),
@@ -241,7 +248,8 @@ module Datapath(
 		.R(r2),
 		.E(e3),
 		.data({seqFPGA_out, out_fpga[63:4]}),
-		.q(out_fpga)
+		.q(out_fpga),
+		.q3(out_fpga_significativos)
 	);
 	
 	

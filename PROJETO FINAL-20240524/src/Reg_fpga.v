@@ -36,7 +36,7 @@ module Reg_fgpa(
 	
 	// Output Port(s)
 	output reg [p_q - 1:0]		q;
-	output reg [p_q3 - 1:0] 	q3; // todo ver com o prof. não ta no diagrama.
+	output reg [p_q3 - 1:0] 	q3;
 	
 	always @ (E) //todo confirmar
 		begin

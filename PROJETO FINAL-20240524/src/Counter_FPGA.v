@@ -1,5 +1,13 @@
 /*
-	Incrementa o endereço que será inserido na ROM para construir a sequência correta na rodada.
+Incrementa o endereço que será inserido na ROM para construir a sequência correta na rodada.
+Entradas:
+	- clk (wire - 1): clock
+	- R (wire - 1): reset
+	- E (wire - 1): enable
+	- data (wire - 4): define o limite da contagem (variavel round)
+Saídas:
+	- tc (reg - 1): sinal de carry terminal, é 1 quando a sequência atinge seu limite de contagem
+	- SEQFPGA (reg - 4): vetor de lógica, será o endereço inserido na ROM
 */
 
 module Counter_FPGA(
@@ -17,37 +25,41 @@ module Counter_FPGA(
 	//localparams
 	localparam p_data = 4;
 	localparam p_SEQFPGA = 4;
+	localparam p_total = 4;
 	
 	// Input Port(s)
-	input wire 					clk; //sinal de clock
-	input wire 					R;  //sinal de reset
-	input wire 					E;  //sinal de enable
-	input wire [p_data-1:0] data;  //define o limite de contagem (round no datapath)
+	input wire 					clk;
+	input wire 					R;
+	input wire 					E;
+	input wire [p_data-1:0] data;
 	
 	// Output Port(s)
-	output reg 						tc;  //sinal de carry terminal. é 1 quando a sequência atinge seu limite de contagem
-	output reg [p_SEQFPGA-1:0] SEQFPGA; //vetor de lógica, será o endereço inserido na ROM
+	output reg 						tc;
+	output reg [p_SEQFPGA-1:0] SEQFPGA;
 	
-	always @(posedge clk or posedge R or posedge E or posedge tc or posedge data)  //não precisa do posedge?
+	// Sinais internos
+	reg [p_total - 1:0] total; //armazena o valor atual do contador. o máximo é 1111 (15)
+	
+	always @(posedge clk or posedge R or posedge E or posedge total or posedge data)  //não precisa do posedge?
 	begin
 		if (R == 1'b1)
 			begin
-				//data <= 4'b0; ???
+				total <= 4'b0;
 				tc <= 1'b0;
 			end
 		else
 			begin
 				if (E == 1'b1)
 					begin
-						tc <= tc + 1'b1;
-						if (data == tc)
+						total <= total + 1'b1;
+						if (data == total)
 							begin
 								tc <= 1'b1; //limite atingido
+								total <= 4'b0;
 							end
-						// TODO a espec ta com erro. o else aqui não faz sentido. qual é a variavel 'total'????
 					end
 			end
-		SEQFPGA <= tc;
+		SEQFPGA <= total;
 	end
 	
 endmodule

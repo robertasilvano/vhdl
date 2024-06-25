@@ -15,8 +15,7 @@ module SEQ1(
     output reg [3:0] output_reg
 );
 
-
-// TODO ver com o prof, porque o nome aqui ta SEQ1, mas esse seria o 10 (ou seja, 3 (em decimal)) 
+ 
 always @(address) begin
     case (address)
         4'b0000: output_reg = 4'b0001;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Tue Jun 25 16:03:11 2024
+Tue Jun 25 16:22:47 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -59,13 +59,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 25 16:03:11 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 25 16:22:47 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 258                                        ;
-;     Total combinational functions  ; 258                                        ;
+; Total logic elements               ; 304                                        ;
+;     Total combinational functions  ; 304                                        ;
 ;     Dedicated logic registers      ; 30                                         ;
 ; Total registers                    ; 30                                         ;
 ; Total pins                         ; 65                                         ;
@@ -207,16 +207,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimated Total logic elements              ; 258                ;
+; Estimated Total logic elements              ; 304                ;
 ;                                             ;                    ;
-; Total combinational functions               ; 258                ;
+; Total combinational functions               ; 304                ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 147                ;
-;     -- 3 input functions                    ; 70                 ;
-;     -- <=2 input functions                  ; 41                 ;
+;     -- 4 input functions                    ; 176                ;
+;     -- 3 input functions                    ; 90                 ;
+;     -- <=2 input functions                  ; 38                 ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 258                ;
+;     -- normal mode                          ; 304                ;
 ;     -- arithmetic mode                      ; 0                  ;
 ;                                             ;                    ;
 ; Total registers                             ; 30                 ;
@@ -226,9 +226,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; I/O pins                                    ; 65                 ;
 ; Embedded Multiplier 9-bit elements          ; 0                  ;
 ; Maximum fan-out node                        ; Controle:U1_FSM|r2 ;
-; Maximum fan-out                             ; 75                 ;
-; Total fan-out                               ; 1064               ;
-; Average fan-out                             ; 2.55               ;
+; Maximum fan-out                             ; 79                 ;
+; Total fan-out                               ; 1235               ;
+; Average fan-out                             ; 2.66               ;
 +---------------------------------------------+--------------------+
 
 
@@ -237,11 +237,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
 ; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Library Name ;
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
-; |Topo                       ; 258 (0)           ; 30 (0)       ; 0           ; 0            ; 0       ; 0         ; 65   ; 0            ; |Topo                                    ; work         ;
-;    |Controle:U1_FSM|        ; 17 (17)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Controle:U1_FSM                    ; work         ;
-;    |Datapath:U0_DP|         ; 241 (40)          ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP                     ; work         ;
+; |Topo                       ; 304 (0)           ; 30 (0)       ; 0           ; 0            ; 0       ; 0         ; 65   ; 0            ; |Topo                                    ; work         ;
+;    |Controle:U1_FSM|        ; 14 (14)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Controle:U1_FSM                    ; work         ;
+;    |Datapath:U0_DP|         ; 290 (46)          ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP                     ; work         ;
 ;       |ButtonSync:BTN|      ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|ButtonSync:BTN      ; work         ;
-;       |Counter_FPGA:CFPGA|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_FPGA:CFPGA  ; work         ;
+;       |Counter_FPGA:CFPGA|  ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_FPGA:CFPGA  ; work         ;
 ;       |Counter_round:CR|    ; 8 (8)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_round:CR    ; work         ;
 ;       |Counter_time:CT|     ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_time:CT     ; work         ;
 ;       |Counter_user:C_USER| ; 9 (9)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_user:C_USER ; work         ;
@@ -251,10 +251,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |Mux2x1_7bits:MUX3|   ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX3   ; work         ;
 ;       |Mux2x1_7bits:MUX5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX5   ; work         ;
 ;       |Mux2x1_7bits:MUX7|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX7   ; work         ;
-;       |Mux4x1_4bits:MUX11|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux4x1_4bits:MUX11  ; work         ;
-;       |Reg_fgpa:R_FPGA|     ; 48 (48)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Reg_fgpa:R_FPGA     ; work         ;
+;       |Mux4x1_4bits:MUX11|  ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux4x1_4bits:MUX11  ; work         ;
+;       |Reg_fgpa:R_FPGA|     ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Reg_fgpa:R_FPGA     ; work         ;
 ;       |Reg_setup:R_SETUP|   ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Reg_setup:R_SETUP   ; work         ;
 ;       |Reg_user:R_USER|     ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Reg_user:R_USER     ; work         ;
+;       |SEQ1:S1|             ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|SEQ1:S1             ; work         ;
+;       |SEQ3:S3|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|SEQ3:S3             ; work         ;
+;       |SEQ4:S4|             ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|SEQ4:S4             ; work         ;
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -329,106 +332,106 @@ Encoding Type:  One-Hot
 ; Latch Name                                           ; Latch Enable Signal                       ; Free of Timing Hazards ;
 +------------------------------------------------------+-------------------------------------------+------------------------+
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[60]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[61]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[62]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[63]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[6]            ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7]            ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
-; Datapath:U0_DP|Counter_FPGA:CFPGA|SEQFPGA[0]         ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[4]            ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[5]            ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[1]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[5]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[9]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[13]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[17]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[21]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[25]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[29]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[33]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[37]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[41]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[45]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[49]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[53]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[57]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[61]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Counter_FPGA:CFPGA|total[0]           ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Counter_FPGA:CFPGA|total[1]           ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Counter_FPGA:CFPGA|total[2]           ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Counter_FPGA:CFPGA|total[3]           ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[0]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[0]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[1]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[1]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[2]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[2]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[3]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[3]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[4]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[4]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[5]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[5]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[6]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[6]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[7]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[7]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[8]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[8]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[9]                  ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[9]                  ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[10]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[10]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[11]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[11]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[12]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[12]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[13]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[13]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[14]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[14]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[15]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[15]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[16]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[16]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[17]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[17]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[18]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[18]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[19]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[19]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[20]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[20]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[21]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[21]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[22]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[22]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[23]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[23]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[24]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[24]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[25]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[25]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[26]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[26]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[27]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[27]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[28]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[28]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[29]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[29]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[30]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[30]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[31]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[31]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[32]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[32]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[33]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[33]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[34]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[34]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[35]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[35]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[36]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[36]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[37]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[37]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[38]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[38]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[39]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[39]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[40]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[40]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
+; Datapath:U0_DP|Reg_user:R_USER|q[41]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
+; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[41]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[42]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[42]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Datapath:U0_DP|Reg_user:R_USER|q[43]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
 ; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[43]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[44]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[44]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[46]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[46]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[47]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[47]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[48]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[48]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
-; Datapath:U0_DP|Reg_user:R_USER|q[50]                 ; Datapath:U0_DP|e2_and_ntnb                ; yes                    ;
-; Datapath:U0_DP|Reg_fgpa:R_FPGA|q[50]                 ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
-; Number of user-specified and inferred latches = 121  ;                                           ;                        ;
+; Number of user-specified and inferred latches = 141  ;                                           ;                        ;
 +------------------------------------------------------+-------------------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -464,13 +467,14 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |Topo|Controle:U1_FSM|state ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Topo|Datapath:U0_DP|Mux4x1_4bits:MUX11|out[1] ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |Topo|Controle:U1_FSM|state                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
 
 +--------------------------------------------------------------+
@@ -578,13 +582,13 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +------------+-------+----------+------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Datapath:U0_DP|Reg_fgpa:R_FPGA"                                                                          ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; q3   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:U0_DP|Reg_fgpa:R_FPGA"                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q3   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -615,7 +619,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 25 16:03:10 2024
+    Info: Processing started: Tue Jun 25 16:22:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/buttonsync.vhd
@@ -627,7 +631,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: SEQ1
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/topo.v
     Info (12023): Found entity 1: Topo
-Warning (10275): Verilog HDL Module Instantiation warning at Datapath.v(144): ignored dangling comma in List of Port Connections
+Warning (10275): Verilog HDL Module Instantiation warning at Datapath.v(150): ignored dangling comma in List of Port Connections
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/datapath.v
     Info (12023): Found entity 1: Datapath
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/controle.v
@@ -666,9 +670,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: Logica
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_user.v
     Info (12023): Found entity 1: Counter_user
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(104): created implicit net for "nbtn_or"
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(105): created implicit net for "e2_and_ntnb"
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(106): created implicit net for "comp"
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(110): created implicit net for "nbtn_or"
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(111): created implicit net for "e2_and_ntnb"
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(112): created implicit net for "comp"
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
 Info (12128): Elaborating entity "FSM_clock" for hierarchy "Datapath:U0_DP|FSM_clock:FSM"
@@ -773,10 +777,16 @@ Info (12128): Elaborating entity "Counter_time" for hierarchy "Datapath:U0_DP|Co
 Info (12128): Elaborating entity "Counter_round" for hierarchy "Datapath:U0_DP|Counter_round:CR"
 Info (12128): Elaborating entity "Counter_user" for hierarchy "Datapath:U0_DP|Counter_user:C_USER"
 Info (12128): Elaborating entity "Counter_FPGA" for hierarchy "Datapath:U0_DP|Counter_FPGA:CFPGA"
-Warning (10646): Verilog HDL Event Control warning at Counter_FPGA.v(31): posedge or negedge of vector "data" depends solely on its least-significant bit
-Critical Warning (10237): Verilog HDL warning at Counter_FPGA.v(50): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
-Warning (10240): Verilog HDL Always Construct warning at Counter_FPGA.v(31): inferring latch(es) for variable "tc", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "tc" at Counter_FPGA.v(31)
+Warning (10646): Verilog HDL Event Control warning at Counter_FPGA.v(43): posedge or negedge of vector "total" depends solely on its least-significant bit
+Warning (10646): Verilog HDL Event Control warning at Counter_FPGA.v(43): posedge or negedge of vector "data" depends solely on its least-significant bit
+Critical Warning (10237): Verilog HDL warning at Counter_FPGA.v(62): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
+Warning (10240): Verilog HDL Always Construct warning at Counter_FPGA.v(43): inferring latch(es) for variable "total", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Counter_FPGA.v(43): inferring latch(es) for variable "tc", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "tc" at Counter_FPGA.v(43)
+Info (10041): Inferred latch for "total[0]" at Counter_FPGA.v(43)
+Info (10041): Inferred latch for "total[1]" at Counter_FPGA.v(43)
+Info (10041): Inferred latch for "total[2]" at Counter_FPGA.v(43)
+Info (10041): Inferred latch for "total[3]" at Counter_FPGA.v(43)
 Info (12128): Elaborating entity "SEQ1" for hierarchy "Datapath:U0_DP|SEQ1:S1"
 Info (12128): Elaborating entity "SEQ2" for hierarchy "Datapath:U0_DP|SEQ2:S2"
 Info (12128): Elaborating entity "SEQ3" for hierarchy "Datapath:U0_DP|SEQ3:S3"
@@ -870,9 +880,10 @@ Info (12128): Elaborating entity "Dec7seg" for hierarchy "Datapath:U0_DP|Dec7seg
 Info (12128): Elaborating entity "Controle" for hierarchy "Controle:U1_FSM"
 Warning (10235): Verilog HDL Always Construct warning at Controle.v(66): variable "enter" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (14026): LATCH primitive "Datapath:U0_DP|Mux4x1_4bits:MUX11|out[0]" is permanently enabled
+Warning (14026): LATCH primitive "Datapath:U0_DP|Mux4x1_4bits:MUX11|out[1]" is permanently enabled
 Warning (14026): LATCH primitive "Datapath:U0_DP|Mux4x1_4bits:MUX11|out[2]" is permanently enabled
 Warning (14026): LATCH primitive "Datapath:U0_DP|Mux4x1_4bits:MUX11|out[3]" is permanently enabled
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[6] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] has unsafe behavior
@@ -881,10 +892,10 @@ Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[4] has unsafe beha
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[5] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
-Warning (13012): Latch Datapath:U0_DP|Reg_user:R_USER|q[61] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Datapath:U0_DP|ButtonSync:BTN|btn1state.SaidaAtiva
 Warning (13012): Latch Datapath:U0_DP|Reg_user:R_USER|q[60] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Datapath:U0_DP|ButtonSync:BTN|btn0state.SaidaAtiva
+Warning (13012): Latch Datapath:U0_DP|Reg_user:R_USER|q[61] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Datapath:U0_DP|ButtonSync:BTN|btn1state.SaidaAtiva
 Warning (13012): Latch Datapath:U0_DP|Reg_user:R_USER|q[62] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Datapath:U0_DP|ButtonSync:BTN|btn2state.SaidaAtiva
 Warning (13012): Latch Datapath:U0_DP|Reg_user:R_USER|q[63] has unsafe behavior
@@ -898,7 +909,6 @@ Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[2] has unsafe beha
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[3] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ledr[5]" is stuck at GND
     Warning (13410): Pin "hex1[2]" is stuck at GND
     Warning (13410): Pin "hex1[5]" is stuck at GND
     Warning (13410): Pin "hex1[6]" is stuck at VCC
@@ -911,14 +921,14 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 7 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 323 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 369 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 50 output pins
-    Info (21061): Implemented 258 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 4650 megabytes
-    Info: Processing ended: Tue Jun 25 16:03:11 2024
-    Info: Elapsed time: 00:00:01
+    Info (21061): Implemented 304 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 69 warnings
+    Info: Peak virtual memory: 4658 megabytes
+    Info: Processing ended: Tue Jun 25 16:22:47 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

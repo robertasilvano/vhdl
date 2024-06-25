@@ -28,10 +28,10 @@ module FSM_clock(
 	begin
 		if (reset == 1'b1)
 			begin
-				c025Hz <= 199999999;
-				c05Hz <= 99999999;
-				c1Hz <= 49999999;
-				c2Hz <= 24999999;
+				c025Hz <= 199999999; // todo ver com o prof. não sei se é pra fazer assim.
+				c05Hz <= 99999999; // todo ver com o prof. não sei se é pra fazer assim.
+				c1Hz <= 49999999; // todo ver com o prof. não sei se é pra fazer assim.
+				c2Hz <= 24999999; // todo ver com o prof. não sei se é pra fazer assim.
 			end
 	end
 

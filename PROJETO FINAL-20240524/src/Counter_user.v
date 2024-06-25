@@ -37,7 +37,7 @@ module Counter_user(
 	output reg tc;
 	
 	// Sinais internos
-	reg [p_total - 1:0] total; //armazena o valor atual do contador. o máximo é 1111 (15) // todo confirmar se aqui é pra ser reg mesmo
+	reg [p_total - 1:0] total; //armazena o valor atual do contador. o máximo é 1111 (15)
 	
 	always @ (posedge R or posedge clk)
 		begin
