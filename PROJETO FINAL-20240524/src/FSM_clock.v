@@ -24,7 +24,7 @@ module FSM_clock(
 
 	// Input Port(s)
 	input wire reset;
-	input wire clock_50;
+	input 	  clock_50;
 	
 	// Output Port(s)
 	output reg c025Hz;

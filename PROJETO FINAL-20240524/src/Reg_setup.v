@@ -1,10 +1,10 @@
 /*
 Registrador de 2 bits que guarda o nível de jogo escolhido no estado Setup.
 Entradas:
-	- clk 	(wire - 1)	 clock
-	- R 		(wire - 1)	 reset
-	- E 		(wire - 1)	 enable
-	- sw 		(wire - 8)	 switches
+	- clk 	(	 - 1)	 clock
+	- R 		(	 - 1)	 reset
+	- E 		(	 - 1)	 enable
+	- sw 		(	 - 8)	 switches
 Saídas:
 	- setup 	(reg - 8)	 guarda o valor do switches
 */
@@ -25,9 +25,9 @@ module Reg_setup(
 	localparam p_setup = 8;
 
 	// Input Port(s)
-	input wire 						clk;
-	input wire 						R;
-	input wire 						E;
+	input 	 						clk;
+	input 	 						R;
+	input 	 						E;
 	input wire [p_sw - 1:0] 	sw;
 	
 	// Output Port(s)

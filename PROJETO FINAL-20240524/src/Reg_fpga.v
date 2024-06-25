@@ -29,7 +29,7 @@ module Reg_fgpa(
 	localparam p_q3 = 4;
 
 	// Input Port(s)
-	input wire 						clk;
+	input 	 						clk;
 	input wire 						R;
 	input wire 						E;
 	input wire [p_data - 1:0] 	data;

@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "06/25/2024 17:41:09"
+-- DATE "06/25/2024 17:44:58"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -393,13 +393,13 @@ SIGNAL \U0_DP|MUX3|out[4]~3_combout\ : std_logic;
 SIGNAL \U0_DP|MUX3|out[5]~4_combout\ : std_logic;
 SIGNAL \U0_DP|MUX3|out[2]~5_combout\ : std_logic;
 SIGNAL \U0_DP|MUX1|out[2]~0_combout\ : std_logic;
-SIGNAL \U0_DP|R_USER|q\ : std_logic_vector(63 DOWNTO 0);
-SIGNAL \U0_DP|CT|tempo\ : std_logic_vector(3 DOWNTO 0);
-SIGNAL \U0_DP|CR|round\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \U0_DP|CFPGA|total\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \U0_DP|R_SETUP|setup\ : std_logic_vector(7 DOWNTO 0);
 SIGNAL \U0_DP|C_USER|total\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \U0_DP|R_FPGA|q\ : std_logic_vector(63 DOWNTO 0);
+SIGNAL \U0_DP|R_USER|q\ : std_logic_vector(63 DOWNTO 0);
+SIGNAL \U0_DP|CT|tempo\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \U0_DP|CR|round\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \U1_FSM|ALT_INV_r2~combout\ : std_logic;
 SIGNAL \U1_FSM|ALT_INV_state.result~q\ : std_logic;
 SIGNAL \U0_DP|MUX3|ALT_INV_out[2]~5_combout\ : std_logic;

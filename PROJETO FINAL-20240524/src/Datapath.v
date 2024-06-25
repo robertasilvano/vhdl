@@ -2,29 +2,29 @@
 Responsável pelo processamento de dados e sinais de controle em um sistema digital. 
 Ele interage com diversos componentes internos e externos para realizar suas funções.
 Entradas:
-	- clock_50	()	sinal de clock
-	- key			()	vetor de teclas de entrada
-	- switch		()	vetor de switches de entrada
-	- r1			()	sinal de controle 1 (reset)
-	- r2			()	sinal de controle 2 (reset)
-	- e1			()	sinal de controle 3 (enable)
-	- e2			()	sinal de controle 4 (enable)
-	- e3			()	sinal de controle 5 (enable)
-	- e4			()	sinal de controle 6 (enable)
-	- sel			()	sinal de seleção
+	- clock_50	(wire - 1)	sinal de clock
+	- key			(wire - 4)	vetor de teclas de entrada
+	- switch		(wire - 8)	vetor de switches de entrada
+	- r1			(wire - 1)	sinal de controle 1 (reset)
+	- r2			(wire - 1)	sinal de controle 2 (reset)
+	- e1			(wire - 1)	sinal de controle 3 (enable)
+	- e2			(wire - 1)	sinal de controle 4 (enable)
+	- e3			(wire - 1)	sinal de controle 5 (enable)
+	- e4			(wire - 1)	sinal de controle 6 (enable)
+	- sel			(wire - 1)	sinal de seleção
 Saidas:
-	- hex0		()	displays de 7 segmentos
-	- hex1		()	displays de 7 segmentos
-	- hex2		() displays de 7 segmentos
-	- hex3		()	displays de 7 segmentos
-	- hex4		()	displays de 7 segmentos
-	- hex5		()	displays de 7 segmentos
-	- leds		()	vetor de leds de saida
-	- end_fpga	()	sinal indicando o final da operação da FPGA
-	- end_user	()	sinal indicando o final da operação do usuário
-	- end_time	()	sinal indicando o final do tempo de jogo
-	- win			()	sinal indicando a vitória
-	- match		()	sinal indicando se houve um acerto no jogo
+	- hex0		(wire - 7)	displays de 7 segmentos
+	- hex1		(wire - 7)	displays de 7 segmentos
+	- hex2		(wire - 7) 	displays de 7 segmentos
+	- hex3		(wire - 7)	displays de 7 segmentos
+	- hex4		(wire - 7)	displays de 7 segmentos
+	- hex5		(wire - 7)	displays de 7 segmentos
+	- leds		(wire - 8)	vetor de leds de saida
+	- end_fpga	(wire - 1)	sinal indicando o final da operação da FPGA
+	- end_user	(wire - 1)	sinal indicando o final da operação do usuário
+	- end_time	(wire - 1)	sinal indicando o final do tempo de jogo
+	- win			(wire - 1)	sinal indicando a vitória
+	- match		(wire - 1)	sinal indicando se houve um acerto no jogo
 */
 
 module Datapath(
@@ -60,27 +60,30 @@ module Datapath(
 	match
 );
 	//TODOs:
-	//	1. documentar tudo no inicio de cada módulo
-	//	2. add comentários do que é cada parametro
-	//	3. rever tamanho de cada parametro
 	//	4. rever a lógica de todos os módulos
 	//	5. rever a lista de sensibilidade de todos os módulos
-	//	6. rever o que é reg e wire
 	//	7. rever todos os comentários
-	//	8. ver se na definição dos clock_50 tem wire
-	// 9. ajustar a identação de tudo
 	//	10. rever as igualdades com o tamanho de cada parametro
 	//	11. ver como iniciar parametros que só são atualizados em if's
 	// 12. rever todas as ligações
 	// 13. ver variaveis que não estao sendo utilizadas (por exemplo clk)
-	// 14. rever parametro 'total' que é interno
-	// 15. rever os clock input wire
+	//	14. O que é a variavel setup? entendi que setup[7:6] = level, setup[5:4] = mapa, mas e setup[3:0]?
+	// 15. adicionar comentários aqui no datapath sobre o que é cada variavel nos módulos
+	//	16. ver como atribuir os valores do FSM_clock
 	
 	//DÚVIDAS PROF
-	// 1. Ainda estou em dúvida de qual decseq equivale a qual seq. Seria DecSeq10 = SEQ1, DecSeq00 = SEQ2, DecSeq01 = SEQ3, DecSeq11 = SEQ4?
+	// 1. Li o README, mas ainda estou em dúvida de qual decseq equivale a qual seq. Seria DecSeq10 = SEQ1, DecSeq00 = SEQ2, DecSeq01 = SEQ3, DecSeq11 = SEQ4?
 	// 2. Ainda não entendi o que é pra fazer com a saida q3 do REG_FPGA. É pra passar ela pro módulo de controle? Se sim, o que fazer com ele lá? Não ficou claro.
 	// 3. O módulo Lógica não encontrei na pasta src do moodle. Ainda vai ser atualizado?
 	// 4. Estou meio perdida sobre a questão de máquinas de estados. O que precisa fazer?
+	//	5. Como fazer as portas or e and do módulo REG_User? Seria isso aqui? to tomando aviso de 'created implicit net' e não entendi muito bem.
+	//		- OR entre cada key? nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3];
+	//		- AND? e2_and_ntnb = e2 & nbtn_or;
+	//	6. E o módulo comp seria isso aqui? Também estou tomando 'created implicit net' e não entendi muito bem.
+	//		- assign comp = out_fpga == out_user;
+	
+	//DÚVIDAS AULA
+	//	1. buttonsync
 	
 	//localparams
 	localparam p_key = 4;
@@ -89,7 +92,7 @@ module Datapath(
 	localparam p_leds = 8;
 
 	// Input Port(s)
-	input 								clock_50;  // aqui tem wire?
+	input 								clock_50;
 	input wire 	[p_key - 1:0] 		key;
 	input wire 	[p_switch - 1:0] 	switch;
 	input wire 							r1;
@@ -118,15 +121,15 @@ module Datapath(
 	wire c025Hz, c05Hz, c1Hz, c2Hz;
 	wire clkhz;
 	wire [3:0] w_tempo;
-	wire [3:0] round; //TODO
-	wire[3:0] seqFPGA_in, seqFPGA_out; //TODO
+	wire [3:0] round;
+	wire[3:0] seqFPGA_in, seqFPGA_out;
 	wire[3:0] seq1, seq2, seq3, seq4;
 	wire [3:0] nbtn; // TODO confirmar tudo. clock é o clock 50? precisa de todos os botões? precisa do not (visto que já tem dentro do módulo?)
 	wire [7:0] points;
-	wire [7:0] setup; //TODO
-	wire [63:0] out_fpga; //TODO
-	wire [3:0] out_fpga_significativos; //TODO
-	wire [63:0] out_user; // TODO
+	wire [7:0] setup;
+	wire [63:0] out_fpga;
+	wire [3:0] out_fpga_significativos;
+	wire [63:0] out_user;
 	wire [6:0] w_mux0_mux1;
 	wire [6:0] w_dec0_mux3;
 	wire [6:0] w_mux2_mux3;

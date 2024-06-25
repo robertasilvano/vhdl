@@ -27,7 +27,7 @@ module Counter_time(
 	localparam p_tempo = 4;
 
 	// Input Port(s)
-	input wire 						clkt;  //sinal de clock para sincronização
+	input 	 						clkt;  //sinal de clock para sincronização
 	input wire 						R;  //sinal de reset
 	input wire 						E;  //habilita a contagem
 	

@@ -25,7 +25,7 @@ module Reg_user(
 	localparam p_q = 64;
 
 	// Input Port(s)
-	input wire 						clk;
+	input 	 						clk;
 	input wire 						R;
 	input wire 						E;
 	input wire [p_data - 1:0] 	data;

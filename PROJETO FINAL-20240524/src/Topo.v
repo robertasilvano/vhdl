@@ -91,7 +91,7 @@ module Topo(
 		// entrada de dados
 		.clock(clock_50),
 		.enter(sw[0]),
-		.reset(sw[1]),
+		.reset(sw[1]), //iniciar o jogo
 		
 		// entrada de status
 		.end_fpga(w_end_fpga),
