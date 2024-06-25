@@ -63,9 +63,8 @@ module Datapath(
 	output wire 						win;
 	output wire 						match;
 	
-	wire [3:0] w_tempo;  //maracutaia só pra poder rodar. depois vamos usar o do codificador 7 seg.
-	
-	Counter_time U0_CT (  //ligar no dec7seg
+	wire [3:0] w_tempo;
+	Counter_time U0_CT (
 		.clkt(clock_50),
 		.R(r2),
 		.E(e2),
@@ -142,7 +141,7 @@ module Datapath(
 	wire [6:0] w_mux6_mux7;
 	
 	Dec7seg DEC1 (
-		.G(TIME), // TODO
+		.G(w_tempo), // TODO
 		.O(w_dec1_mux7)
 	);
 	
