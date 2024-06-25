@@ -63,7 +63,28 @@ module Datapath(
 	output wire 						win;
 	output wire 						match;
 	
-	//COUNTERS
+	//FSM_clock
+	wire c025Hz, c05Hz, c1Hz, c2Hz;
+	wire clkhz;
+	FSM_clock FSM (
+		.reset(r1),
+		.clock_50(clock_50),
+		.c025Hz(c025Hz),
+		.c05Hz(c05Hz),
+		.c1Hz(c1Hz),
+		.c2Hz(c2Hz)
+	);
+	
+	Mux4x1_4bits MUX10 (  //TODO ver com o prof. aqui ta clock 0.5 ate 3, e não de 0.25 até 2.
+		.sel(setup[7:6]),
+		.ent0(c025Hz),
+		.ent1(c05Hz),
+		.ent2(c1Hz),
+		.ent3(c2Hz),
+		.out(clkhz)
+	);
+	
+	//COUNTER TIME
 	wire [3:0] w_tempo;
 	Counter_time CT (
 		.clkt(clock_50),
@@ -73,6 +94,7 @@ module Datapath(
 		.end_time(end_time)
 	);
 	
+	//COUNTER ROUND
 	wire [7:0] setup; //TODO
 	wire [3:0] round; //TODO
 	Counter_round CR (
@@ -82,6 +104,47 @@ module Datapath(
 		.data(setup[3:0]),
 		.tc(win),
 		.round(round)
+	);
+	
+	//COUNTER FPGA
+	wire[3:0] seqFPGA_in, seqFPGA_out; //TODO
+	wire[3:0] seq1, seq2, seq3, seq4;
+	Counter_FPGA CFPGA (
+		.clk(clkhz),
+		.R(r2),
+		.E(e3),
+		.data(round),
+		.tc(end_fpga),
+		.SEQFPGA(seqFPGA_in)
+	);
+	
+	SEQ1 S1 (
+		.address(seqFPGA_in),
+		.output_reg(seq1)
+	);
+	
+	SEQ2 S2 (
+		.address(seqFPGA_in),
+		.output_reg(seq2)
+	);
+	
+	SEQ3 S3 (
+		.address(seqFPGA_in),
+		.output_reg(seq3)
+	);
+	
+	SEQ4 S4 (
+		.address(seqFPGA_in),
+		.output_reg(seq4)
+	);
+	
+	Mux4x1_4bits MUX11 (
+		.sel(setup[5:4]),
+		.ent0(seq1),
+		.ent1(seq2),
+		.ent2(seq3),
+		.ent3(seq4),
+		.out(seqFPGA_out)
 	);
 	
 	//HEX5
@@ -204,28 +267,6 @@ module Datapath(
 		.ent0(w_dec4_mux9), //1
 		.ent1(w_dec3_mux9), //0 
 		.out(hex0)
-	);
-	
-		
-	//FSM_clock
-	wire c025Hz, c05Hz, c1Hz, c2Hz;
-	wire clkhz;
-	FSM_clock FSM (
-		.reset(r1),
-		.clock_50(clock_50),
-		.c025Hz(c025Hz),
-		.c05Hz(c05Hz),
-		.c1Hz(c1Hz),
-		.c2Hz(c2Hz)
-	);
-	
-	Mux4x1_4bits MUX10 (  //TODO ver com o prof. aqui ta clock 0.5 ate 3, e não de 0.25 até 2.
-		.sel(setup[7:6]),
-		.ent0(c025Hz),
-		.ent1(c05Hz),
-		.ent2(c1Hz),
-		.ent3(c2Hz),
-		.out(clkhz)
 	);
 
 endmodule

@@ -28,7 +28,7 @@ module Counter_FPGA(
 	output reg 						tc;  //sinal de carry terminal. é 1 quando a sequência atinge seu limite de contagem
 	output reg [p_SEQFPGA-1:0] SEQFPGA; //vetor de lógica, será o endereço inserido na ROM
 	
-	always @(posedge clk or R or E or tc or data)
+	always @(posedge clk or posedge R or posedge E or posedge tc or posedge data)  //não precisa do posedge?
 	begin
 		if (R == 1'b1)
 			begin
