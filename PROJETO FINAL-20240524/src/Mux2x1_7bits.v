@@ -31,8 +31,9 @@ module Mux2x1_7bits(
 	
 	always @(ent0 or ent1 or sel)
 	begin
-		if (sel == 1'b1) out = ent1;  // = ou <=? ver com o prof
-		else out = ent0;
+		if (sel == 1'b0) out = ent0;  // = ou <=? ver com o prof
+		else if (sel == 1'b1) out = ent1;
+		// else? ver com o prof
 	end
 
 endmodule
