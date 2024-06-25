@@ -38,7 +38,7 @@ module Datapath(
 	localparam p_leds = 4;
 
 	// Input Port(s)
-	input wire 							clock_50;  // aqui tem wire?
+	input 								clock_50;  // aqui tem wire?
 	input wire 	[p_key - 1:0] 		key;
 	input wire 	[p_switch - 1:0] 	switch;
 	input wire 							r1;

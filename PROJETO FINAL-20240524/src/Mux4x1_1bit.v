@@ -31,4 +31,13 @@ module Mux4x1_1bit(
 	// Output Port(s)
 	output reg							clkhz;
 	
+	always @(cl1 or cl2 or cl3 or cl4 or level)
+	begin
+		if (level == 0) clkhz = cl1;  // = ou <=? ver com o prof
+		else if (level == 1) clkhz = cl2;
+		else if (level == 2) clkhz = cl3;
+		else if (level == 3) clkhz = cl4;
+		// else? ver com o prof
+	end
+	
 endmodule

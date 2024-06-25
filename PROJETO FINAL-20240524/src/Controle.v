@@ -22,7 +22,7 @@ module Controle(
 );
 	
 	// Input Port(s)
-	input wire		clock;  //aqui tem wire?
+	input 			clock;  //aqui tem wire?
 	input wire 		enter;
 	input wire 		reset;
 	input wire 		end_fpga;

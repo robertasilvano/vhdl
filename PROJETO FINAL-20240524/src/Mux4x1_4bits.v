@@ -30,15 +30,15 @@ module Mux4x1_4bits(
 	input wire [p_ent - 1:0] ent3;
 	
 	// Output Port(s)
-	input wire [p_out - 1:0] out;
+	output reg [p_out - 1:0] out;
 	
 		
 	always @(ent0 or ent1 or ent2 or ent3 or sel)
 	begin
-		if (sel == 1'b0) out = ent0;  // = ou <=? ver com o prof
-		else if (sel == 1'b1) out = ent1;
-		else if (sel == 1'b2) out = ent2;
-		else if (sel == 1'b3) out = ent3;
+		if (sel == 0) out = ent0;  // = ou <=? ver com o prof
+		else if (sel == 1) out = ent1;
+		else if (sel == 2) out = ent2;
+		else if (sel == 3) out = ent3;
 		// else? ver com o prof
 	end
 
