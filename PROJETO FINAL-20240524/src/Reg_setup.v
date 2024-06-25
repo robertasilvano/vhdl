@@ -33,7 +33,7 @@ module Reg_setup(
 	// Output Port(s)
 	output reg [p_setup - 1:0] setup;
 	
-	always @ (E or R)
+	always @(E or R)
 		begin
 			if (R == 1'b1)
 				begin

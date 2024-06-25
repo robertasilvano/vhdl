@@ -1,23 +1,3 @@
-
-QUESTÃO_06: o que são as letras "P", "S", "g" nos mux?
-RQ_06:
-	SÃO CONSTANTES QUE DEVEM SER ESCRITAS NO DISPLAY DE SETE SEGMENTOS
-	VER COMO FUNCIONA UM DISPLAY DE SETE SEGMENTOS
-
-QUESTÃO_07: sobre o buttonsync, logica e comp: vão ser feitos em aula?
-RQ_07:
-	CÓDIGO DISPONÍVEL NA PASTA src
-
-QUESTÃO_08: controle: como fazer a máquina de estados? vai ser feito em aula?
-RQ_08:
-	VAMOS OPTAR POR MOORE. VER AULA SOBRE MOORE
-	
-QUESTÃO_09: vai ter a apresentação?
-RQ_09:
-	SOMENTE 101 (PROFESSOR VS DUPLA) COM A DUPLA 
-
---
-
 QUESTÃO_10: 
 Fato: decSeq10 == SEQ1 ("decSeq10.pdf" e "SEQ1.pdf" implementam a mesma tabela)
 Porém, deveria ser: SEQ1 == decSeq00 ("GENIUS_alunos.pdf" mostra a relação visual entre "SEQ1" e "decSeq00")

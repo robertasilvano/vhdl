@@ -47,8 +47,11 @@ module Datapath(
 	// 14. rever parametro 'total' que é interno
 	
 	//DÚVIDAS PROF
-	// 1. O arquivo SEQ1 que o prof havia passado corresponde ao arquivo seqdec10 das especificações e não ao seqdec00. To em dúvida de qual seqdec é na ordem pro mux. ou não faz diferença?
-	// 2. Não entendi o que é pra fazer com a saida q3 do REG_FPGA. É pra passar ela pro módulo de controle? Se sim, o que fazer com ele lá? Não ficou claro.
+	// 1. Ainda estou em dúvida de qual decseq equivale a qual seq. Seria DecSeq10 = SEQ1, DecSeq00 = SEQ2, DecSeq01 = SEQ3, DecSeq11 = SEQ4?
+	// 2. Ainda não entendi o que é pra fazer com a saida q3 do REG_FPGA. É pra passar ela pro módulo de controle? Se sim, o que fazer com ele lá? Não ficou claro.
+	// 3. O módulo Lógica não encontrei na pasta src do moodle. Ainda vai ser atualizado?
+	// 4. Estou meio perdida sobre a questão de máquinas de estados. O que precisa fazer?
+	
 	
 	
 	
@@ -147,7 +150,7 @@ module Datapath(
 		.BTN0(nbtn[0]),
 		.BTN1(nbtn[1]),
 		.BTN2(nbtn[2]),
-		.BTN3(nbtn[3]),
+		.BTN3(nbtn[3])
 	);
 	
 	
@@ -199,7 +202,7 @@ module Datapath(
 		.E(e2_and_ntnb),
 		.data(round),
 		.tc(end_user)
-	); // todo ver com o prof pq tem um parametro de saida 'SEQUSER' que não é utilizada
+	);
 	
 	
 	/*   COUNTER FPGA   */
