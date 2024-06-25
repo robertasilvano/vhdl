@@ -158,7 +158,21 @@ module Datapath(
 		.out(seqFPGA_out)
 	);
 	
-	//REGs
+	//BUTTON SYNC
+	wire [3:0] nbtn; // TODO confirmar tudo. clock é o clock 50? precisa de todos os botões? precisa do not (visto que já tem dentro do módulo?)
+	ButtonSync BTN(
+		.CLK(clock_50),
+		.KEY0(key[0]),
+		.KEY1(key[1]),
+		.KEY2(key[2]),
+		.KEY3(key[3]),
+		.BTN0(nbtn[0]),
+		.BTN1(nbtn[1]),
+		.BTN2(nbtn[2]),
+		.BTN3(nbtn[3]),
+	);
+	
+	//REG SETUP
 	wire [7:0] setup; //TODO
 	Reg_setup R_SETUP (
 		.clk(clock_50),
@@ -168,6 +182,8 @@ module Datapath(
 		.setup(setup)
 	);
 	
+	
+	//REG FPGA
 	wire [63:0] out_fpga; //TODO
 	Reg_fgpa R_FPGA (
 		.clk(clkhz),
@@ -176,6 +192,21 @@ module Datapath(
 		.data({seqFPGA_out, out_fpga[63:4]}),
 		.q(out_fpga)
 	);
+	
+//	//REG USER
+//	wire [63:0] out_user; // TODO
+//	wire [3:0] nbtn; // TODO
+//	
+//	
+//	
+//	
+//	Reg_user R_USER (
+//		.clk(clock_50),
+//		.R(r2),
+//		.E(),
+//		.data(),
+//		.q()
+//	);
 	
 	//HEX5
 	wire [6:0] w_mux0_mux1;

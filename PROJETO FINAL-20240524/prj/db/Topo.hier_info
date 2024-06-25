@@ -69,11 +69,11 @@ hex5[6] << Datapath:U0_DP.hex5
 
 
 |Topo|Datapath:U0_DP
-clock_50 => clock_50.IN4
-key[0] => ~NO_FANOUT~
-key[1] => ~NO_FANOUT~
-key[2] => ~NO_FANOUT~
-key[3] => ~NO_FANOUT~
+clock_50 => clock_50.IN5
+key[0] => key[0].IN1
+key[1] => key[1].IN1
+key[2] => key[2].IN1
+key[3] => key[3].IN1
 switch[0] => switch[0].IN1
 switch[1] => switch[1].IN1
 switch[2] => switch[2].IN1
@@ -324,6 +324,29 @@ out[0] <= out[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= out[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Topo|Datapath:U0_DP|ButtonSync:BTN
+KEY0 => btn0next.EsperaApertar.IN0
+KEY0 => btn0next.SaidaAtiva.DATAB
+KEY0 => Selector0.IN1
+KEY1 => btn1next.EsperaApertar.IN0
+KEY1 => btn1next.SaidaAtiva.DATAB
+KEY1 => Selector1.IN1
+KEY2 => btn2next.EsperaApertar.IN0
+KEY2 => btn2next.SaidaAtiva.DATAB
+KEY2 => Selector2.IN1
+KEY3 => btn3next.EsperaApertar.IN0
+KEY3 => btn3next.SaidaAtiva.DATAB
+KEY3 => Selector3.IN1
+CLK => btn3state~1.DATAIN
+CLK => btn2state~1.DATAIN
+CLK => btn1state~1.DATAIN
+CLK => btn0state~1.DATAIN
+BTN0 <= BTN0.DB_MAX_OUTPUT_PORT_TYPE
+BTN1 <= BTN1.DB_MAX_OUTPUT_PORT_TYPE
+BTN2 <= BTN2.DB_MAX_OUTPUT_PORT_TYPE
+BTN3 <= BTN3.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topo|Datapath:U0_DP|Reg_setup:R_SETUP
