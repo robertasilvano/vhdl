@@ -72,5 +72,132 @@ module Datapath(
 		.tempo(w_tempo),
 		.end_time(end_time)
 	);
+	
+	
+	//HEX5
+	wire w_win;
+	assign win = w_win;
+	wire [6:0] w_mux0_mux1;
+	
+	Mux2x1_7bits MUX0 (
+		.sel(w_win),
+		.ent0(7'b1011_011),  // 1 - U
+		.ent1(7'b1000_111),  // 0 - F
+		.out(w_mux0_mux1)
+	);
+	
+	Mux2x1_7bits MUX1 (
+		.sel(sel),
+		.ent0(w_mux0_mux1), //1 - L
+		.ent1(7'b0001_110), //0
+		.out(hex5)
+	);
+	
+	
+	//HEX4
+	wire [7:0] setup; //TODO
+	wire [6:0] w_dec0_mux3;
+	wire [6:0] w_mux2_mux3;
+	
+	Dec7seg DEC0 (
+		.G({2'b00, setup[7:6]}),
+		.O(w_dec0_mux3)
+	);
+	
+	Mux2x1_7bits MUX2 (
+		.sel(w_win),
+		.ent0(7'b1011_011), //1 - S
+		.ent1(7'b1100_111), //0 - P
+		.out(w_mux2_mux3)
+	);
+	
+	Mux2x1_7bits MUX3 (
+		.sel(sel),
+		.ent0(w_mux2_mux3),
+		.ent1(w_dec0_mux3),
+		.out(hex4)
+	);
+	
+	
+	//HEX3
+	wire [6:0] w_mux4_mux5;
+	
+	Mux2x1_7bits MUX4 (
+		.sel(w_win),
+		.ent0(7'b1001_111), //1 - E
+		.ent1(7'b1111_011), //0 - g
+		.out(w_mux4_mux5)
+	);
+	
+	Mux2x1_7bits MUX5 (
+		.sel(sel),
+		.ent0(w_mux4_mux5),
+		.ent1(7'b0001_111), //0 - t
+		.out(hex3)
+	);
+	
+	
+	//HEX2
+	wire [6:0] w_dec1_mux7;
+	wire [6:0] w_mux6_mux7;
+	
+	Dec7seg DEC1 (
+		.G(TIME), // TODO
+		.O(w_dec1_mux7)
+	);
+	
+	Mux2x1_7bits MUX6 (
+		.sel(w_win),
+		.ent0(7'b1011_011), //1 - r
+		.ent1(7'b1100_111), //0 - A
+		.out(w_mux6_mux7)
+	);
+	
+	Mux2x1_7bits MUX7 (
+		.sel(sel),
+		.ent0(w_mux6_mux7), //1
+		.ent1(w_dec1_mux7), //0
+		.out(hex2)
+	);
+	
+	
+	//HEX1
+	wire [7:0] points; //TODO
+	wire [6:0] w_dec2_mux8;
+	
+	Dec7seg DEC2 (
+		.G(points[7:4]),
+		.O(w_dec2_mux8)
+	);
+	
+	Mux2x1_7bits MUX8 (
+		.sel(sel),
+		.ent0(w_dec2_mux8), //1
+		.ent1(7'b1011_011), //0 - r
+		.out(hex1)
+	);
+	
+	
+	//HEX0
+	wire [3:0] round; //TODO
+	wire [6:0] w_dec3_mux9;
+	wire [6:0] w_dec4_mux9;
+	
+	Dec7seg DEC3 (
+		.G(round),
+		.O(w_dec3_mux9)
+	);
+	
+	Dec7seg DEC4 (
+		.G(points[3:0]),
+		.O(w_dec4_mux9)
+	);
+	
+	Mux2x1_7bits MUX9 (
+		.sel(sel),
+		.ent0(w_dec4_mux9), //1
+		.ent1(w_dec3_mux9), //0 
+		.out(hex0)
+	);
 
 endmodule
