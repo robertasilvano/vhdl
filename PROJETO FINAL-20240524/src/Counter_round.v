@@ -1,13 +1,13 @@
 /*
 Contar a quantidade de sequências que o jogador acertou em um jogo
 Entradas:
-	- data: determina o número total de rodadas do jogo
-	- clk: para sincronização
-	- R: reset
-	- E: habilitar a contagem
+	- data 	(wire - 3) 	determina o número total de rodadas do jogo
+	- clk 	(wire - 1) 	para sincronização
+	- R 		(wire - 1) 	reset
+	- E 		(wire - 1) 	habilitar a contagem
 Saidas:
-	- tc: indica se o jogador ganhou o jogo
-	- round: quantidade de sequências que o jogador acertou
+	- tc 		(reg - 1) 	indica se o jogador ganhou o jogo
+	- round 	(reg - 4) 	quantidade de sequências que o jogador acertou
 */
 
 module Counter_round(

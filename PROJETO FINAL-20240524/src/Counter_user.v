@@ -1,15 +1,13 @@
 /*
-
 Incrementar uma sequência de números conforme o usuário avança nas rodadas de um jogo.
 Verifica se o limite da contagem foi atingido, e sinaliza quando o limite é alcançado.
 Entradas:
-	- clk (wire - 1): sinal de clock que sincroniza as operações do contador
-	- R (wire - 1): sinal de reset. quando ativado (1), o contador é reinicializado para zero. assíncrono.
-	- E (wire - 1): enable. quando ativado (1), permite que o contador incremente seu valor.
-	- data (wire - 4): define o limite de contagem. quando o valor do contador atinge este limite, tc é ativado.
+	- clk 	(wire - 1) 	sinal de clock que sincroniza as operações do contador
+	- R 		(wire - 1) 	sinal de reset. quando ativado (1), o contador é reinicializado para zero. assíncrono.
+	- E 		(wire - 1) 	enable. quando ativado (1), permite que o contador incremente seu valor.
+	- data 	(wire - 4) 	define o limite de contagem. quando o valor do contador atinge este limite, tc é ativado.
 Saídas:
-	- tc (reg - 1): sinal de término de contagem. é ativado (1) quando o contador atinge o limite definido por data.
-
+	- tc 		(reg - 1) 	sinal de término de contagem. é ativado (1) quando o contador atinge o limite definido por data.
 */
 
 module Counter_user(

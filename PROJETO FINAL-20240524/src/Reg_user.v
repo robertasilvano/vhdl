@@ -1,12 +1,12 @@
 /*
 Registrador de 64 bits que guarda e monta a sequência digitada pelo usuário.
 Entradas:
-	- clk (wire - 1): clock
-	- R (wire - 1): reset
-	- E (wire - 1): enable
-	- data (wire - 64): entrada de dados que contém a sequência digitada pelo usuário
+	- clk 	(wire - 1) 	clock
+	- R 		(wire - 1) 	reset
+	- E 		(wire - 1) 	enable
+	- data 	(wire - 64) entrada de dados que contém a sequência digitada pelo usuário
 Saidas:
-	- q (reg - 64): guarda a sequência completa de 64 bits
+	- q 		(reg - 64) 	guarda a sequência completa de 64 bits
 */
 
 module Reg_user(

@@ -1,3 +1,27 @@
+/*
+Gerencia os estados do sistema e controla as saídas de acordo com as entradas recebidas. 
+O módulo Controle coordena diferentes fases do jogo e as respostas do sistema a diferentes eventos. 
+Possui os estados ‘Init‘, ‘Setup‘, ‘Play FPGA‘, ‘Play User‘, ‘Check‘, ‘Next Round‘ e ‘Result‘. 
+Cada estado configura as saídas de acordo com a fase do jogo em que se encontra e com as entradas recebidas, como sinais de finalização de jogadas, tempo, vitória, etc.
+Entradas:
+	- clock		(input - 1)		sinal de clock
+	- enter		(wire - 1)		sinal de entrada para iniciar a operação
+	- reset		(wire - 1)		sinal de reset para reiniciar o estado
+	- end_fpga	(wire - 1)		sinal indicando o final da operação da FPGA
+	- end_user	(wire - 1)		sinal indicando o final da operação do usuário
+	- end_time	(wire - 1)		sinal indicando o final do tempo de jogo
+	- win			(wire - 1)		sinal indicando a vitória
+	- match		(wire - 1)		sinal indicando se houve um acerto no jogo
+Saidas:
+	- r1			(reg - 1)		sinal de controle 1 (reset)
+	- r2			(reg - 1)		sinal de controle 2 (reset)
+	- e1			(reg - 1)		sinal de controle 3 (enable)
+	- e2			(reg - 1)		sinal de controle 4 (enable)
+	- e3			(reg - 1)		sinal de controle 5 (enable)
+	- e4			(reg - 1)		sinal de controle 6 (enable)
+	- sel			(reg - 1)		sinal de seleção
+*/
+
 module Controle(
 	// entrada de dados
 	clock,
@@ -22,7 +46,7 @@ module Controle(
 );
 	
 	// Input Port(s)
-	input 			clock;  //aqui tem wire?
+	input 			clock;
 	input wire 		enter;
 	input wire 		reset;
 	input wire 		end_fpga;

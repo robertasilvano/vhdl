@@ -1,10 +1,13 @@
 /*
-	Topo.v
-	Roberta Silvano - 2024/05/24
-	
-	Descrição: Arquivo Topo.v é o arquivo principal.
-	Revisão:
-
+Módulo de hardware descrito em Verilog que integra diversos componentes do projeto para realizar o controle e o processamento de dados. 
+A estrutura principal consiste em dois componentes: o Controle e o Datapath.
+Entradas:
+	- clock_50 	(input - 1) 	sinal de clock de 50MHz
+	- key 		(wire - 4)  	vetor de teclas de entrada
+	- sw			(wire - 10) 	vetor de switches de entrada
+Saídas:
+	- ledr		(wire - 8)  	vetor de leds de saida
+	- hexs 		(wire - 7)  	displays de 7 segmentos
 */
 
 module Topo(
@@ -45,8 +48,9 @@ module Topo(
 	output wire [p_hex  - 1:0] hex4;
 	output wire [p_hex  - 1:0] hex5;
 	
-	wire w_r1, w_r2, w_e1, w_e2, w_e3, w_e4, w_sel;  //maracutaia 2 pra ligar com o datapath e o controller
-	wire w_end_fpga, w_end_user, w_endtime, w_win, w_match;  //maracutaia 2 pra ligar com o datapath e o controller
+	// Sinais internos
+	wire w_r1, w_r2, w_e1, w_e2, w_e3, w_e4, w_sel; //saem do controle e entram no datapath
+	wire w_end_fpga, w_end_user, w_endtime, w_win, w_match; //saem do datapath e entram no controle
 	
 	Datapath U0_DP (
 	

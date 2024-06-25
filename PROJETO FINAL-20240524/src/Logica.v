@@ -4,11 +4,11 @@ onde reg_setup_level é o nível de jogo (1, 2, 3 ou 4)
 e round é o número de sequências acertadas pelo jogador.
 
 Entradas:
-	- reg_setup_level (wire - 2): registrador do nível do jogo (criado no módulo Reg_setup, setup[7:6])
-	- round (wire - 4): registrador round, quantidade de sequências que o jogador acertou (criado no módulo Counter_round)
-	- reg_setup_mapa (wire - 2): registrador do mapa (criado no módulo Reg_setup, setup[5:4])
+	- round 					(wire - 4) 	registrador round, quantidade de sequências que o jogador acertou (criado no módulo Counter_round)
+	- reg_setup_level 	(wire - 2) 	registrador do nível do jogo (criado no módulo Reg_setup, setup[7:6])
+	- reg_setup_mapa 		(wire - 2) 	registrador do mapa (criado no módulo Reg_setup, setup[5:4])
 Saídas:
-	- points (wire - 8)
+	- points 				(wire - 8)	quantidade de pontos
 */
 
 module Logica(

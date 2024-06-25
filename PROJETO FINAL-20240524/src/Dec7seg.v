@@ -1,3 +1,13 @@
+/*
+Decodificador de números binários de 4 bits para serem utilizados nos displays de 7 segmentos. 
+Ele recebe um número binário de 4 bits (G) e fornece os sinais para acender os segmentos do display correspondentes ao número decodificado. 
+Cada segmento do display é representado por um bit no vetor de saída (O).
+Entradas:
+	- G 	(wire - 4)	sequência de 4 bits de entrada
+Saídas:
+	- O 	(reg - 7)	vetor decodificado dos segmentos do display
+*/
+
 module Dec7seg(
 
 	//entrada de dados
@@ -12,10 +22,10 @@ module Dec7seg(
 	localparam p_O = 7;
 
 	// Input Port(s)
-	input wire [p_G - 1:0] G;  //número binário de 4 bits
+	input wire [p_G - 1:0] G;
 	
 	// Output Port(s)
-	output reg [p_O - 1:0] O;  //vetor dos segmentos do display
+	output reg [p_O - 1:0] O;
 	
 	always @(G) begin
 		case (G)

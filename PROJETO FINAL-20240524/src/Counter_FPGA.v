@@ -1,13 +1,13 @@
 /*
 Incrementa o endereço que será inserido na ROM para construir a sequência correta na rodada.
 Entradas:
-	- clk (wire - 1): clock
-	- R (wire - 1): reset
-	- E (wire - 1): enable
-	- data (wire - 4): define o limite da contagem (variavel round)
+	- clk 		(wire - 1)	 clock
+	- R 			(wire - 1)	 reset
+	- E 			(wire - 1)	 enable
+	- data 		(wire - 4)	 define o limite da contagem (variavel round)
 Saídas:
-	- tc (reg - 1): sinal de carry terminal, é 1 quando a sequência atinge seu limite de contagem
-	- SEQFPGA (reg - 4): vetor de lógica, será o endereço inserido na ROM
+	- tc 			(reg - 1)	 sinal de carry terminal, é 1 quando a sequência atinge seu limite de contagem
+	- SEQFPGA 	(reg - 4)	 vetor de lógica, será o endereço inserido na ROM
 */
 
 module Counter_FPGA(

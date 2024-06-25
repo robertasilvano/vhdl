@@ -1,3 +1,32 @@
+/*
+Responsável pelo processamento de dados e sinais de controle em um sistema digital. 
+Ele interage com diversos componentes internos e externos para realizar suas funções.
+Entradas:
+	- clock_50	()	sinal de clock
+	- key			()	vetor de teclas de entrada
+	- switch		()	vetor de switches de entrada
+	- r1			()	sinal de controle 1 (reset)
+	- r2			()	sinal de controle 2 (reset)
+	- e1			()	sinal de controle 3 (enable)
+	- e2			()	sinal de controle 4 (enable)
+	- e3			()	sinal de controle 5 (enable)
+	- e4			()	sinal de controle 6 (enable)
+	- sel			()	sinal de seleção
+Saidas:
+	- hex0		()	displays de 7 segmentos
+	- hex1		()	displays de 7 segmentos
+	- hex2		() displays de 7 segmentos
+	- hex3		()	displays de 7 segmentos
+	- hex4		()	displays de 7 segmentos
+	- hex5		()	displays de 7 segmentos
+	- leds		()	vetor de leds de saida
+	- end_fpga	()	sinal indicando o final da operação da FPGA
+	- end_user	()	sinal indicando o final da operação do usuário
+	- end_time	()	sinal indicando o final do tempo de jogo
+	- win			()	sinal indicando a vitória
+	- match		()	sinal indicando se houve um acerto no jogo
+*/
+
 module Datapath(
 
 	//entrada de dados
@@ -45,15 +74,13 @@ module Datapath(
 	// 12. rever todas as ligações
 	// 13. ver variaveis que não estao sendo utilizadas (por exemplo clk)
 	// 14. rever parametro 'total' que é interno
+	// 15. rever os clock input wire
 	
 	//DÚVIDAS PROF
 	// 1. Ainda estou em dúvida de qual decseq equivale a qual seq. Seria DecSeq10 = SEQ1, DecSeq00 = SEQ2, DecSeq01 = SEQ3, DecSeq11 = SEQ4?
 	// 2. Ainda não entendi o que é pra fazer com a saida q3 do REG_FPGA. É pra passar ela pro módulo de controle? Se sim, o que fazer com ele lá? Não ficou claro.
 	// 3. O módulo Lógica não encontrei na pasta src do moodle. Ainda vai ser atualizado?
 	// 4. Estou meio perdida sobre a questão de máquinas de estados. O que precisa fazer?
-	
-	
-	
 	
 	//localparams
 	localparam p_key = 4;

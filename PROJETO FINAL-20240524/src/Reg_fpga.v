@@ -1,13 +1,13 @@
 /*
 Registrador de 64 bits que guarda e monta uma sequência correta na rodada.
 Entradas:
-	- clk (wire - 1): clock
-	- R (wire - 1): reset
-	- E (wire - 1): enable
-	- data (wire - 64): entrada de dados
+	- clk 	(wire - 1) 	clock
+	- R 		(wire - 1) 	reset
+	- E 		(wire - 1) 	enable
+	- data 	(wire - 64) entrada de dados
 Saídas:
-	- q (reg - 64): guarda a sequência completa de 64 bits
-	- q3 (reg - 4): guarda os 4 bits mais significativos da sequência
+	- q 		(reg - 64) 	guarda a sequência completa de 64 bits
+	- q3 		(reg - 4) 	guarda os 4 bits mais significativos da sequência
 */
 
 

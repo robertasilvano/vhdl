@@ -1,5 +1,13 @@
 /*
-Transforma um sinal de clock de 50MHz em sinais de 0.25Hz, 0.5Hz, 1Hz e 2Hz
+Transforma um sinal de clock de 50MHz em sinais de 0.25Hz, 0.5Hz, 1Hz e 2Hz.
+Entradas:
+	- reset			(wire - 1)	sinal de reset
+	- clock_50		(wire - 1)	sinal de clock de 50MHz
+Saidas:
+	- c025Hz			(reg - 1)	sinal de 0.25Hz
+	- c05Hz			(reg - 1)	sinal de 0.5Hz
+	- c1Hz			(reg - 1)	sinal de 1Hz
+	- c2Hz			(reg - 1)	sinal de 2Hz
 */
 
 module FSM_clock(

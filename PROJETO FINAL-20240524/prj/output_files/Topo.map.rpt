@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Tue Jun 25 16:43:12 2024
+Tue Jun 25 17:40:57 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 25 16:43:12 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 25 17:40:57 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -180,25 +180,25 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                 ; Library ;
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
 ; ../src/ButtonSync.vhd            ; yes             ; User VHDL File         ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/ButtonSync.vhd  ;         ;
-; ../src/SEQ1.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ1.v          ;         ;
-; ../src/Topo.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Topo.v          ;         ;
-; ../src/Datapath.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Datapath.v      ;         ;
 ; ../src/Controle.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Controle.v      ;         ;
+; ../src/Counter_FPGA.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_FPGA.v  ;         ;
+; ../src/Counter_round.v           ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_round.v ;         ;
+; ../src/Counter_time.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_time.v  ;         ;
+; ../src/Counter_user.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_user.v  ;         ;
+; ../src/Datapath.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Datapath.v      ;         ;
+; ../src/Dec7seg.v                 ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Dec7seg.v       ;         ;
+; ../src/FSM_clock.v               ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/FSM_clock.v     ;         ;
+; ../src/Logica.v                  ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Logica.v        ;         ;
 ; ../src/Mux4x1_4bits.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Mux4x1_4bits.v  ;         ;
 ; ../src/Mux2x1_7bits.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Mux2x1_7bits.v  ;         ;
-; ../src/Dec7seg.v                 ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Dec7seg.v       ;         ;
-; ../src/Reg_setup.v               ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Reg_setup.v     ;         ;
 ; ../src/Reg_fpga.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Reg_fpga.v      ;         ;
+; ../src/Reg_setup.v               ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Reg_setup.v     ;         ;
 ; ../src/Reg_user.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Reg_user.v      ;         ;
-; ../src/Counter_time.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_time.v  ;         ;
-; ../src/Counter_round.v           ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_round.v ;         ;
-; ../src/FSM_clock.v               ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/FSM_clock.v     ;         ;
-; ../src/Counter_FPGA.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_FPGA.v  ;         ;
+; ../src/SEQ1.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ1.v          ;         ;
 ; ../src/SEQ2.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ2.v          ;         ;
 ; ../src/SEQ3.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ3.v          ;         ;
 ; ../src/SEQ4.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ4.v          ;         ;
-; ../src/Logica.v                  ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Logica.v        ;         ;
-; ../src/Counter_user.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_user.v  ;         ;
+; ../src/Topo.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Topo.v          ;         ;
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
@@ -619,80 +619,74 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 25 16:43:10 2024
+    Info: Processing started: Tue Jun 25 17:40:56 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/buttonsync.vhd
     Info (12022): Found design unit 1: ButtonSync-ButtonSyncImpl
     Info (12023): Found entity 1: ButtonSync
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/mux4x1_1bit.v
-    Info (12023): Found entity 1: Mux4x1_1bit
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq1.v
-    Info (12023): Found entity 1: SEQ1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/topo.v
-    Info (12023): Found entity 1: Topo
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/datapath.v
-    Info (12023): Found entity 1: Datapath
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/controle.v
     Info (12023): Found entity 1: Controle
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_fpga.v
+    Info (12023): Found entity 1: Counter_FPGA
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_round.v
+    Info (12023): Found entity 1: Counter_round
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_time.v
+    Info (12023): Found entity 1: Counter_time
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_user.v
+    Info (12023): Found entity 1: Counter_user
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/datapath.v
+    Info (12023): Found entity 1: Datapath
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/dec7seg.v
+    Info (12023): Found entity 1: Dec7seg
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/fsm_clock.v
+    Info (12023): Found entity 1: FSM_clock
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/logica.v
+    Info (12023): Found entity 1: Logica
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/mux4x1_4bits.v
     Info (12023): Found entity 1: Mux4x1_4bits
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/mux2x1_7bits.v
     Info (12023): Found entity 1: Mux2x1_7bits
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/dec7seg.v
-    Info (12023): Found entity 1: Dec7seg
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/reg_setup.v
-    Info (12023): Found entity 1: Reg_setup
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/reg_fpga.v
     Info (12023): Found entity 1: Reg_fgpa
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/reg_setup.v
+    Info (12023): Found entity 1: Reg_setup
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/reg_user.v
     Info (12023): Found entity 1: Reg_user
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/decseq.v
-    Info (12023): Found entity 1: DecSeq
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_time.v
-    Info (12023): Found entity 1: Counter_time
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_round.v
-    Info (12023): Found entity 1: Counter_round
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_divide.v
-    Info (12023): Found entity 1: Counter_divider
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/fsm_clock.v
-    Info (12023): Found entity 1: FSM_clock
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_fpga.v
-    Info (12023): Found entity 1: Counter_FPGA
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq1.v
+    Info (12023): Found entity 1: SEQ1
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq2.v
     Info (12023): Found entity 1: SEQ2
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq3.v
     Info (12023): Found entity 1: SEQ3
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/seq4.v
     Info (12023): Found entity 1: SEQ4
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/logica.v
-    Info (12023): Found entity 1: Logica
-Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_user.v
-    Info (12023): Found entity 1: Counter_user
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(114): created implicit net for "nbtn_or"
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(115): created implicit net for "e2_and_ntnb"
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(116): created implicit net for "comp"
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/topo.v
+    Info (12023): Found entity 1: Topo
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(141): created implicit net for "nbtn_or"
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(142): created implicit net for "e2_and_ntnb"
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(143): created implicit net for "comp"
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
 Info (12128): Elaborating entity "FSM_clock" for hierarchy "Datapath:U0_DP|FSM_clock:FSM"
-Warning (10230): Verilog HDL assignment warning at FSM_clock.v(31): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at FSM_clock.v(32): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at FSM_clock.v(33): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at FSM_clock.v(34): truncated value with size 32 to match size of target (1)
-Warning (10240): Verilog HDL Always Construct warning at FSM_clock.v(27): inferring latch(es) for variable "c025Hz", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM_clock.v(27): inferring latch(es) for variable "c05Hz", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM_clock.v(27): inferring latch(es) for variable "c1Hz", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM_clock.v(27): inferring latch(es) for variable "c2Hz", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "c2Hz" at FSM_clock.v(27)
-Info (10041): Inferred latch for "c1Hz" at FSM_clock.v(27)
-Info (10041): Inferred latch for "c05Hz" at FSM_clock.v(27)
-Info (10041): Inferred latch for "c025Hz" at FSM_clock.v(27)
+Warning (10230): Verilog HDL assignment warning at FSM_clock.v(39): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at FSM_clock.v(40): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at FSM_clock.v(41): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at FSM_clock.v(42): truncated value with size 32 to match size of target (1)
+Warning (10240): Verilog HDL Always Construct warning at FSM_clock.v(35): inferring latch(es) for variable "c025Hz", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FSM_clock.v(35): inferring latch(es) for variable "c05Hz", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FSM_clock.v(35): inferring latch(es) for variable "c1Hz", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FSM_clock.v(35): inferring latch(es) for variable "c2Hz", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "c2Hz" at FSM_clock.v(35)
+Info (10041): Inferred latch for "c1Hz" at FSM_clock.v(35)
+Info (10041): Inferred latch for "c05Hz" at FSM_clock.v(35)
+Info (10041): Inferred latch for "c025Hz" at FSM_clock.v(35)
 Info (12128): Elaborating entity "Mux4x1_4bits" for hierarchy "Datapath:U0_DP|Mux4x1_4bits:MUX10"
-Warning (10240): Verilog HDL Always Construct warning at Mux4x1_4bits.v(36): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "out[0]" at Mux4x1_4bits.v(36)
-Info (10041): Inferred latch for "out[1]" at Mux4x1_4bits.v(36)
-Info (10041): Inferred latch for "out[2]" at Mux4x1_4bits.v(36)
-Info (10041): Inferred latch for "out[3]" at Mux4x1_4bits.v(36)
+Warning (10240): Verilog HDL Always Construct warning at Mux4x1_4bits.v(46): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at Mux4x1_4bits.v(46)
+Info (10041): Inferred latch for "out[1]" at Mux4x1_4bits.v(46)
+Info (10041): Inferred latch for "out[2]" at Mux4x1_4bits.v(46)
+Info (10041): Inferred latch for "out[3]" at Mux4x1_4bits.v(46)
 Info (12128): Elaborating entity "ButtonSync" for hierarchy "Datapath:U0_DP|ButtonSync:BTN"
 Info (12128): Elaborating entity "Reg_user" for hierarchy "Datapath:U0_DP|Reg_user:R_USER"
 Warning (10235): Verilog HDL Always Construct warning at Reg_user.v(40): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control
@@ -867,17 +861,17 @@ Info (10041): Inferred latch for "q[63]" at Reg_fpga.v(41)
 Info (12128): Elaborating entity "Logica" for hierarchy "Datapath:U0_DP|Logica:LG"
 Warning (10034): Output port "points" at Logica.v(35) has no driver
 Info (12128): Elaborating entity "Mux2x1_7bits" for hierarchy "Datapath:U0_DP|Mux2x1_7bits:MUX0"
-Warning (10240): Verilog HDL Always Construct warning at Mux2x1_7bits.v(32): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "out[0]" at Mux2x1_7bits.v(32)
-Info (10041): Inferred latch for "out[1]" at Mux2x1_7bits.v(32)
-Info (10041): Inferred latch for "out[2]" at Mux2x1_7bits.v(32)
-Info (10041): Inferred latch for "out[3]" at Mux2x1_7bits.v(32)
-Info (10041): Inferred latch for "out[4]" at Mux2x1_7bits.v(32)
-Info (10041): Inferred latch for "out[5]" at Mux2x1_7bits.v(32)
-Info (10041): Inferred latch for "out[6]" at Mux2x1_7bits.v(32)
+Warning (10240): Verilog HDL Always Construct warning at Mux2x1_7bits.v(38): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at Mux2x1_7bits.v(38)
+Info (10041): Inferred latch for "out[1]" at Mux2x1_7bits.v(38)
+Info (10041): Inferred latch for "out[2]" at Mux2x1_7bits.v(38)
+Info (10041): Inferred latch for "out[3]" at Mux2x1_7bits.v(38)
+Info (10041): Inferred latch for "out[4]" at Mux2x1_7bits.v(38)
+Info (10041): Inferred latch for "out[5]" at Mux2x1_7bits.v(38)
+Info (10041): Inferred latch for "out[6]" at Mux2x1_7bits.v(38)
 Info (12128): Elaborating entity "Dec7seg" for hierarchy "Datapath:U0_DP|Dec7seg:DEC0"
 Info (12128): Elaborating entity "Controle" for hierarchy "Controle:U1_FSM"
-Warning (10235): Verilog HDL Always Construct warning at Controle.v(66): variable "enter" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Controle.v(90): variable "enter" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (14026): LATCH primitive "Datapath:U0_DP|Mux4x1_4bits:MUX11|out[0]" is permanently enabled
 Warning (14026): LATCH primitive "Datapath:U0_DP|Mux4x1_4bits:MUX11|out[1]" is permanently enabled
 Warning (14026): LATCH primitive "Datapath:U0_DP|Mux4x1_4bits:MUX11|out[2]" is permanently enabled
@@ -926,8 +920,8 @@ Info (21057): Implemented 369 device resources after synthesis - the final resou
     Info (21061): Implemented 304 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 68 warnings
     Info: Peak virtual memory: 4663 megabytes
-    Info: Processing ended: Tue Jun 25 16:43:12 2024
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Processing ended: Tue Jun 25 17:40:57 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

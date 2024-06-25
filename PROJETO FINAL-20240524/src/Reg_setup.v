@@ -1,12 +1,12 @@
 /*
 Registrador de 2 bits que guarda o nível de jogo escolhido no estado Setup.
 Entradas:
-	- clk (wire - 1): clock
-	- R (wire - 1): reset
-	- E (wire - 1): enable
-	- sw (wire - 8): switches
+	- clk 	(wire - 1)	 clock
+	- R 		(wire - 1)	 reset
+	- E 		(wire - 1)	 enable
+	- sw 		(wire - 8)	 switches
 Saídas:
-	- setup (reg - 8: guarda o valor do switches
+	- setup 	(reg - 8)	 guarda o valor do switches
 */
 
 module Reg_setup(

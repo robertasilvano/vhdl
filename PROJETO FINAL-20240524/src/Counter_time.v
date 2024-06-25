@@ -1,3 +1,14 @@
+/*
+Responsável por realizar uma contagem progressiva do tempo, de 0 até 9.
+Entradas:
+	- clkt 		(wire - 1) 	sinal de clock para sincronização
+	- R 			(wire - 1) 	sinal de reset
+	- E 			(wire - 1) 	habilita a contagem
+Saidas:
+	- tempo 		(reg - 4) 	representa o valor atual do contador
+	- end_time 	(reg - 1) 	indica que o contador chegou a 9
+*/
+
 module Counter_time(
 	
 	//entrada de dados

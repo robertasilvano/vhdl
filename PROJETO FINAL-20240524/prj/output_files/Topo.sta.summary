@@ -2,40 +2,220 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clkt'
-Slack : -0.041
-TNS   : -0.104
+Type  : Slow 1200mV 85C Model Setup 'clock_50'
+Slack : -3.486
+TNS   : -33.044
 
-Type  : Slow 1200mV 85C Model Hold 'clkt'
-Slack : 0.358
+Type  : Slow 1200mV 85C Model Setup 'Controle:U1_FSM|state.play_FPGA'
+Slack : -2.621
+TNS   : -52.722
+
+Type  : Slow 1200mV 85C Model Setup 'Controle:U1_FSM|state.play_user'
+Slack : -1.120
+TNS   : -32.983
+
+Type  : Slow 1200mV 85C Model Setup 'Controle:U1_FSM|state.init'
+Slack : -0.929
+TNS   : -6.837
+
+Type  : Slow 1200mV 85C Model Hold 'clock_50'
+Slack : -0.247
+TNS   : -1.129
+
+Type  : Slow 1200mV 85C Model Hold 'Controle:U1_FSM|state.play_user'
+Slack : 0.029
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clkt'
+Type  : Slow 1200mV 85C Model Hold 'Controle:U1_FSM|state.init'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Controle:U1_FSM|state.play_FPGA'
+Slack : 0.242
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'Controle:U1_FSM|state.play_FPGA'
+Slack : -1.963
+TNS   : -6.445
+
+Type  : Slow 1200mV 85C Model Recovery 'Controle:U1_FSM|state.play_user'
+Slack : -1.460
+TNS   : -72.480
+
+Type  : Slow 1200mV 85C Model Recovery 'clock_50'
+Slack : -1.110
+TNS   : -10.026
+
+Type  : Slow 1200mV 85C Model Removal 'Controle:U1_FSM|state.play_user'
+Slack : -1.577
+TNS   : -90.013
+
+Type  : Slow 1200mV 85C Model Removal 'Controle:U1_FSM|state.play_FPGA'
+Slack : -1.237
+TNS   : -4.298
+
+Type  : Slow 1200mV 85C Model Removal 'clock_50'
+Slack : -0.360
+TNS   : -2.288
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -7.000
+TNS   : -33.000
 
-Type  : Slow 1200mV 0C Model Setup 'clkt'
-Slack : 0.070
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Controle:U1_FSM|state.play_FPGA'
+Slack : 0.347
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clkt'
-Slack : 0.312
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Controle:U1_FSM|state.play_user'
+Slack : 0.347
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clkt'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Controle:U1_FSM|state.init'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clock_50'
+Slack : -2.982
+TNS   : -27.487
+
+Type  : Slow 1200mV 0C Model Setup 'Controle:U1_FSM|state.play_FPGA'
+Slack : -2.287
+TNS   : -41.197
+
+Type  : Slow 1200mV 0C Model Setup 'Controle:U1_FSM|state.play_user'
+Slack : -0.925
+TNS   : -24.101
+
+Type  : Slow 1200mV 0C Model Setup 'Controle:U1_FSM|state.init'
+Slack : -0.837
+TNS   : -6.205
+
+Type  : Slow 1200mV 0C Model Hold 'clock_50'
+Slack : -0.225
+TNS   : -1.096
+
+Type  : Slow 1200mV 0C Model Hold 'Controle:U1_FSM|state.play_user'
+Slack : 0.117
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Controle:U1_FSM|state.play_FPGA'
+Slack : 0.232
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Controle:U1_FSM|state.init'
+Slack : 0.307
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'Controle:U1_FSM|state.play_FPGA'
+Slack : -1.797
+TNS   : -5.961
+
+Type  : Slow 1200mV 0C Model Recovery 'Controle:U1_FSM|state.play_user'
+Slack : -1.382
+TNS   : -68.376
+
+Type  : Slow 1200mV 0C Model Recovery 'clock_50'
+Slack : -0.887
+TNS   : -7.531
+
+Type  : Slow 1200mV 0C Model Removal 'Controle:U1_FSM|state.play_user'
+Slack : -1.345
+TNS   : -77.656
+
+Type  : Slow 1200mV 0C Model Removal 'Controle:U1_FSM|state.play_FPGA'
+Slack : -1.072
+TNS   : -3.715
+
+Type  : Slow 1200mV 0C Model Removal 'clock_50'
+Slack : -0.360
+TNS   : -2.436
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -7.000
+TNS   : -33.000
 
-Type  : Fast 1200mV 0C Model Setup 'clkt'
-Slack : 0.416
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Controle:U1_FSM|state.init'
+Slack : 0.370
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'clkt'
-Slack : 0.188
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Controle:U1_FSM|state.play_FPGA'
+Slack : 0.409
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clkt'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Controle:U1_FSM|state.play_user'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clock_50'
+Slack : -1.831
+TNS   : -10.841
+
+Type  : Fast 1200mV 0C Model Setup 'Controle:U1_FSM|state.play_FPGA'
+Slack : -1.261
+TNS   : -10.744
+
+Type  : Fast 1200mV 0C Model Setup 'Controle:U1_FSM|state.play_user'
+Slack : -0.224
+TNS   : -0.918
+
+Type  : Fast 1200mV 0C Model Setup 'Controle:U1_FSM|state.init'
+Slack : -0.077
+TNS   : -0.304
+
+Type  : Fast 1200mV 0C Model Hold 'clock_50'
+Slack : -0.221
+TNS   : -1.039
+
+Type  : Fast 1200mV 0C Model Hold 'Controle:U1_FSM|state.init'
+Slack : 0.038
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Controle:U1_FSM|state.play_user'
+Slack : 0.063
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Controle:U1_FSM|state.play_FPGA'
+Slack : 0.123
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'Controle:U1_FSM|state.play_FPGA'
+Slack : -0.854
+TNS   : -2.612
+
+Type  : Fast 1200mV 0C Model Recovery 'Controle:U1_FSM|state.play_user'
+Slack : -0.604
+TNS   : -25.940
+
+Type  : Fast 1200mV 0C Model Recovery 'clock_50'
+Slack : -0.208
+TNS   : -1.223
+
+Type  : Fast 1200mV 0C Model Removal 'Controle:U1_FSM|state.play_user'
+Slack : -0.984
+TNS   : -57.055
+
+Type  : Fast 1200mV 0C Model Removal 'Controle:U1_FSM|state.play_FPGA'
+Slack : -0.795
+TNS   : -2.823
+
+Type  : Fast 1200mV 0C Model Removal 'clock_50'
+Slack : -0.288
+TNS   : -2.173
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50'
 Slack : -3.000
-TNS   : -7.224
+TNS   : -34.395
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Controle:U1_FSM|state.play_user'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Controle:U1_FSM|state.play_FPGA'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Controle:U1_FSM|state.init'
+Slack : 0.428
+TNS   : 0.000
 
 ------------------------------------------------------------

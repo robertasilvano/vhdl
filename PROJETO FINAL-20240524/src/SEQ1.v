@@ -1,15 +1,13 @@
-/* **********************************************
-* File Name: SEQ1.v
-* Description: 4-bits sequency attribution 
-* Author: Pereira, Rodrigo
-* Creation Date: 05/07/2024
-* Revision: Version 1.0
-*
-* Input: 4-bits address
-* Output: 4-bits registered output_reg
-*	
+/*
+Responsável por decodificar um endereço de 4 bits (address) em um valor de saída de 4 bits (output).
+Entradas:
+	- address		(wire - 4)	endereço de 4 bits
+Saídas:
+	- output_reg	(reg - 4)	valor decodificado de 4 bits
 
-********************************************** */
+OBS: decSeq10/SEQ1
+*/
+
 module SEQ1(
     input [3:0] address,
     output reg [3:0] output_reg
