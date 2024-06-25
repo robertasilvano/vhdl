@@ -1,14 +1,20 @@
 module Counter_divider(
-clk,
-clk1,
-clk2,
-clk3,
-clk4
+	//entrada de dados
+	clk,
+	
+	//saída de dados
+	clk1,
+	clk2,
+	clk3,
+	clk4
 );
 
+	// Input Port(s)
 	input wire clk;
-	input wire clk1;
-	input wire clk2;
-	input wire clk3;
-	input wire clk4;
+	
+	// Output Port(s)
+	output wire clk1;  //wire ou reg?
+	output wire clk2;  //wire ou reg?
+	output wire clk3;  //wire ou reg?
+	output wire clk4;  //wire ou reg?
 endmodule
