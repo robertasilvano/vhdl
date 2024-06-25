@@ -33,7 +33,7 @@ module Mux2x1_7bits(
 	begin
 		if (sel == 0) out <= ent0;  // = ou <=? ver com o prof
 		else if (sel == 1) out <= ent1;
-		else out <= ent0;  //caso else, ver com o prof
+		// TODO else ver com o prof
 	end
 
 endmodule

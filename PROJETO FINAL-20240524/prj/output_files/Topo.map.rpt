@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Tue Jun 25 00:36:41 2024
+Tue Jun 25 00:56:32 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -55,7 +55,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 25 00:36:40 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 25 00:56:32 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -448,7 +448,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 25 00:36:40 2024
+    Info: Processing started: Tue Jun 25 00:56:31 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/mux4x1_1bit.v
@@ -483,6 +483,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: Counter_divider
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/fsm_clock.v
     Info (12023): Found entity 1: FSM_clock
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_fpga.v
+    Info (12023): Found entity 1: Counter_FPGA
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
 Warning (10034): Output port "ledr" at Topo.v(40) has no driver
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
@@ -493,6 +495,14 @@ Warning (10034): Output port "match" at Datapath.v(64) has no driver
 Info (12128): Elaborating entity "Counter_time" for hierarchy "Datapath:U0_DP|Counter_time:CT"
 Info (12128): Elaborating entity "Counter_round" for hierarchy "Datapath:U0_DP|Counter_round:CR"
 Info (12128): Elaborating entity "Mux2x1_7bits" for hierarchy "Datapath:U0_DP|Mux2x1_7bits:MUX0"
+Warning (10240): Verilog HDL Always Construct warning at Mux2x1_7bits.v(32): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "out[0]" at Mux2x1_7bits.v(32)
+Info (10041): Inferred latch for "out[1]" at Mux2x1_7bits.v(32)
+Info (10041): Inferred latch for "out[2]" at Mux2x1_7bits.v(32)
+Info (10041): Inferred latch for "out[3]" at Mux2x1_7bits.v(32)
+Info (10041): Inferred latch for "out[4]" at Mux2x1_7bits.v(32)
+Info (10041): Inferred latch for "out[5]" at Mux2x1_7bits.v(32)
+Info (10041): Inferred latch for "out[6]" at Mux2x1_7bits.v(32)
 Info (12128): Elaborating entity "Dec7seg" for hierarchy "Datapath:U0_DP|Dec7seg:DEC0"
 Info (12128): Elaborating entity "FSM_clock" for hierarchy "Datapath:U0_DP|FSM_clock:FSM"
 Warning (10230): Verilog HDL assignment warning at FSM_clock.v(31): truncated value with size 32 to match size of target (1)
@@ -580,9 +590,9 @@ Info (21057): Implemented 69 device resources after synthesis - the final resour
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 2 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 73 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 74 warnings
     Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Tue Jun 25 00:36:41 2024
+    Info: Processing ended: Tue Jun 25 00:56:32 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

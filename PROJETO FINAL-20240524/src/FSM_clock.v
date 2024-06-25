@@ -27,12 +27,12 @@ module FSM_clock(
 	always @(reset)
 	begin
 		if (reset == 1'b1)
-		begin
-			c025Hz <= 199999999;
-			c05Hz <= 99999999;
-			c1Hz <= 49999999;
-			c2Hz <= 24999999;
-		end
+			begin
+				c025Hz <= 199999999;
+				c05Hz <= 99999999;
+				c1Hz <= 49999999;
+				c2Hz <= 24999999;
+			end
 	end
 
 endmodule
