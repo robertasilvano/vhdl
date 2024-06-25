@@ -42,6 +42,7 @@ module Datapath(
 	// 9. ajustar a identação de tudo
 	//	10. rever as igualdades com o tamanho de cada parametro
 	//	11. ver como iniciar parametros que só são atualizados em if's
+	// 12. rever todas as ligações
 
 	//localparams
 	localparam p_key = 4;
@@ -193,20 +194,18 @@ module Datapath(
 		.q(out_fpga)
 	);
 	
-//	//REG USER
-//	wire [63:0] out_user; // TODO
-//	wire [3:0] nbtn; // TODO
-//	
-//	
-//	
-//	
-//	Reg_user R_USER (
-//		.clk(clock_50),
-//		.R(r2),
-//		.E(),
-//		.data(),
-//		.q()
-//	);
+	//REG USER
+	wire [63:0] out_user; // TODO
+	assign nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3]; // todo confirmar ???? são essas entradas mesmo? ver com o prof
+	assign e2_and_ntnb = e2 & nbtn_or; // todo confirmar
+	
+	Reg_user R_USER (
+		.clk(clock_50),
+		.R(r2),
+		.E(e2_and_ntnb),
+		.data({nbtn, out_user[63:4]}),
+		.q(out_user)
+	);
 	
 	//HEX5
 	wire [6:0] w_mux0_mux1;
