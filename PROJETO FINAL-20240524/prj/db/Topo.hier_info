@@ -69,7 +69,7 @@ hex5[6] << Datapath:U0_DP.hex5
 
 
 |Topo|Datapath:U0_DP
-clock_50 => clock_50.IN6
+clock_50 => clock_50.IN7
 key[0] => key[0].IN1
 key[1] => key[1].IN1
 key[2] => key[2].IN1
@@ -83,7 +83,7 @@ switch[5] => switch[5].IN1
 switch[6] => switch[6].IN1
 switch[7] => switch[7].IN1
 r1 => r1.IN3
-r2 => r2.IN4
+r2 => r2.IN5
 e1 => e1.IN1
 e2 => e2.IN1
 e3 => e3.IN2
@@ -136,7 +136,7 @@ leds[1] <= <GND>
 leds[2] <= <GND>
 leds[3] <= <GND>
 end_fpga <= Counter_FPGA:CFPGA.tc
-end_user <= <GND>
+end_user <= Counter_user:C_USER.tc
 end_time <= Counter_time:CT.end_time
 win <= win.DB_MAX_OUTPUT_PORT_TYPE
 match <= <GND>
@@ -229,6 +229,29 @@ round[0] <= round[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 round[1] <= round[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 round[2] <= round[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 round[3] <= round[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Topo|Datapath:U0_DP|Counter_user:C_USER
+clk => tc~reg0.CLK
+clk => total[0].CLK
+clk => total[1].CLK
+clk => total[2].CLK
+clk => total[3].CLK
+R => tc~reg0.ACLR
+R => total[0].ACLR
+R => total[1].ACLR
+R => total[2].ACLR
+R => total[3].ACLR
+E => tc~reg0.ENA
+E => total[3].ENA
+E => total[2].ENA
+E => total[1].ENA
+E => total[0].ENA
+data[0] => Equal0.IN3
+data[1] => Equal0.IN2
+data[2] => Equal0.IN1
+data[3] => Equal0.IN0
+tc <= tc~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topo|Datapath:U0_DP|Counter_FPGA:CFPGA

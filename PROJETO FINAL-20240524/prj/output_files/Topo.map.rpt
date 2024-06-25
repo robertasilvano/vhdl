@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Tue Jun 25 14:53:14 2024
+Tue Jun 25 15:22:17 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -20,23 +20,22 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  12. State Machine - |Topo|Datapath:U0_DP|ButtonSync:BTN|btn0state
  13. User-Specified and Inferred Latches
  14. Registers Removed During Synthesis
- 15. Removed Registers Triggering Further Register Optimizations
- 16. General Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX8"
- 19. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX6"
- 20. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX5"
- 21. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX4"
- 22. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX2"
- 23. Port Connectivity Checks: "Datapath:U0_DP|Dec7seg:DEC0"
- 24. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX1"
- 25. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX0"
- 26. Port Connectivity Checks: "Datapath:U0_DP|Reg_user:R_USER"
- 27. Port Connectivity Checks: "Datapath:U0_DP|Reg_fgpa:R_FPGA"
- 28. Port Connectivity Checks: "Datapath:U0_DP|Mux4x1_4bits:MUX10"
- 29. Port Connectivity Checks: "Datapath:U0_DP"
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
+ 15. General Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX8"
+ 18. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX6"
+ 19. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX5"
+ 20. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX4"
+ 21. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX2"
+ 22. Port Connectivity Checks: "Datapath:U0_DP|Dec7seg:DEC0"
+ 23. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX1"
+ 24. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX0"
+ 25. Port Connectivity Checks: "Datapath:U0_DP|Reg_user:R_USER"
+ 26. Port Connectivity Checks: "Datapath:U0_DP|Reg_fgpa:R_FPGA"
+ 27. Port Connectivity Checks: "Datapath:U0_DP|Mux4x1_4bits:MUX10"
+ 28. Port Connectivity Checks: "Datapath:U0_DP"
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -62,15 +61,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 25 14:53:14 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 25 15:22:16 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 50                                         ;
-;     Total combinational functions  ; 50                                         ;
-;     Dedicated logic registers      ; 11                                         ;
-; Total registers                    ; 11                                         ;
+; Total logic elements               ; 96                                         ;
+;     Total combinational functions  ; 96                                         ;
+;     Dedicated logic registers      ; 29                                         ;
+; Total registers                    ; 29                                         ;
 ; Total pins                         ; 67                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -201,6 +200,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ../src/SEQ3.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ3.v          ;         ;
 ; ../src/SEQ4.v                    ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/SEQ4.v          ;         ;
 ; ../src/Logica.v                  ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Logica.v        ;         ;
+; ../src/Counter_user.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_user.v  ;         ;
 +----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
 
 
@@ -209,49 +209,52 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+------------------------------+
 ; Resource                                    ; Usage                        ;
 +---------------------------------------------+------------------------------+
-; Estimated Total logic elements              ; 50                           ;
+; Estimated Total logic elements              ; 96                           ;
 ;                                             ;                              ;
-; Total combinational functions               ; 50                           ;
+; Total combinational functions               ; 96                           ;
 ; Logic element usage by number of LUT inputs ;                              ;
-;     -- 4 input functions                    ; 18                           ;
-;     -- 3 input functions                    ; 14                           ;
-;     -- <=2 input functions                  ; 18                           ;
+;     -- 4 input functions                    ; 41                           ;
+;     -- 3 input functions                    ; 17                           ;
+;     -- <=2 input functions                  ; 38                           ;
 ;                                             ;                              ;
 ; Logic elements by mode                      ;                              ;
-;     -- normal mode                          ; 50                           ;
+;     -- normal mode                          ; 96                           ;
 ;     -- arithmetic mode                      ; 0                            ;
 ;                                             ;                              ;
-; Total registers                             ; 11                           ;
-;     -- Dedicated logic registers            ; 11                           ;
+; Total registers                             ; 29                           ;
+;     -- Dedicated logic registers            ; 29                           ;
 ;     -- I/O registers                        ; 0                            ;
 ;                                             ;                              ;
 ; I/O pins                                    ; 67                           ;
 ; Embedded Multiplier 9-bit elements          ; 0                            ;
 ; Maximum fan-out node                        ; Controle:U1_FSM|state.result ;
-; Maximum fan-out                             ; 24                           ;
-; Total fan-out                               ; 275                          ;
-; Average fan-out                             ; 1.41                         ;
+; Maximum fan-out                             ; 31                           ;
+; Total fan-out                               ; 468                          ;
+; Average fan-out                             ; 1.81                         ;
 +---------------------------------------------+------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
-; |Topo                      ; 50 (0)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |Topo                                   ; work         ;
-;    |Controle:U1_FSM|       ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Controle:U1_FSM                   ; work         ;
-;    |Datapath:U0_DP|        ; 43 (0)            ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP                    ; work         ;
-;       |Counter_FPGA:CFPGA| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_FPGA:CFPGA ; work         ;
-;       |Counter_round:CR|   ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_round:CR   ; work         ;
-;       |Counter_time:CT|    ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_time:CT    ; work         ;
-;       |Dec7seg:DEC1|       ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Dec7seg:DEC1       ; work         ;
-;       |Mux2x1_7bits:MUX1|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX1  ; work         ;
-;       |Mux2x1_7bits:MUX3|  ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX3  ; work         ;
-;       |Mux2x1_7bits:MUX5|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX5  ; work         ;
-;       |Mux2x1_7bits:MUX7|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX7  ; work         ;
-;       |Reg_setup:R_SETUP|  ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Reg_setup:R_SETUP  ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                               ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Library Name ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
+; |Topo                       ; 96 (0)            ; 29 (0)       ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |Topo                                    ; work         ;
+;    |Controle:U1_FSM|        ; 12 (12)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Controle:U1_FSM                    ; work         ;
+;    |Datapath:U0_DP|         ; 84 (2)            ; 23 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP                     ; work         ;
+;       |ButtonSync:BTN|      ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|ButtonSync:BTN      ; work         ;
+;       |Counter_FPGA:CFPGA|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_FPGA:CFPGA  ; work         ;
+;       |Counter_round:CR|    ; 8 (8)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_round:CR    ; work         ;
+;       |Counter_time:CT|     ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_time:CT     ; work         ;
+;       |Counter_user:C_USER| ; 9 (9)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Counter_user:C_USER ; work         ;
+;       |Dec7seg:DEC1|        ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Dec7seg:DEC1        ; work         ;
+;       |Dec7seg:DEC3|        ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Dec7seg:DEC3        ; work         ;
+;       |Mux2x1_7bits:MUX1|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX1   ; work         ;
+;       |Mux2x1_7bits:MUX3|   ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX3   ; work         ;
+;       |Mux2x1_7bits:MUX5|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX5   ; work         ;
+;       |Mux2x1_7bits:MUX7|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX7   ; work         ;
+;       |Reg_setup:R_SETUP|   ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Topo|Datapath:U0_DP|Reg_setup:R_SETUP   ; work         ;
++-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -326,53 +329,31 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+-------------------------------------------+------------------------+
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[6]          ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7]          ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
+; Datapath:U0_DP|Reg_setup:R_SETUP|setup[0]          ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[1]          ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[2]          ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
 ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[3]          ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
-; Datapath:U0_DP|Reg_setup:R_SETUP|setup[0]          ; Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] ; yes                    ;
 ; Datapath:U0_DP|Counter_FPGA:CFPGA|SEQFPGA[0]       ; Controle:U1_FSM|state.play_FPGA           ; yes                    ;
 ; Number of user-specified and inferred latches = 7  ;                                           ;                        ;
 +----------------------------------------------------+-------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                  ;
-+-------------------------------------------------------+---------------------------------------------+
-; Register name                                         ; Reason for Removal                          ;
-+-------------------------------------------------------+---------------------------------------------+
-; Datapath:U0_DP|Counter_round:CR|round[0..3]           ; Stuck at GND due to stuck port clock_enable ;
-; Datapath:U0_DP|ButtonSync:BTN|btn3state.SaidaAtiva    ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn3state.EsperaSoltar  ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn3state.EsperaApertar ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn2state.SaidaAtiva    ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn2state.EsperaSoltar  ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn2state.EsperaApertar ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn1state.SaidaAtiva    ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn1state.EsperaSoltar  ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn1state.EsperaApertar ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn0state.SaidaAtiva    ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn0state.EsperaSoltar  ; Lost fanout                                 ;
-; Datapath:U0_DP|ButtonSync:BTN|btn0state.EsperaApertar ; Lost fanout                                 ;
-; Controle:U1_FSM|state.check                           ; Lost fanout                                 ;
-; Controle:U1_FSM|state.next_round                      ; Lost fanout                                 ;
-; Controle:U1_FSM|state~2                               ; Lost fanout                                 ;
-; Controle:U1_FSM|state~3                               ; Lost fanout                                 ;
-; Controle:U1_FSM|state~4                               ; Lost fanout                                 ;
-; Total Number of Removed Registers = 21                ;                                             ;
-+-------------------------------------------------------+---------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                     ;
-+----------------------------------------------------+--------------------+-------------------------------------------------------+
-; Register name                                      ; Reason for Removal ; Registers Removed due to This Register                ;
-+----------------------------------------------------+--------------------+-------------------------------------------------------+
-; Datapath:U0_DP|ButtonSync:BTN|btn3state.SaidaAtiva ; Lost Fanouts       ; Datapath:U0_DP|ButtonSync:BTN|btn3state.EsperaApertar ;
-; Datapath:U0_DP|ButtonSync:BTN|btn2state.SaidaAtiva ; Lost Fanouts       ; Datapath:U0_DP|ButtonSync:BTN|btn2state.EsperaApertar ;
-; Datapath:U0_DP|ButtonSync:BTN|btn1state.SaidaAtiva ; Lost Fanouts       ; Datapath:U0_DP|ButtonSync:BTN|btn1state.EsperaApertar ;
-; Datapath:U0_DP|ButtonSync:BTN|btn0state.SaidaAtiva ; Lost Fanouts       ; Datapath:U0_DP|ButtonSync:BTN|btn0state.EsperaApertar ;
-+----------------------------------------------------+--------------------+-------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                        ;
++------------------------------------------------------+--------------------+
+; Register name                                        ; Reason for Removal ;
++------------------------------------------------------+--------------------+
+; Datapath:U0_DP|ButtonSync:BTN|btn3state.EsperaSoltar ; Lost fanout        ;
+; Datapath:U0_DP|ButtonSync:BTN|btn2state.EsperaSoltar ; Lost fanout        ;
+; Datapath:U0_DP|ButtonSync:BTN|btn1state.EsperaSoltar ; Lost fanout        ;
+; Datapath:U0_DP|ButtonSync:BTN|btn0state.EsperaSoltar ; Lost fanout        ;
+; Controle:U1_FSM|state.next_round                     ; Lost fanout        ;
+; Controle:U1_FSM|state~2                              ; Lost fanout        ;
+; Controle:U1_FSM|state~3                              ; Lost fanout        ;
+; Controle:U1_FSM|state~4                              ; Lost fanout        ;
+; Total Number of Removed Registers = 8                ;                    ;
++------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -380,12 +361,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 11    ;
+; Total registers                              ; 29    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Clear ; 15    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -395,7 +376,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |Topo|Controle:U1_FSM|state ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |Topo|Controle:U1_FSM|state ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
@@ -560,7 +541,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 25 14:53:13 2024
+    Info: Processing started: Tue Jun 25 15:22:15 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/buttonsync.vhd
@@ -572,7 +553,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: SEQ1
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/topo.v
     Info (12023): Found entity 1: Topo
-Warning (10275): Verilog HDL Module Instantiation warning at Datapath.v(174): ignored dangling comma in List of Port Connections
+Warning (10275): Verilog HDL Module Instantiation warning at Datapath.v(187): ignored dangling comma in List of Port Connections
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/datapath.v
     Info (12023): Found entity 1: Datapath
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/controle.v
@@ -609,14 +590,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
     Info (12023): Found entity 1: SEQ4
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/logica.v
     Info (12023): Found entity 1: Logica
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(208): created implicit net for "nbtn_or"
-Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(209): created implicit net for "e2_and_ntnb"
+Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/counter_user.v
+    Info (12023): Found entity 1: Counter_user
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(124): created implicit net for "nbtn_or"
+Warning (10236): Verilog HDL Implicit Net warning at Datapath.v(125): created implicit net for "e2_and_ntnb"
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
 Warning (10034): Output port "ledr" at Topo.v(40) has no driver
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
-Warning (10034): Output port "leds" at Datapath.v(72) has no driver
-Warning (10034): Output port "end_user" at Datapath.v(74) has no driver
-Warning (10034): Output port "match" at Datapath.v(77) has no driver
+Warning (10034): Output port "leds" at Datapath.v(74) has no driver
+Warning (10034): Output port "match" at Datapath.v(79) has no driver
 Info (12128): Elaborating entity "FSM_clock" for hierarchy "Datapath:U0_DP|FSM_clock:FSM"
 Warning (10230): Verilog HDL assignment warning at FSM_clock.v(31): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at FSM_clock.v(32): truncated value with size 32 to match size of target (1)
@@ -638,6 +620,7 @@ Info (10041): Inferred latch for "out[2]" at Mux4x1_4bits.v(39)
 Info (10041): Inferred latch for "out[3]" at Mux4x1_4bits.v(39)
 Info (12128): Elaborating entity "Counter_time" for hierarchy "Datapath:U0_DP|Counter_time:CT"
 Info (12128): Elaborating entity "Counter_round" for hierarchy "Datapath:U0_DP|Counter_round:CR"
+Info (12128): Elaborating entity "Counter_user" for hierarchy "Datapath:U0_DP|Counter_user:C_USER"
 Info (12128): Elaborating entity "Counter_FPGA" for hierarchy "Datapath:U0_DP|Counter_FPGA:CFPGA"
 Warning (10646): Verilog HDL Event Control warning at Counter_FPGA.v(31): posedge or negedge of vector "data" depends solely on its least-significant bit
 Critical Warning (10237): Verilog HDL warning at Counter_FPGA.v(50): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead
@@ -650,7 +633,6 @@ Info (12128): Elaborating entity "SEQ4" for hierarchy "Datapath:U0_DP|SEQ4:S4"
 Info (12128): Elaborating entity "ButtonSync" for hierarchy "Datapath:U0_DP|ButtonSync:BTN"
 Info (12128): Elaborating entity "Logica" for hierarchy "Datapath:U0_DP|Logica:LG"
 Warning (10034): Output port "points" at Logica.v(35) has no driver
-Warning (12158): Entity "Logica" contains only dangling pins
 Info (12128): Elaborating entity "Reg_setup" for hierarchy "Datapath:U0_DP|Reg_setup:R_SETUP"
 Warning (10235): Verilog HDL Always Construct warning at Reg_setup.v(45): variable "sw" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10240): Verilog HDL Always Construct warning at Reg_setup.v(36): inferring latch(es) for variable "setup", which holds its previous value in one or more paths through the always construct
@@ -820,13 +802,13 @@ Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[6] has unsafe beha
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
+Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[2] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
-Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledr[0]" is stuck at GND
@@ -839,13 +821,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ledr[7]" is stuck at GND
     Warning (13410): Pin "ledr[8]" is stuck at GND
     Warning (13410): Pin "ledr[9]" is stuck at GND
-    Warning (13410): Pin "hex0[0]" is stuck at GND
-    Warning (13410): Pin "hex0[1]" is stuck at GND
-    Warning (13410): Pin "hex0[2]" is stuck at GND
-    Warning (13410): Pin "hex0[3]" is stuck at GND
-    Warning (13410): Pin "hex0[4]" is stuck at GND
-    Warning (13410): Pin "hex0[5]" is stuck at GND
-    Warning (13410): Pin "hex0[6]" is stuck at VCC
     Warning (13410): Pin "hex1[2]" is stuck at GND
     Warning (13410): Pin "hex1[5]" is stuck at GND
     Warning (13410): Pin "hex1[6]" is stuck at VCC
@@ -855,24 +830,20 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "hex5[1]" is stuck at VCC
     Warning (13410): Pin "hex5[5]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw[6]"
     Warning (15610): No output dependent on input pin "sw[7]"
-    Warning (15610): No output dependent on input pin "key[3]"
-    Warning (15610): No output dependent on input pin "key[2]"
-    Warning (15610): No output dependent on input pin "key[1]"
-    Warning (15610): No output dependent on input pin "key[0]"
-Info (21057): Implemented 117 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 163 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 50 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 79 warnings
+    Info (21061): Implemented 96 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 66 warnings
     Info: Peak virtual memory: 4658 megabytes
-    Info: Processing ended: Tue Jun 25 14:53:14 2024
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Tue Jun 25 15:22:17 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:00
 
 

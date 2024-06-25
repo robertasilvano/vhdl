@@ -43,6 +43,8 @@ module Datapath(
 	//	10. rever as igualdades com o tamanho de cada parametro
 	//	11. ver como iniciar parametros que só são atualizados em if's
 	// 12. rever todas as ligações
+	// 13. ver variaveis que não estao sendo utilizadas (por exemplo clk)
+	// 14. rever parametro 'total' que é interno
 
 	//localparams
 	localparam p_key = 4;
@@ -117,6 +119,17 @@ module Datapath(
 		.tc(win),
 		.round(round)
 	);
+	
+	//COUNTER USER
+	assign nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3]; // todo confirmar ???? são essas entradas mesmo? ver com o prof
+	assign e2_and_ntnb = e2 & nbtn_or; // todo confirmar
+	Counter_user C_USER (
+		.clk(clock_50),
+		.R(r2),
+		.E(e2_and_ntnb),
+		.data(round),
+		.tc(end_user)
+	); // todo ver com o prof pq tem um parametro de saida 'SEQUSER' que não é utilizada
 	
 	//COUNTER FPGA
 	wire[3:0] seqFPGA_in, seqFPGA_out; //TODO
@@ -205,9 +218,6 @@ module Datapath(
 	
 	//REG USER
 	wire [63:0] out_user; // TODO
-	assign nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3]; // todo confirmar ???? são essas entradas mesmo? ver com o prof
-	assign e2_and_ntnb = e2 & nbtn_or; // todo confirmar
-	
 	Reg_user R_USER (
 		.clk(clock_50),
 		.R(r2),
