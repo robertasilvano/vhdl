@@ -84,17 +84,6 @@ module Datapath(
 		.round(round)
 	);
 	
-	//FSM_clock
-	wire c025Hz, c05Hz, c1Hz, c2Hz;
-	FSM_clock FSM (
-		.reset(r1),
-		.clock_50(clock_50),
-		.c025Hz(c025Hz),
-		.c05Hz(c05Hz),
-		.c1Hz(c1Hz),
-		.c2Hz(c2Hz)
-	);
-	
 	//HEX5
 	wire [6:0] w_mux0_mux1;
 	
@@ -215,6 +204,28 @@ module Datapath(
 		.ent0(w_dec4_mux9), //1
 		.ent1(w_dec3_mux9), //0 
 		.out(hex0)
+	);
+	
+		
+	//FSM_clock
+	wire c025Hz, c05Hz, c1Hz, c2Hz;
+	wire clkhz;
+	FSM_clock FSM (
+		.reset(r1),
+		.clock_50(clock_50),
+		.c025Hz(c025Hz),
+		.c05Hz(c05Hz),
+		.c1Hz(c1Hz),
+		.c2Hz(c2Hz)
+	);
+	
+	Mux4x1_4bits MUX10 (  //TODO ver com o prof. aqui ta clock 0.5 ate 3, e não de 0.25 até 2.
+		.sel(setup[7:6]),
+		.ent0(c025Hz),
+		.ent1(c05Hz),
+		.ent2(c1Hz),
+		.ent3(c2Hz),
+		.out(clkhz)
 	);
 
 endmodule
