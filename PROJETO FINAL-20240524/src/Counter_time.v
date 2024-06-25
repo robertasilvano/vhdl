@@ -1,20 +1,31 @@
 module Counter_time(
-clkt,
-R,
-E,
-tempo,
-end_time
+	
+	//entrada de dados
+	clkt,
+	R,
+	E,
+	
+	//saida de dados
+	tempo,
+	
+	//saida de status
+	end_time
 );
 
 	//localparams
 	localparam p_tempo = 4;
 
-	input wire 						clkt;
-	input wire 						R;
-	input wire 						E;
-	output reg [p_tempo - 1:0] tempo;
-	output reg 						end_time;
+	// Input Port(s)
+	input wire 						clkt;  //sinal de clock para sincronização
+	input wire 						R;  //sinal de reset
+	input wire 						E;  //habilita a contagem
 	
+	// Output Port(s)
+	output reg [p_tempo - 1:0] tempo;  //representa o valor atual do contador
+	output reg 						end_time;  //indica quando o contador chega a 9
+	
+	
+	// Lógica
 	always @(posedge clkt or posedge R)
 	begin
 		if (R == 1'b1)
@@ -31,7 +42,7 @@ end_time
 						if (tempo == 4'b1001)
 							begin
 								tempo <= 4'b0000;
-								end_time <= 1'b0;
+								end_time <= 1'b1;
 							end
 					end
 			end
