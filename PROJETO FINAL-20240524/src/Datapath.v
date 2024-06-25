@@ -50,7 +50,7 @@ module Datapath(
 	localparam p_key = 4;
 	localparam p_switch = 8;
 	localparam p_hex = 7;
-	localparam p_leds = 4;
+	localparam p_leds = 8;
 
 	// Input Port(s)
 	input 								clock_50;  // aqui tem wire?
@@ -71,16 +71,46 @@ module Datapath(
 	output wire [p_hex - 1:0]		hex3;
 	output wire [p_hex - 1:0]		hex4;
 	output wire [p_hex - 1:0]		hex5;
-	output wire [p_leds - 1:0]		leds;
+	output wire [p_leds - 1:0]		leds = {out_fpga[63:60], key[3:0]};
 	output wire 						end_fpga;
 	output wire 						end_user;
 	output wire 						end_time;
 	output wire 						win;
 	output wire 						match;
 	
-	//FSM_clock
+	// Sinais internos
 	wire c025Hz, c05Hz, c1Hz, c2Hz;
 	wire clkhz;
+	wire [3:0] w_tempo;
+	wire [3:0] round; //TODO
+	wire[3:0] seqFPGA_in, seqFPGA_out; //TODO
+	wire[3:0] seq1, seq2, seq3, seq4;
+	wire [3:0] nbtn; // TODO confirmar tudo. clock é o clock 50? precisa de todos os botões? precisa do not (visto que já tem dentro do módulo?)
+	wire [7:0] points;
+	wire [7:0] setup; //TODO
+	wire [63:0] out_fpga; //TODO
+	wire [63:0] out_user; // TODO
+	wire [6:0] w_mux0_mux1;
+	wire [6:0] w_dec0_mux3;
+	wire [6:0] w_mux2_mux3;
+	wire [6:0] w_mux4_mux5;
+	wire [6:0] w_dec1_mux7;
+	wire [6:0] w_mux6_mux7;
+	wire [6:0] w_dec2_mux8;
+	wire [6:0] w_dec3_mux9;
+	wire [6:0] w_dec4_mux9;
+	
+	// Portas lógicas
+	assign nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3]; // todo confirmar ???? são essas entradas mesmo? ver com o prof
+	assign e2_and_ntnb = e2 & nbtn_or; // todo confirmar
+	assign comp = out_fpga == out_user;
+	assign match = comp & end_user;
+	
+	
+	/*   MÓDULOS   *******************************************************************************************************************************************/
+	
+	
+	/*   FSM CLOCK   */
 	FSM_clock FSM (
 		.reset(r1),
 		.clock_50(clock_50),
@@ -99,8 +129,42 @@ module Datapath(
 		.out(clkhz)
 	);
 	
-	//COUNTER TIME
-	wire [3:0] w_tempo;
+	
+	/*   BUTTON SYNC   */
+	ButtonSync BTN(
+		.CLK(clock_50),
+		.KEY0(key[0]),
+		.KEY1(key[1]),
+		.KEY2(key[2]),
+		.KEY3(key[3]),
+		.BTN0(nbtn[0]),
+		.BTN1(nbtn[1]),
+		.BTN2(nbtn[2]),
+		.BTN3(nbtn[3]),
+	);
+	
+	
+	/*   REG USER   */
+	Reg_user R_USER (
+		.clk(clock_50),
+		.R(r2),
+		.E(e2_and_ntnb),
+		.data({nbtn, out_user[63:4]}),
+		.q(out_user)
+	);
+	
+	
+	/*   REG SETUP   */
+	Reg_setup R_SETUP (
+		.clk(clock_50),
+		.R(r1),
+		.E(e1),
+		.sw(switch),
+		.setup(setup)
+	);
+	
+	
+	/*   COUNTER TIME   */
 	Counter_time CT (
 		.clkt(clock_50),
 		.R(r2),
@@ -109,8 +173,8 @@ module Datapath(
 		.end_time(end_time)
 	);
 	
-	//COUNTER ROUND
-	wire [3:0] round; //TODO
+	
+	/*   COUNTER ROUND   */
 	Counter_round CR (
 		.clk(clock_50),
 		.R(r1),
@@ -120,9 +184,8 @@ module Datapath(
 		.round(round)
 	);
 	
-	//COUNTER USER
-	assign nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3]; // todo confirmar ???? são essas entradas mesmo? ver com o prof
-	assign e2_and_ntnb = e2 & nbtn_or; // todo confirmar
+	
+	/*   COUNTER USER   */
 	Counter_user C_USER (
 		.clk(clock_50),
 		.R(r2),
@@ -131,9 +194,8 @@ module Datapath(
 		.tc(end_user)
 	); // todo ver com o prof pq tem um parametro de saida 'SEQUSER' que não é utilizada
 	
-	//COUNTER FPGA
-	wire[3:0] seqFPGA_in, seqFPGA_out; //TODO
-	wire[3:0] seq1, seq2, seq3, seq4;
+	
+	/*   COUNTER FPGA   */
 	Counter_FPGA CFPGA (
 		.clk(clkhz),
 		.R(r2),
@@ -172,46 +234,8 @@ module Datapath(
 		.out(seqFPGA_out)
 	);
 	
-	//BUTTON SYNC
-	wire [3:0] nbtn; // TODO confirmar tudo. clock é o clock 50? precisa de todos os botões? precisa do not (visto que já tem dentro do módulo?)
-	ButtonSync BTN(
-		.CLK(clock_50),
-		.KEY0(key[0]),
-		.KEY1(key[1]),
-		.KEY2(key[2]),
-		.KEY3(key[3]),
-		.BTN0(nbtn[0]),
-		.BTN1(nbtn[1]),
-		.BTN2(nbtn[2]),
-		.BTN3(nbtn[3]),
-	);
 	
-	//LOGICA
-	wire [7:0] points;
-	Logica LG (
-		.round(round),
-		.reg_setup_level(setup[7:6]), //setup[7:6] = level
-		.reg_setup_mapa(setup[5:4]), //setup[5:4] = mapa
-		.points(points)
-	);
-	
-	//COMP
-	assign comp = out_fpga == out_user;
-	assign match = comp & end_user;
-	
-	//REG SETUP
-	wire [7:0] setup; //TODO
-	Reg_setup R_SETUP (
-		.clk(clock_50),
-		.R(r1),
-		.E(e1),
-		.sw(switch),
-		.setup(setup)
-	);
-	
-	
-	//REG FPGA
-	wire [63:0] out_fpga; //TODO
+	/*   REG FPGA   */
 	Reg_fgpa R_FPGA (
 		.clk(clkhz),
 		.R(r2),
@@ -220,19 +244,17 @@ module Datapath(
 		.q(out_fpga)
 	);
 	
-	//REG USER
-	wire [63:0] out_user; // TODO
-	Reg_user R_USER (
-		.clk(clock_50),
-		.R(r2),
-		.E(e2_and_ntnb),
-		.data({nbtn, out_user[63:4]}),
-		.q(out_user)
+	
+	/*   LOGICA   */
+	Logica LG (
+		.round(round),
+		.reg_setup_level(setup[7:6]), //setup[7:6] = level
+		.reg_setup_mapa(setup[5:4]), //setup[5:4] = mapa
+		.points(points)
 	);
 	
-	//HEX5
-	wire [6:0] w_mux0_mux1;
 	
+	/*   HEX5   */
 	Mux2x1_7bits MUX0 (
 		.sel(win),
 		.ent0(7'b1011_011),  // 1 - U
@@ -248,10 +270,7 @@ module Datapath(
 	);
 	
 	
-	//HEX4
-	wire [6:0] w_dec0_mux3;
-	wire [6:0] w_mux2_mux3;
-	
+	/*   HEX4   */
 	Dec7seg DEC0 (
 		.G({2'b00, setup[7:6]}), //setup[7:6] = level
 		.O(w_dec0_mux3)
@@ -272,9 +291,7 @@ module Datapath(
 	);
 	
 	
-	//HEX3
-	wire [6:0] w_mux4_mux5;
-	
+	/*   HEX3   */
 	Mux2x1_7bits MUX4 (
 		.sel(win),
 		.ent0(7'b1001_111), //1 - E
@@ -290,10 +307,7 @@ module Datapath(
 	);
 	
 	
-	//HEX2
-	wire [6:0] w_dec1_mux7;
-	wire [6:0] w_mux6_mux7;
-	
+	/*   HEX2   */
 	Dec7seg DEC1 (
 		.G(w_tempo), // TODO
 		.O(w_dec1_mux7)
@@ -314,9 +328,7 @@ module Datapath(
 	);
 	
 	
-	//HEX1
-	wire [6:0] w_dec2_mux8;
-	
+	/*   HEX1   */
 	Dec7seg DEC2 (
 		.G(points[7:4]),
 		.O(w_dec2_mux8)
@@ -330,10 +342,7 @@ module Datapath(
 	);
 	
 	
-	//HEX0
-	wire [6:0] w_dec3_mux9;
-	wire [6:0] w_dec4_mux9;
-	
+	/*   HEX0   */
 	Dec7seg DEC3 (
 		.G(round),
 		.O(w_dec3_mux9)

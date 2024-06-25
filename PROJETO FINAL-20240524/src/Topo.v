@@ -28,7 +28,7 @@ module Topo(
 	//localparams
 	localparam p_key	= 4;
 	localparam p_sw	= 10;
-	localparam p_ledr = 10;
+	localparam p_ledr = 8;
 	localparam p_hex 	= 7;
 	
 	// Input Port(s)
@@ -71,7 +71,7 @@ module Topo(
 		.hex3(hex3),		
 		.hex4(hex4),		
 		.hex5(hex5),		
-		.leds(),	// TODO
+		.leds(ledr),
 		
 		// saida de status
 		.end_fpga(w_end_fpga),
