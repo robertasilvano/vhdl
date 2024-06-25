@@ -95,7 +95,6 @@ module Datapath(
 	);
 	
 	//COUNTER ROUND
-	wire [7:0] setup; //TODO
 	wire [3:0] round; //TODO
 	Counter_round CR (
 		.clk(clock_50),
@@ -145,6 +144,16 @@ module Datapath(
 		.ent2(seq3),
 		.ent3(seq4),
 		.out(seqFPGA_out)
+	);
+	
+	//REGs
+	wire [7:0] setup; //TODO
+	Reg_setup R_SETUP (
+		.clk(clock_50),
+		.R(r1),
+		.E(e1),
+		.sw(switch),
+		.setup(setup)
 	);
 	
 	//HEX5

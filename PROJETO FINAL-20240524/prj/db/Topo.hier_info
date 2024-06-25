@@ -69,22 +69,22 @@ hex5[6] << Datapath:U0_DP.hex5
 
 
 |Topo|Datapath:U0_DP
-clock_50 => clock_50.IN3
+clock_50 => clock_50.IN4
 key[0] => ~NO_FANOUT~
 key[1] => ~NO_FANOUT~
 key[2] => ~NO_FANOUT~
 key[3] => ~NO_FANOUT~
-switch[0] => ~NO_FANOUT~
-switch[1] => ~NO_FANOUT~
-switch[2] => ~NO_FANOUT~
-switch[3] => ~NO_FANOUT~
-switch[4] => ~NO_FANOUT~
-switch[5] => ~NO_FANOUT~
-switch[6] => ~NO_FANOUT~
-switch[7] => ~NO_FANOUT~
-r1 => r1.IN2
+switch[0] => switch[0].IN1
+switch[1] => switch[1].IN1
+switch[2] => switch[2].IN1
+switch[3] => switch[3].IN1
+switch[4] => switch[4].IN1
+switch[5] => switch[5].IN1
+switch[6] => switch[6].IN1
+switch[7] => switch[7].IN1
+r1 => r1.IN3
 r2 => r2.IN2
-e1 => ~NO_FANOUT~
+e1 => e1.IN1
 e2 => e2.IN1
 e3 => e3.IN1
 e4 => e4.IN1
@@ -324,6 +324,36 @@ out[0] <= out[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[1] <= out[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[2] <= out[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= out[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Topo|Datapath:U0_DP|Reg_setup:R_SETUP
+clk => ~NO_FANOUT~
+R => setup[7].IN0
+E => setup[0].OUTPUTSELECT
+E => setup[1].OUTPUTSELECT
+E => setup[2].OUTPUTSELECT
+E => setup[3].OUTPUTSELECT
+E => setup[4].OUTPUTSELECT
+E => setup[5].OUTPUTSELECT
+E => setup[6].OUTPUTSELECT
+E => setup[7].OUTPUTSELECT
+E => setup[7].IN1
+sw[0] => setup[0].DATAB
+sw[1] => setup[1].DATAB
+sw[2] => setup[2].DATAB
+sw[3] => setup[3].DATAB
+sw[4] => setup[4].DATAB
+sw[5] => setup[5].DATAB
+sw[6] => setup[6].DATAB
+sw[7] => setup[7].DATAB
+setup[0] <= setup[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+setup[1] <= setup[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+setup[2] <= setup[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+setup[3] <= setup[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+setup[4] <= setup[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+setup[5] <= setup[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+setup[6] <= setup[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+setup[7] <= setup[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX0

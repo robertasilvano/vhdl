@@ -1,3 +1,14 @@
+/*
+Registrador de 2 bits que guarda o nível de jogo escolhido no estado Setup.
+Entradas:
+	- clk (wire - 1): clock
+	- R (wire - 1): reset
+	- E (wire - 1): enable
+	- sw (wire - 8): switches
+Saídas:
+	- setup (reg - 8: guarda o valor do switches
+*/
+
 module Reg_setup(
 	//entrada de dados
 	clk,
@@ -20,5 +31,18 @@ module Reg_setup(
 	input wire [p_sw - 1:0] 	sw;
 	
 	// Output Port(s)
-	output wire [p_setup - 1:0] setup; //wire ou reg?
+	output reg [p_setup - 1:0] setup;
+	
+	always @ (E or R)
+		begin
+			if (R == 1'b1)
+				begin
+					setup <= 8'b0;  // TODO ver com o prof. o registrador não é de 2 bits? pq tamanho 8?
+				end
+			
+			if (E)
+				begin
+					setup <= sw;
+				end
+		end
 endmodule
