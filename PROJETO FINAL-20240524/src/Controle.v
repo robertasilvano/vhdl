@@ -20,8 +20,6 @@ module Controle(
 	e4,
 	sel
 );
-
-	//TODO: NÃO ENTENDI A TABELA 4 DO ARQUIVO "Top.pdf". REVER.
 	
 	// Input Port(s)
 	input wire		clock;  //aqui tem wire?
