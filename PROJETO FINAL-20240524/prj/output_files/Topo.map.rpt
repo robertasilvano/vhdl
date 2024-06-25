@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Topo
-Tue Jun 25 13:43:24 2024
+Tue Jun 25 14:03:10 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -26,7 +26,7 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  18. Port Connectivity Checks: "Datapath:U0_DP|Dec7seg:DEC0"
  19. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX1"
  20. Port Connectivity Checks: "Datapath:U0_DP|Mux2x1_7bits:MUX0"
- 21. Port Connectivity Checks: "Datapath:U0_DP|Mux4x1_4bits:MUX11"
+ 21. Port Connectivity Checks: "Datapath:U0_DP|Reg_fgpa:R_FPGA"
  22. Port Connectivity Checks: "Datapath:U0_DP|Mux4x1_4bits:MUX10"
  23. Port Connectivity Checks: "Datapath:U0_DP"
  24. Elapsed Time Per Partition
@@ -56,7 +56,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jun 25 13:43:24 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 25 14:03:10 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -184,6 +184,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ../src/Mux2x1_7bits.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Mux2x1_7bits.v  ;         ;
 ; ../src/Dec7seg.v                 ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Dec7seg.v       ;         ;
 ; ../src/Reg_setup.v               ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Reg_setup.v     ;         ;
+; ../src/Reg_fpga.v                ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Reg_fpga.v      ;         ;
 ; ../src/Counter_time.v            ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_time.v  ;         ;
 ; ../src/Counter_round.v           ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/Counter_round.v ;         ;
 ; ../src/FSM_clock.v               ; yes             ; User Verilog HDL File  ; C:/Users/rober/Desktop/UFSC241/VHDL/PROJETOS/vhdl/PROJETO FINAL-20240524/src/FSM_clock.v     ;         ;
@@ -422,13 +423,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------+-------+----------+------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Datapath:U0_DP|Mux4x1_4bits:MUX11"                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:U0_DP|Reg_fgpa:R_FPGA"                                                                             ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; q[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; q3      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -468,7 +470,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 25 13:43:24 2024
+    Info: Processing started: Tue Jun 25 14:03:09 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off genius_prj -c Topo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /users/rober/desktop/ufsc241/vhdl/projetos/vhdl/projeto final-20240524/src/mux4x1_1bit.v
@@ -514,9 +516,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12127): Elaborating entity "Topo" for the top level hierarchy
 Warning (10034): Output port "ledr" at Topo.v(40) has no driver
 Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:U0_DP"
-Warning (10034): Output port "leds" at Datapath.v(59) has no driver
-Warning (10034): Output port "end_user" at Datapath.v(61) has no driver
-Warning (10034): Output port "match" at Datapath.v(64) has no driver
+Warning (10034): Output port "leds" at Datapath.v(71) has no driver
+Warning (10034): Output port "end_user" at Datapath.v(73) has no driver
+Warning (10034): Output port "match" at Datapath.v(76) has no driver
 Info (12128): Elaborating entity "FSM_clock" for hierarchy "Datapath:U0_DP|FSM_clock:FSM"
 Warning (10230): Verilog HDL assignment warning at FSM_clock.v(31): truncated value with size 32 to match size of target (1)
 Warning (10230): Verilog HDL assignment warning at FSM_clock.v(32): truncated value with size 32 to match size of target (1)
@@ -558,6 +560,80 @@ Info (10041): Inferred latch for "setup[4]" at Reg_setup.v(36)
 Info (10041): Inferred latch for "setup[5]" at Reg_setup.v(36)
 Info (10041): Inferred latch for "setup[6]" at Reg_setup.v(36)
 Info (10041): Inferred latch for "setup[7]" at Reg_setup.v(36)
+Info (12128): Elaborating entity "Reg_fgpa" for hierarchy "Datapath:U0_DP|Reg_fgpa:R_FPGA"
+Warning (10235): Verilog HDL Always Construct warning at Reg_fpga.v(45): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Reg_fpga.v(46): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Reg_fpga.v(46): truncated value with size 5 to match size of target (4)
+Warning (10240): Verilog HDL Always Construct warning at Reg_fpga.v(41): inferring latch(es) for variable "q", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Reg_fpga.v(41): inferring latch(es) for variable "q3", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "q3[0]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q3[1]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q3[2]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q3[3]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[0]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[1]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[2]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[3]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[4]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[5]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[6]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[7]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[8]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[9]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[10]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[11]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[12]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[13]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[14]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[15]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[16]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[17]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[18]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[19]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[20]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[21]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[22]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[23]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[24]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[25]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[26]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[27]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[28]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[29]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[30]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[31]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[32]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[33]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[34]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[35]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[36]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[37]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[38]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[39]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[40]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[41]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[42]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[43]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[44]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[45]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[46]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[47]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[48]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[49]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[50]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[51]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[52]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[53]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[54]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[55]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[56]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[57]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[58]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[59]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[60]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[61]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[62]" at Reg_fpga.v(41)
+Info (10041): Inferred latch for "q[63]" at Reg_fpga.v(41)
 Info (12128): Elaborating entity "Mux2x1_7bits" for hierarchy "Datapath:U0_DP|Mux2x1_7bits:MUX0"
 Warning (10240): Verilog HDL Always Construct warning at Mux2x1_7bits.v(32): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
 Info (10041): Inferred latch for "out[0]" at Mux2x1_7bits.v(32)
@@ -570,7 +646,7 @@ Info (10041): Inferred latch for "out[6]" at Mux2x1_7bits.v(32)
 Info (12128): Elaborating entity "Dec7seg" for hierarchy "Datapath:U0_DP|Dec7seg:DEC0"
 Info (12128): Elaborating entity "Controle" for hierarchy "Controle:U1_FSM"
 Warning (10235): Verilog HDL Always Construct warning at Controle.v(66): variable "enter" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[6] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal Controle:U1_FSM|state.setup
 Warning (13012): Latch Datapath:U0_DP|Reg_setup:R_SETUP|setup[7] has unsafe behavior
@@ -624,10 +700,10 @@ Info (21057): Implemented 117 device resources after synthesis - the final resou
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
     Info (21061): Implemented 50 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 67 warnings
-    Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Tue Jun 25 13:43:24 2024
-    Info: Elapsed time: 00:00:00
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 72 warnings
+    Info: Peak virtual memory: 4623 megabytes
+    Info: Processing ended: Tue Jun 25 14:03:10 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

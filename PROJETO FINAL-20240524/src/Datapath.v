@@ -30,6 +30,18 @@ module Datapath(
 	win,
 	match
 );
+	//TODOs:
+	//	1. documentar tudo no inicio de cada módulo
+	//	2. add comentários do que é cada parametro
+	//	3. rever tamanho de cada parametro
+	//	4. rever a lógica de todos os módulos
+	//	5. rever a lista de sensibilidade de todos os módulos
+	//	6. rever o que é reg e wire
+	//	7. rever todos os comentários
+	//	8. ver se na definição dos clock_50 tem wire
+	// 9. ajustar a identação de tudo
+	//	10. rever as igualdades com o tamanho de cada parametro
+	//	11. ver como iniciar parametros que só são atualizados em if's
 
 	//localparams
 	localparam p_key = 4;
@@ -154,6 +166,15 @@ module Datapath(
 		.E(e1),
 		.sw(switch),
 		.setup(setup)
+	);
+	
+	wire [63:0] out_fpga; //TODO
+	Reg_fgpa R_FPGA (
+		.clk(clkhz),
+		.R(r2),
+		.E(e3),
+		.data({seqFPGA_out, out_fpga[63:4]}),
+		.q(out_fpga)
 	);
 	
 	//HEX5

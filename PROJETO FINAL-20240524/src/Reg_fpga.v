@@ -1,3 +1,16 @@
+/*
+Registrador de 64 bits que guarda e monta uma sequência correta na rodada.
+Entradas:
+	- clk (wire - 1): clock
+	- R (wire - 1): reset
+	- E (wire - 1): enable
+	- data (wire - 64): entrada de dados
+Saídas:
+	- q (reg - 64): guarda a sequência completa de 64 bits
+	- q3 (reg - 4): guarda os 4 bits mais significativos da sequência
+*/
+
+
 module Reg_fgpa(
 	//entrada de dados
 	clk,
@@ -22,6 +35,15 @@ module Reg_fgpa(
 	input wire [p_data - 1:0] 	data;
 	
 	// Output Port(s)
-	output wire [p_q - 1:0]		q;  //wire ou reg?
-	output wire [p_q3 - 1:0] 	q3;  //wire ou reg?
+	output reg [p_q - 1:0]		q;
+	output reg [p_q3 - 1:0] 	q3; // todo ver com o prof. não ta no diagrama.
+	
+	always @ (E) //todo confirmar
+		begin
+			if (E == 1'b1) //todo confirmar
+				begin
+					q <= data;
+					q3 <= data[63:59]; //todo confirmar
+				end
+		end
 endmodule

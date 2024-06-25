@@ -1,5 +1,5 @@
 Flow report for Topo
-Tue Jun 25 13:43:24 2024
+Tue Jun 25 14:03:10 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 25 13:43:24 2024      ;
+; Flow Status                        ; Successful - Tue Jun 25 14:03:10 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Topo                                       ;
 ; Top-level Entity Name              ; Topo                                       ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/25/2024 13:43:24 ;
+; Start date & time ; 06/25/2024 14:03:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Topo                ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                         ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+-------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 5218842033209.171933380422568 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 5218842033209.171933498921672 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                          ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)        ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                            ; --            ; --          ; --             ;
@@ -92,8 +92,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:00     ; 1.0                     ; 4611 MB             ; 00:00:00                           ;
-; Total                ; 00:00:00     ; --                      ; --                  ; 00:00:00                           ;
+; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 4612 MB             ; 00:00:00                           ;
+; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:00                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
