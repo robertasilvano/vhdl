@@ -118,13 +118,13 @@ module Datapath(
 	output wire 						match;
 	
 	// Sinais internos
-	wire c025Hz, c05Hz, c1Hz, c2Hz;
+	wire c025hz, c05hz, c1hz, c2hz;
 	wire clkhz;
 	wire [3:0] w_tempo;
 	wire [3:0] round;
 	wire[3:0] seqFPGA_in, seqFPGA_out;
 	wire[3:0] seq1, seq2, seq3, seq4;
-	wire [3:0] nbtn; // TODO confirmar tudo. clock é o clock 50? precisa de todos os botões? precisa do not (visto que já tem dentro do módulo?)
+	wire [3:0] nbtn;
 	wire [7:0] points;
 	wire [7:0] setup;
 	wire [63:0] out_fpga;
@@ -141,10 +141,9 @@ module Datapath(
 	wire [6:0] w_dec4_mux9;
 	
 	// Portas lógicas
-	assign nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3]; // todo confirmar ???? são essas entradas mesmo? ver com o prof
-	assign e2_and_ntnb = e2 & nbtn_or; // todo confirmar
-	assign comp = out_fpga == out_user;
-	assign match = comp & end_user;
+	wire nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3];
+	wire e2_and_ntnb = e2 & nbtn_or;
+	assign match = (out_fpga == out_user) & end_user? 1'b1:1'b0;
 	
 	
 	/*   MÓDULOS   *******************************************************************************************************************************************/
@@ -154,18 +153,18 @@ module Datapath(
 	FSM_clock FSM (
 		.reset(r1),
 		.clock_50(clock_50),
-		.c025Hz(c025Hz),
-		.c05Hz(c05Hz),
-		.c1Hz(c1Hz),
-		.c2Hz(c2Hz)
+		.c025hz(c025hz),
+		.c05hz(c05hz),
+		.c1hz(c1hz),
+		.c2hz(c2hz)
 	);
 	
 	Mux4x1_4bits MUX10 (
 		.sel(setup[7:6]), //setup[7:6] = level
-		.ent0(c025Hz),
-		.ent1(c05Hz),
-		.ent2(c1Hz),
-		.ent3(c2Hz),
+		.ent0(c025hz),
+		.ent1(c05hz),
+		.ent2(c1hz),
+		.ent3(c2hz),
 		.out(clkhz)
 	);
 	
@@ -282,7 +281,7 @@ module Datapath(
 		.E(e3),
 		.data({seqFPGA_out, out_fpga[63:4]}),
 		.q(out_fpga),
-		.q3(out_fpga_significativos)
+		.q3()//out_fpga_significativos
 	);
 	
 	

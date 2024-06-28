@@ -40,7 +40,7 @@ module Counter_FPGA(
 	// Sinais internos
 	reg [p_total - 1:0] total; //armazena o valor atual do contador. o máximo é 1111 (15)
 	
-	always @(posedge clk or posedge R or posedge E or posedge total or posedge data)  //não precisa do posedge?
+	always @(posedge clk or posedge R)
 	begin
 		if (R == 1'b1)
 			begin
