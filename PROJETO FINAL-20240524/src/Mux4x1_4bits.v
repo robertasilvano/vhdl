@@ -45,7 +45,7 @@ module Mux4x1_4bits(
 		
 	always @(ent0 or ent1 or ent2 or ent3 or sel)
 	begin
-		if (sel == 0) out <= ent0;  // = ou <=? ver com o prof
+		if (sel == 0) out <= ent0;
 		else if (sel == 1) out <= ent1;
 		else if (sel == 2) out <= ent2;
 		else if (sel == 3) out <= ent3;

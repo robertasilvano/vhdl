@@ -69,21 +69,6 @@ module Datapath(
 	// 13. ver variaveis que não estao sendo utilizadas (por exemplo clk)
 	//	14. O que é a variavel setup? entendi que setup[7:6] = level, setup[5:4] = mapa, mas e setup[3:0]?
 	// 15. adicionar comentários aqui no datapath sobre o que é cada variavel nos módulos
-	//	16. ver como atribuir os valores do FSM_clock
-	
-	//DÚVIDAS PROF
-	// 1. Li o README, mas ainda estou em dúvida de qual decseq equivale a qual seq. Seria DecSeq10 = SEQ1, DecSeq00 = SEQ2, DecSeq01 = SEQ3, DecSeq11 = SEQ4?
-	// 2. Ainda não entendi o que é pra fazer com a saida q3 do REG_FPGA. É pra passar ela pro módulo de controle? Se sim, o que fazer com ele lá? Não ficou claro.
-	// 3. O módulo Lógica não encontrei na pasta src do moodle. Ainda vai ser atualizado?
-	// 4. Estou meio perdida sobre a questão de máquinas de estados. O que precisa fazer?
-	//	5. Como fazer as portas or e and do módulo REG_User? Seria isso aqui? to tomando aviso de 'created implicit net' e não entendi muito bem.
-	//		- OR entre cada key? nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3];
-	//		- AND? e2_and_ntnb = e2 & nbtn_or;
-	//	6. E o módulo comp seria isso aqui? Também estou tomando 'created implicit net' e não entendi muito bem.
-	//		- assign comp = out_fpga == out_user;
-	
-	//DÚVIDAS AULA
-	//	1. buttonsync
 	
 	//localparams
 	localparam p_key = 4;

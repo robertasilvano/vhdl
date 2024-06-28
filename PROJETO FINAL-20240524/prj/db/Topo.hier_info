@@ -1112,22 +1112,22 @@ q3[3] <= q3[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topo|Datapath:U0_DP|Logica:LG
-round[0] => ~NO_FANOUT~
-round[1] => ~NO_FANOUT~
-round[2] => ~NO_FANOUT~
-round[3] => ~NO_FANOUT~
-reg_setup_level[0] => ~NO_FANOUT~
-reg_setup_level[1] => ~NO_FANOUT~
-reg_setup_mapa[0] => ~NO_FANOUT~
-reg_setup_mapa[1] => ~NO_FANOUT~
-points[0] <= <GND>
-points[1] <= <GND>
-points[2] <= <GND>
-points[3] <= <GND>
-points[4] <= <GND>
-points[5] <= <GND>
-points[6] <= <GND>
-points[7] <= <GND>
+round[0] => points[2].DATAIN
+round[1] => points[3].DATAIN
+round[2] => points[4].DATAIN
+round[3] => points[5].DATAIN
+reg_setup_level[0] => points[6].DATAIN
+reg_setup_level[1] => points[7].DATAIN
+reg_setup_mapa[0] => points[0].DATAIN
+reg_setup_mapa[1] => points[1].DATAIN
+points[0] <= reg_setup_mapa[0].DB_MAX_OUTPUT_PORT_TYPE
+points[1] <= reg_setup_mapa[1].DB_MAX_OUTPUT_PORT_TYPE
+points[2] <= round[0].DB_MAX_OUTPUT_PORT_TYPE
+points[3] <= round[1].DB_MAX_OUTPUT_PORT_TYPE
+points[4] <= round[2].DB_MAX_OUTPUT_PORT_TYPE
+points[5] <= round[3].DB_MAX_OUTPUT_PORT_TYPE
+points[6] <= reg_setup_level[0].DB_MAX_OUTPUT_PORT_TYPE
+points[7] <= reg_setup_level[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topo|Datapath:U0_DP|Mux2x1_7bits:MUX0

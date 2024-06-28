@@ -32,9 +32,6 @@ module Logica(
 	input wire [p_setup - 1:0] reg_setup_mapa;
 	
 	// Output Port(s)
-	output reg [p_points - 1:0] points;
-	
-	//todo fazer a lógica!!!!
-	
+	output wire [p_points - 1:0] points = {reg_setup_level, round, reg_setup_mapa};	
 	
 endmodule

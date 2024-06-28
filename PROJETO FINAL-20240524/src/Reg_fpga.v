@@ -38,12 +38,12 @@ module Reg_fgpa(
 	output reg [p_q - 1:0]		q;
 	output reg [p_q3 - 1:0] 	q3;
 	
-	always @ (E) //todo confirmar
+	always @ (E)
 		begin
-			if (E == 1'b1) //todo confirmar
+			if (E == 1'b1)
 				begin
 					q <= data;
-					q3 <= data[63:59]; //todo confirmar
+					q3 <= data[63:59];
 				end
 		end
 endmodule

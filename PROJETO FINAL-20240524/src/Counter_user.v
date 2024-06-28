@@ -39,19 +39,19 @@ module Counter_user(
 	
 	always @ (posedge R or posedge clk)
 		begin
-			if (R == 1'b1) //todo confirmar
+			if (R == 1'b1)
 				begin
-					total <= 4'b0; //todo confirmar
-					tc <= 1'b0; //todo confirmar
+					total <= 4'b0;
+					tc <= 1'b0;
 				end
 			else
 				begin
-					if (E == 1'b1) // todo confirmar
+					if (E == 1'b1)
 						begin
-							total <= total + 1'b1; //todo confirmar
+							total <= total + 1'b1;
 							if (total == data)
 								begin
-									tc <= 1'b1; //todo confirmar
+									tc <= 1'b1;
 									total <= 4'b0;
 								end
 						end
