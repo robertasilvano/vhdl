@@ -10,8 +10,6 @@ Entradas:
 	- ent3 	(wire - 7)	entrada 3
 Saídas:
 	- out 	(reg - 7)	saída escolhida
-
-
 */
 
 module Mux4x1_4bits(

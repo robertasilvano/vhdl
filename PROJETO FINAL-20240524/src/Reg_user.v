@@ -33,15 +33,15 @@ module Reg_user(
 	// Output Port(s)
 	output reg [p_q - 1:0]		q;
 	
-	always @(E or R) //TODO confirmar
+	always @(E or R)
 		begin
-			if (E == 1'b1) // TODO confirmar
+			if (E == 1'b1)
 				begin
 					q <= data;
 				end
-			if (R == 1'b1) // TODO confirmar
+			if (R == 1'b1)
 				begin
-					q <= 64'b0; // TODO confirmar
+					q <= 64'b0;
 				end
 			// todo confirmar else?
 		end
