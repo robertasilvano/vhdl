@@ -59,7 +59,7 @@ module Counter_FPGA(
 							end
 					end
 			end
-		SEQFPGA <= total;
+		SEQFPGA = total;
 	end
 	
 endmodule

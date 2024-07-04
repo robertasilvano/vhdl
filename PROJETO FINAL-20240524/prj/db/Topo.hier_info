@@ -823,17 +823,6 @@ SEQFPGA[3] <= total[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topo|Datapath:U0_DP|SEQ1:S1
-address[0] => Decoder0.IN3
-address[1] => Decoder0.IN2
-address[2] => Decoder0.IN1
-address[3] => Decoder0.IN0
-output_reg[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-output_reg[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-output_reg[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-output_reg[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Topo|Datapath:U0_DP|SEQ2:S2
 address[0] => ~NO_FANOUT~
 address[1] => ~NO_FANOUT~
 address[2] => ~NO_FANOUT~
@@ -844,7 +833,7 @@ output_reg[2] <= <GND>
 output_reg[3] <= <GND>
 
 
-|Topo|Datapath:U0_DP|SEQ3:S3
+|Topo|Datapath:U0_DP|SEQ2:S2
 address[0] => Decoder0.IN2
 address[0] => Decoder1.IN3
 address[1] => Decoder0.IN1
@@ -856,6 +845,17 @@ output_reg[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
 output_reg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 output_reg[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 output_reg[3] <= output_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Topo|Datapath:U0_DP|SEQ3:S3
+address[0] => Decoder0.IN3
+address[1] => Decoder0.IN2
+address[2] => Decoder0.IN1
+address[3] => Decoder0.IN0
+output_reg[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+output_reg[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+output_reg[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+output_reg[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Topo|Datapath:U0_DP|SEQ4:S4
@@ -1032,14 +1032,14 @@ data[55] => q[55]$latch.DATAIN
 data[56] => q[56]$latch.DATAIN
 data[57] => q[57]$latch.DATAIN
 data[58] => q[58]$latch.DATAIN
-data[59] => q3[0]$latch.DATAIN
 data[59] => q[59]$latch.DATAIN
-data[60] => q3[1]$latch.DATAIN
+data[60] => q3[0]$latch.DATAIN
 data[60] => q[60]$latch.DATAIN
-data[61] => q3[2]$latch.DATAIN
+data[61] => q3[1]$latch.DATAIN
 data[61] => q[61]$latch.DATAIN
-data[62] => q3[3]$latch.DATAIN
+data[62] => q3[2]$latch.DATAIN
 data[62] => q[62]$latch.DATAIN
+data[63] => q3[3]$latch.DATAIN
 data[63] => q[63]$latch.DATAIN
 q[0] <= q[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= q[1]$latch.DB_MAX_OUTPUT_PORT_TYPE

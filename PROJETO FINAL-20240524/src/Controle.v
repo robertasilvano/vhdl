@@ -82,33 +82,87 @@ module Controle(
 		next_state = state;
 		case (state)
 			init:  //Define o proximo estado como setup.
+				/*
+				TODO: 
+					ativar os comandos de reset (R1 e R2)
+					HEX5 mostra L e HEX4 o level escolhido
+					HEX3 mostra t e HEX2 o tempo máximo de jogo
+					HEX1 mostra r e HEX0 o valor da rodada
+					passa para setup
+				*/
 				begin
 					next_state = setup;
 				end
 			setup:  //Passa para o estado Play FPGA se enter for ativado
+				/*
+				TODO 
+				o user deve escolher:
+					1 das 4 velocidades de jogo com os switches 9 e 8
+					1 das 4 sequências possiveis de jogo com os switches 7 e 6
+					Número máximo de iterações por sequência com os switches 5 e 2
+				As frequências para os quatro níveis de jogo serã 0.25Hz, 0.5Hz, 1Hz, 2Hz.
+				O nível de jogo será mostrado no HEX4
+				Damos inicio ao jogo ativando a entrada enter (SW[0]) e passando para o estado play_FPGA
+				*/
 				begin
 					if (enter == 1'b1) next_state = play_FPGA;
 				end
 			play_FPGA: //Passa para o estado Play User quando end FPGA é ativado
+				/*
+				TODO
+				É ativada a sequênia selecionada, que será mostrada nos LEDR[3:0] ???? não entendi
+				A sequência possui 16 linhas de atribuição de 4-bits
+				Um exemplo de sequência é o SEQ1.v
+				Na primeira rodada é apresentada uma linha da sequência, na segunda são apresentadas duas, e assim sucessivamente
+				O jogo passa pro proximo estado quando estiver ativo o end_fpga
+				*/
 				begin
 					if (end_fpga == 1'b1) next_state = play_user;
 				end
 			play_user:  //Passa para Result se o tempo acabar ou para Check se end User for ativado.
+				/*
+				TODO
+				O usuário deve indicar com os botões KEY a sequência mostrada no estado anterior
+				HEX2 mostrara uma contagem ascendente de 0 a 9 com frequência de 1Hz
+				Se o tempo acabar o sinal end_time é verdadeiro e o jogo passa para result
+				Se o user acabar de inserir sua sequencia antes de o tempo acabar, o sinal end_user é verdadeiro e o jogo passa para check
+				*/
 				begin
 					if (end_time == 1'b1) next_state = result;
 					else if (end_user == 1'b1) next_state = check;
 				end
 			check:  //Passa para Next Round se houve uma correspondencia ou para Result se não houve correspondencia.
+				/*
+				TODO
+				Nessa etapa faz a verificação se o usuário acertou na sequência inserida
+				Se estiver correto, o sinal de match é verdadeiro e o jogo passa para next_round
+				Se o usuário errou, passa para result
+				Nesse estado é habilitado a contagem da rodada, que é mostrada no HEX0	
+				*/
 				begin
 					if (match == 1'b1) next_state = next_round;
 					else next_state = result;
 				end
 			next_round:  //Volta para Play FPGA se nao houve vitoria, ou vai para Result se houve vitoria.
+				/*
+				TODO
+				Avalia o sinal de win
+				Se positivo, o jogo passa para result
+				Se negativo, passa para play fpga
+				É resetado as contagens das sequências do fpga e do user
+				*/
 				begin
 					if (win) next_state = result;  // acho que precisa de um == 1'b1
 					else next_state = play_FPGA; // confirmar com o prof
 				end
 			result:  //Volta pro estado inicial
+				/*
+				TODO
+				É mostrada a pontuação final em hexadecimal no HEX1 E HEX0
+				A lógica de pontuação para um nivel j é: 64*j*4*rodadas+i
+				HEX5, HEX4, HEX3 E HEX2 mostrarão FPGA ou USER indicando quem ganhou o jogo
+				Ao pressionar reset, volta ao estado de init
+				*/
 				begin
 					next_state = init;  // confirmar com o prof
 				end

@@ -43,7 +43,7 @@ module Reg_fgpa(
 			if (E == 1'b1)
 				begin
 					q <= data;
-					q3 <= data[63:59];
+					q3 <= data[63:60];
 				end
 		end
 endmodule
