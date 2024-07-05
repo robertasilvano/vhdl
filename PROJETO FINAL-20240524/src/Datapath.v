@@ -60,14 +60,7 @@ module Datapath(
 	match
 );
 	//TODOs:
-	//	4. rever a lógica de todos os módulos
-	//	5. rever a lista de sensibilidade de todos os módulos
-	//	7. rever todos os comentários
-	//	10. rever as igualdades com o tamanho de cada parametro
-	//	11. ver como iniciar parametros que só são atualizados em if's
-	// 12. rever todas as ligações
-	// 13. ver variaveis que não estao sendo utilizadas (por exemplo clk)
-	// 15. adicionar comentários aqui no datapath sobre o que é cada variavel nos módulos
+	// 1. Rever warnings com o prof
 	
 	//localparams
 	localparam p_key = 4;
@@ -331,7 +324,7 @@ module Datapath(
 	);
 	
 	
-	/*   HEX2   */  //TODO VER COM O PROF. no diagrama tem um ground mas as conexoes me parecem ok????
+	/*   HEX2   */
 	Dec7seg DEC1 (   //entra o tempo em hexadec e saí o tempo atual em binário
 		.G(w_tempo),
 		.O(w_dec1_mux7)
@@ -353,7 +346,7 @@ module Datapath(
 	
 	
 	/*   HEX1   */
-	Dec7seg DEC2 (   //??
+	Dec7seg DEC2 (
 		.G(points[7:4]),
 		.O(w_dec2_mux8)
 	);
@@ -372,7 +365,7 @@ module Datapath(
 		.O(w_dec3_mux9)
 	);
 	
-	Dec7seg DEC4 (  //??
+	Dec7seg DEC4 (
 		.G(points[3:0]),
 		.O(w_dec4_mux9)
 	);

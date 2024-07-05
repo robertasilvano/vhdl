@@ -38,7 +38,7 @@ module Reg_fgpa(
 	output reg [p_q - 1:0]		q;
 	output reg [p_q3 - 1:0] 	q3;
 	
-	always @ (E) //TODO VER COM O PROF. aqui precisa de posedge clk? no desenho tem, mas na doc não falar nada. E do r2?
+	always @ (E or R) //TODO VER COM O PROF. aqui precisa de posedge clk? no desenho tem, mas na doc não falar nada. E do r2?
 		begin
 			if (E == 1'b1)
 				begin
