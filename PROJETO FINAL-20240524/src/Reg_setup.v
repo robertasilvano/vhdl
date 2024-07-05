@@ -43,11 +43,19 @@ module Reg_setup(
 			if (E)
 				begin
 					setup <= sw;
-					//[9:8] 4 velocidades de jogo
-					//[7:6] 4 sequências de jogo
-					//[5:4] número máximo de iterações por sequência //TODO ver com o prof porque na doc fala que é 5:2
-					//[3:2] número máximo de rodadas //TODO ver com o prof porque isso não ta descrito na doc, e pela imagem diz ser [3:0], mas acho que ta errado.
-					//[1] reset do jogo
+					/*
+					SWITCHES:
+					[9:8] 4 velocidades de jogo (level)
+					[7:6] 4 sequências de jogo (mapa)
+					[5:2] número máximo de iterações por sequência (rodadas - qual tipo de sequência iremos querer)
+					[1] 	reset do jogo
+					[0] 	enter do jogo
+					
+					SETUP:
+					[7:6] 4 velocidades de jogo (level)
+					[5:4] 4 sequências de jogo (mapa - qual tipo de sequência iremos querer)
+					[3:0] número máximo de iterações por sequência (rodadas)
+					*/
 				end
 		end
 endmodule

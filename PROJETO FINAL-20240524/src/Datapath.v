@@ -27,31 +27,6 @@ Saidas:
 	- match		(wire - 1)	sinal indicando se houve um acerto no jogo
 */
 
-/*
-Init:
-reset sw1 = 0
-sel = 0
-r1 = 1
-r2 = 1
-e1 = 1'b0
-e2 = 1'b0
-e3 = 1'b0
-e4 = 1'b0;
-
-Setup:
-reset sw1 = 0
-sel = 0
-r1 = 0
-r2 = 0
-e1 = 1'b1
-e2 = 1'b0
-e3 = 1'b0
-e4 = 1'b0;
-
-
-
-*/
-
 module Datapath(
 
 	//entrada de dados
@@ -92,7 +67,6 @@ module Datapath(
 	//	11. ver como iniciar parametros que só são atualizados em if's
 	// 12. rever todas as ligações
 	// 13. ver variaveis que não estao sendo utilizadas (por exemplo clk)
-	//	14. O que é a variavel setup? entendi que setup[7:6] = level, setup[5:4] = mapa, mas e setup[3:0]?
 	// 15. adicionar comentários aqui no datapath sobre o que é cada variavel nos módulos
 	
 	//localparams
@@ -169,7 +143,7 @@ module Datapath(
 		.c2hz(c2hz)
 	);
 	
-	Mux4x1_4bits MUX10 (
+	Mux4x1_4bits MUX10 ( // Seta no clkhz o level (velocidade de clock) que o FPGA vai rodar
 		.sel(setup[7:6]), //setup[7:6] = level
 		.ent0(c025hz),
 		.ent1(c05hz),
@@ -285,11 +259,11 @@ module Datapath(
 	
 	
 	/*   REG FPGA   */
-	Reg_fgpa R_FPGA (
+	Reg_fgpa R_FPGA ( //monta a sequência dos leds
 		.clk(clkhz),
 		.R(r2),
 		.E(e3),
-		.data({seqFPGA_out, out_fpga[63:4]}),
+		.data({seqFPGA_out, out_fpga[63:4]}),  //TODO VER COM O PROF. não limpamos o out_fpga em momento nenhum?
 		.q(out_fpga),
 		.q3()//out_fpga_significativos
 	);

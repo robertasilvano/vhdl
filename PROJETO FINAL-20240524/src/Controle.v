@@ -71,7 +71,7 @@ module Controle(
 	always @(posedge clock)
 	begin
 		if (reset)
-			state <= init; //TODO VER COM O PROF. aqui o sinal de reset sw[1] deveria ser 0, não?
+			state <= init;
 		else
 			state <= next_state; // TODO VER COM O PROF. porque o state muda no always de baixo, não?
 	end
@@ -215,3 +215,4 @@ module Controle(
 		endcase
 	end
 endmodule
+

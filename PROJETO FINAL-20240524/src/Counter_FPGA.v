@@ -52,14 +52,14 @@ module Counter_FPGA(
 				if (E == 1'b1)
 					begin
 						total <= total + 1'b1;
-						if (data == total)
+						if (data == total) //verifica se já atingiu a quantidade de rodadas máximas
 							begin
 								tc <= 1'b1; //limite atingido
 								total <= 4'b0;
 							end
 					end
 			end
-		SEQFPGA = total;
+		SEQFPGA = total; //recebe o valor da rodada atual
 	end
 	
 endmodule
