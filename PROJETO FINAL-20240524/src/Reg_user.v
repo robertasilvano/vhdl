@@ -33,7 +33,7 @@ module Reg_user(
 	// Output Port(s)
 	output reg [p_q - 1:0]		q;
 	
-	always @(E or R)
+	always @(E or R) //concatena botão que o usuário clicou agora com os botões clicados anteriormente
 		begin
 			if (E == 1'b1)
 				begin
@@ -43,7 +43,6 @@ module Reg_user(
 				begin
 					q <= 64'b0;
 				end
-			// todo confirmar else?
 		end
 	
 endmodule

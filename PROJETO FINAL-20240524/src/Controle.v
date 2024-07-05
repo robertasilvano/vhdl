@@ -152,8 +152,8 @@ module Controle(
 				É resetado as contagens das sequências do fpga e do user
 				*/
 				begin
-					if (win) next_state = result;  // acho que precisa de um == 1'b1
-					else next_state = play_FPGA; // confirmar com o prof
+					if (win == 1'b1) next_state = result;
+					else next_state = play_FPGA;
 				end
 			result:  //Volta pro estado inicial
 				/*

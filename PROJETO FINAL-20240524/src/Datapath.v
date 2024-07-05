@@ -127,7 +127,7 @@ module Datapath(
 	// Portas lógicas
 	wire nbtn_or = nbtn[0] | nbtn[1] | nbtn[2] | nbtn[3];
 	wire e2_and_ntnb = e2 & nbtn_or;
-	assign match = (out_fpga == out_user) & end_user? 1'b1:1'b0;
+	assign match = (out_fpga == out_user) & end_user? 1'b1 : 1'b0;
 	
 	
 	/*   MÓDULOS   *******************************************************************************************************************************************/
@@ -332,7 +332,7 @@ module Datapath(
 	
 	
 	/*   HEX2   */  //TODO VER COM O PROF. no diagrama tem um ground mas as conexoes me parecem ok????
-	Dec7seg DEC1 (   //entra o tempo máximo atual em hexadec e saí o tempo máximo atual em binário
+	Dec7seg DEC1 (   //entra o tempo em hexadec e saí o tempo atual em binário
 		.G(w_tempo),
 		.O(w_dec1_mux7)
 	);

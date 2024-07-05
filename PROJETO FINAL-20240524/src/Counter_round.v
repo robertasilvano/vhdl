@@ -45,7 +45,7 @@ module Counter_round(
 			end
 		else
 			begin
-				if (E == 1'b1)
+				if (E == 1'b1) //ta no estado de check, ou seja, rodada finalizou
 					begin
 						round <= round + 1'b1;
 					end

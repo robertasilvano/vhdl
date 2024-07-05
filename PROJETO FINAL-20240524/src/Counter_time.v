@@ -37,7 +37,7 @@ module Counter_time(
 	
 	
 	// Lógica
-	always @(posedge clkt or posedge R)
+	always @(posedge clkt or posedge R) //conta o tempo pro usuário refazer a sequência (9 segundos)
 	begin
 		if (R == 1'b1)
 			begin

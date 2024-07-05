@@ -45,6 +45,11 @@ module Reg_fgpa(
 					q <= data;
 					q3 <= data[63:60];
 				end
+			if (R == 1'b1)
+				begin
+					q <= 64'b0;
+					q3 <= 4'b0;
+				end
 		end
 endmodule
 

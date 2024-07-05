@@ -37,7 +37,7 @@ module Counter_user(
 	// Sinais internos
 	reg [p_total - 1:0] total; //armazena o valor atual do contador. o máximo é 1111 (15)
 	
-	always @ (posedge R or posedge clk)
+	always @ (posedge R or posedge clk)  //conta quantos botões o usuário já apertou
 		begin
 			if (R == 1'b1)
 				begin
@@ -46,10 +46,10 @@ module Counter_user(
 				end
 			else
 				begin
-					if (E == 1'b1)
+					if (E == 1'b1) // se ta na etapa certa e se o botão foi clicado
 						begin
 							total <= total + 1'b1;
-							if (total == data)
+							if (total == data) //atingiu a rodada final
 								begin
 									tc <= 1'b1;
 									total <= 4'b0;
@@ -59,3 +59,5 @@ module Counter_user(
 		end
 
 endmodule
+
+
