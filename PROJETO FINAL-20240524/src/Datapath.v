@@ -282,36 +282,36 @@ module Datapath(
 	/*   HEX5   */
 	Mux2x1_7bits MUX0 (
 		.sel(win),
-		.ent0(7'b1011_011),  // 1 - U
-		.ent1(7'b1000_111),  // 0 - F
+		.ent0(7'b1000_111),  // F
+		.ent1(7'b1011_011),  // U
 		.out(w_mux0_mux1)
 	);
 	
 	Mux2x1_7bits MUX1 (
 		.sel(sel),
-		.ent0(w_mux0_mux1), //1 - L
-		.ent1(7'b0001_110), //0
+		.ent0(7'b0001_110), // L 
+		.ent1(w_mux0_mux1), // F ou U
 		.out(hex5)
 	);
 	
 	
 	/*   HEX4   */
-	Dec7seg DEC0 (
+	Dec7seg DEC0 (   //entra o level atual em hexadec e saí o level atual em binário
 		.G({2'b00, setup[7:6]}), //setup[7:6] = level
 		.O(w_dec0_mux3)
 	);
 	
 	Mux2x1_7bits MUX2 (
 		.sel(win),
-		.ent0(7'b1011_011), //1 - S
-		.ent1(7'b1100_111), //0 - P
+		.ent0(7'b1100_111), // P
+		.ent1(7'b1011_011), // S
 		.out(w_mux2_mux3)
 	);
 	
 	Mux2x1_7bits MUX3 (
 		.sel(sel),
-		.ent0(w_mux2_mux3),
-		.ent1(w_dec0_mux3),
+		.ent0(w_dec0_mux3), //level atual
+		.ent1(w_mux2_mux3),
 		.out(hex4)
 	);
 	
@@ -319,69 +319,69 @@ module Datapath(
 	/*   HEX3   */
 	Mux2x1_7bits MUX4 (
 		.sel(win),
-		.ent0(7'b1001_111), //1 - E
-		.ent1(7'b1111_011), //0 - g
+		.ent0(7'b1111_011), // g
+		.ent1(7'b1001_111), // E
 		.out(w_mux4_mux5)
 	);
 	
 	Mux2x1_7bits MUX5 (
 		.sel(sel),
-		.ent0(w_mux4_mux5),
-		.ent1(7'b0001_111), //0 - t
+		.ent0(7'b0001_111), // t
+		.ent1(w_mux4_mux5),
 		.out(hex3)
 	);
 	
 	
 	/*   HEX2   */
-	Dec7seg DEC1 (
-		.G(w_tempo), // TODO
+	Dec7seg DEC1 (   //entra o tempo máximo atual em hexadec e saí o tempo máximo atual em binário
+		.G(w_tempo),
 		.O(w_dec1_mux7)
 	);
 	
 	Mux2x1_7bits MUX6 (
 		.sel(win),
-		.ent0(7'b1011_011), //1 - r
-		.ent1(7'b1100_111), //0 - A
+		.ent0(7'b1100_111), // A
+		.ent1(7'b1011_011), // r
 		.out(w_mux6_mux7)
 	);
 	
 	Mux2x1_7bits MUX7 (
 		.sel(sel),
-		.ent0(w_mux6_mux7), //1
-		.ent1(w_dec1_mux7), //0
+		.ent0(w_dec1_mux7), //tempo máximo de jogo
+		.ent1(w_mux6_mux7),
 		.out(hex2)
 	);
 	
 	
 	/*   HEX1   */
-	Dec7seg DEC2 (
+	Dec7seg DEC2 (   //??
 		.G(points[7:4]),
 		.O(w_dec2_mux8)
 	);
 	
 	Mux2x1_7bits MUX8 (
 		.sel(sel),
-		.ent0(w_dec2_mux8), //1
-		.ent1(7'b1011_011), //0 - r
+		.ent0(7'b1011_011), // r
+		.ent1(w_dec2_mux8),
 		.out(hex1)
 	);
 	
 	
 	/*   HEX0   */
-	Dec7seg DEC3 (
+	Dec7seg DEC3 (  //entra o valor da rodada do jogo atual em hexadec e saí o valor da rodada do jogo atual em binário
 		.G(round),
 		.O(w_dec3_mux9)
 	);
 	
-	Dec7seg DEC4 (
+	Dec7seg DEC4 (  //??
 		.G(points[3:0]),
 		.O(w_dec4_mux9)
 	);
 	
 	Mux2x1_7bits MUX9 (
 		.sel(sel),
-		.ent0(w_dec4_mux9), //1
-		.ent1(w_dec3_mux9), //0 
+		.ent0(w_dec3_mux9), //rodada atual
+		.ent1(w_dec4_mux9),
 		.out(hex0)
 	);
 

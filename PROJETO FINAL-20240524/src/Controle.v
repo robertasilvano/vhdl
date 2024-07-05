@@ -73,11 +73,11 @@ module Controle(
 		if (reset)
 			state <= init;
 		else
-			state <= next_state;
+			state <= next_state; // TODO VER COM O PROF. porque o state muda no always de baixo, não?
 	end
 
 	// Lógica combinacional dos estados
-	always @(end_fpga or end_user or end_time or win or match or state) // state e enter precisam ta aqui?
+	always @(end_fpga or end_user or end_time or win or match or state or enter)
 	begin
 		next_state = state;
 		case (state)
