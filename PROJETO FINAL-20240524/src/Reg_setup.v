@@ -37,12 +37,17 @@ module Reg_setup(
 		begin
 			if (R == 1'b1)
 				begin
-					setup <= 8'b0;  // TODO ver com o prof. o registrador não é de 2 bits? pq tamanho 8?
+					setup <= 8'b0;
 				end
 			
 			if (E)
 				begin
 					setup <= sw;
+					//[9:8] 4 velocidades de jogo
+					//[7:6] 4 sequências de jogo
+					//[5:4] número máximo de iterações por sequência //TODO ver com o prof porque na doc fala que é 5:2
+					//[3:2] número máximo de rodadas //TODO ver com o prof porque isso não ta descrito na doc, e pela imagem diz ser [3:0], mas acho que ta errado.
+					//[1] reset do jogo
 				end
 		end
 endmodule

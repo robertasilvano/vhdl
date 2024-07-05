@@ -27,6 +27,31 @@ Saidas:
 	- match		(wire - 1)	sinal indicando se houve um acerto no jogo
 */
 
+/*
+Init:
+reset sw1 = 0
+sel = 0
+r1 = 1
+r2 = 1
+e1 = 1'b0
+e2 = 1'b0
+e3 = 1'b0
+e4 = 1'b0;
+
+Setup:
+reset sw1 = 0
+sel = 0
+r1 = 0
+r2 = 0
+e1 = 1'b1
+e2 = 1'b0
+e3 = 1'b0
+e4 = 1'b0;
+
+
+
+*/
+
 module Datapath(
 
 	//entrada de dados
@@ -203,7 +228,7 @@ module Datapath(
 		.clk(clock_50),
 		.R(r1),
 		.E(e4),
-		.data(setup[3:0]), //setup[3:0] = ?????
+		.data(setup[3:0]), //setup[3:0] quantidade de rodadas máxima
 		.tc(win),
 		.round(round)
 	);
@@ -332,7 +357,7 @@ module Datapath(
 	);
 	
 	
-	/*   HEX2   */
+	/*   HEX2   */  //TODO VER COM O PROF. no diagrama tem um ground mas as conexoes me parecem ok????
 	Dec7seg DEC1 (   //entra o tempo máximo atual em hexadec e saí o tempo máximo atual em binário
 		.G(w_tempo),
 		.O(w_dec1_mux7)
